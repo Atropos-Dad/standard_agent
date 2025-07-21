@@ -101,6 +101,22 @@ PARAMETER_GENERATION_PROMPT = ("""
     """
 )
 
+PARAMETER_GENERATION_RETRY_PROMPT: str = (
+    """
+    The previous attempt to generate parameters failed. This is attempt number {attempt_number} of {max_attempts}.
+
+    ERROR: {error}
+    PREVIOUS_PARAMETERS: {previous_params}
+
+    Please review the error and the available memory keys, then generate a corrected set of parameters.
+
+    Available Memory Keys: {memory_keys}
+
+    ---
+    {original_prompt}
+    """
+)
+
 BASE_REFLECTION_PROMPT: str = (
     """You are a self-healing reasoning engine. A step in your plan failed. Your task is to analyze the error and propose a single, precise fix.
 

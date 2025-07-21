@@ -36,11 +36,13 @@ class ReWOOReasoner(BaseSequentialReasoner):
     def run(self, goal: str, max_iterations: int = 20):  # noqa: D401
         return super().run(goal, max_iterations)
 
+
     def _generate_plan(self, state: ReasonerState) -> None:
         """Generate initial plan from goal using the LLM."""
         prompt = prompts.PLAN_GENERATION_PROMPT.replace("{goal}", state.goal)
         plan_md = self._call_llm(prompt)
         self._logger.info(f"phase=PLAN_GENERATED plan={plan_md}")
+        
         state.plan = parse_bullet_plan(plan_md)
 
     def _execute_step(self, step: Step, state: ReasonerState) -> Optional[Dict[str, Any]]:
@@ -79,7 +81,14 @@ class ReWOOReasoner(BaseSequentialReasoner):
                 )
 
             params = self._generate_params(step, tool_id, inputs)
+
             result = self.tool.execute(tool_id, params)
+            
+            # Check if execution actually succeeded
+            if result.get("error") or not result.get("result"):
+                error_msg = result.get("error", "Tool execution returned no result")
+                raise ToolExecutionError(f"Tool execution failed: {error_msg}")
+            
             self._logger.info("phase=EXECUTE_OK run_id=%s tool_id=%s", getattr(self, "_run_id", "NA"), tool_id)
 
             # On success, update step and state
@@ -238,7 +247,11 @@ class ReWOOReasoner(BaseSequentialReasoner):
         inputs: Dict[str, Any] = {}
         for key in step.input_keys:
             try:
-                inputs[key] = self._memory.retrieve(key)  # type: ignore[attr-defined]
+                value = self._memory.retrieve(key)  # type: ignore[attr-defined]
+                if value is None:
+                    self._logger.warning("Missing required input key: %s", key)
+                    raise MissingInputError(key)
+                inputs[key] = value
             except Exception:  # noqa: BLE001
                 self._logger.warning("Missing required input key: %s", key)
                 raise MissingInputError(key)
@@ -347,7 +360,9 @@ class ReWOOReasoner(BaseSequentialReasoner):
         """Use the LLM to propose parameters for *tool_id*."""
         tool_execution_info = self._get_tool(tool_id)
         if not tool_execution_info:
-            raise ParameterGenerationError(f"Could not load definition for selected tool_id: {tool_id}")
+            raise ParameterGenerationError(
+                f"Could not load definition for selected tool_id: {tool_id}"
+            )
 
         forced_key = f"forced_params:{step.text}"
         forced = self._memory.retrieve(forced_key) if hasattr(self, "_memory") else None
@@ -356,29 +371,78 @@ class ReWOOReasoner(BaseSequentialReasoner):
 
         tool_params = tool_execution_info.parameters or {}
         allowed_keys = ",".join(tool_params.keys())
-        prompt = prompts.PARAMETER_GENERATION_PROMPT.format(
+        original_prompt = prompts.PARAMETER_GENERATION_PROMPT.format(
             step=step.text,
             tool_schema=json.dumps(tool_params, ensure_ascii=False),
             step_inputs=json.dumps(inputs, ensure_ascii=False),
             allowed_keys=allowed_keys,
         )
-        raw = self._call_llm(prompt).strip()
-        params = self._parse_json_or_retry(raw, prompt)
 
-        # Keep only parameters that the tool schema recognises to avoid 400s.
-        params = {k: v for k, v in params.items() if k in tool_params}
-        return params
+        last_error = None
+        last_params = None
+        max_attempts = 3
+
+        for attempt in range(max_attempts):
+            prompt = original_prompt
+            if attempt > 0:
+                prompt = prompts.PARAMETER_GENERATION_RETRY_PROMPT.format(
+                    original_prompt=original_prompt,
+                    error=str(last_error),
+                    previous_params=str(last_params),
+                    memory_keys=str(self._memory.get_all_keys()),
+                    attempt_number=attempt + 1,
+                    max_attempts=max_attempts,
+                )
+
+            try:
+                raw = self._call_llm(prompt).strip()
+                params = self._parse_json_or_retry(raw, prompt)
+                last_params = params
+
+                # Keep only parameters that the tool schema recognises to avoid 400s.
+                params = {k: v for k, v in params.items() if k in tool_params}
+
+                # Resolve memory placeholders in parameters only if they exist
+                if hasattr(self._memory, "resolve_placeholders"):
+                    params_str = str(params)
+                    if "${memory." in params_str:
+                        return self._memory.resolve_placeholders(params)
+
+                return params
+
+            except (ParameterGenerationError, MissingInputError, KeyError) as e:
+                self._logger.warning(
+                    f"Parameter generation attempt {attempt + 1} failed: {e}"
+                )
+                last_error = e
+                if attempt == max_attempts - 1:
+                    raise
+
+        raise ParameterGenerationError(
+            f"Failed to generate parameters after {max_attempts} attempts."
+        )
 
     def _parse_json_or_retry(self, raw: str, original_prompt: str) -> Dict[str, Any]:
-        """Best-effort JSON parse with a single retry on failure."""
+        """Parse JSON with fallback for markdown-wrapped responses."""
+        # First try raw parsing
         try:
             return json.loads(raw)
         except json.JSONDecodeError:
-            self._logger.warning("phase=JSON_PARSE_FAIL raw='%s'", raw)
-            # Ask the LLM to fix the JSON, this is a single-shot correction
-            prompt = prompts.JSON_CORRECTION_PROMPT.format(bad_json=raw, original_prompt=original_prompt)
-            raw = self._call_llm(prompt).strip()
-            return json.loads(raw)
+            pass
+        
+        # Try extracting from markdown code blocks
+        _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*([^`]+)\s*```")
+        match = _JSON_FENCE_RE.search(raw)
+        if match:
+            extracted = match.group(1).strip()
+            try:
+                return json.loads(extracted)
+            except json.JSONDecodeError:
+                pass
+        
+        # Log failure and raise error
+        self._logger.warning("phase=JSON_PARSE_FAIL raw='%s'", raw)
+        raise ParameterGenerationError(f"LLM returned invalid JSON: {raw}")
 
     @staticmethod
     def _is_valid_tool_reply(reply: str, tools: List[Tool]) -> bool:
