@@ -51,19 +51,3 @@ class HumanInTheLoopInterface:
     @abstractmethod
     def request_human_input(self, question: str) -> str:
         raise NotImplementedError
-
-
-class NoopInterventionHub(HumanInTheLoopInterface):
-    """
-    Null escalation that doesn't provide human help.
-    Used when the agent should work completely autonomously.
-    """
-
-    def __init__(self, llm: LiteLLMChatLLM):
-        super().__init__(llm=llm)
-
-    def should_delegate_to_human(self, context: Optional[str] = None) -> DelegationAssessment:
-        return DelegationAssessment(should_delegate=False, message="")
-
-    def request_human_input(self, question: str) -> str:
-        return ""
