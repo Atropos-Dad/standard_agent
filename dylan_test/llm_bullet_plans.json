@@ -1,0 +1,152 @@
+[
+  {
+    "provider": "Google",
+    "goal": "Email John about the project update using Gmail",
+    "plan": "```\n- send an email via Gmail to John regarding the project update (output: email_confirmation)\n  \u2192 keyword search query: \"send email gmail to recipient subject body\"\n```"
+  },
+  {
+    "provider": "Google",
+    "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+    "plan": "```\n- calculate the date for next Friday (output: next_friday_date)\n- create a calendar event on Google Calendar for \"team sync\" at 2pm (input: next_friday_date) (output: event_creation_confirmation)\n  \u2192 keyword search query: \"create event google calendar add schedule\"\n```"
+  },
+  {
+    "provider": "Google",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "plan": "```\n- upload quarterly report file to \"Reports\" folder in Google Drive (input: quarterly_report_file) (output: upload_confirmation)\n  \u2192 keyword search query: \"upload file google drive folder create\"\n```"
+  },
+  {
+    "provider": "Google",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "plan": "```\n- find NASA's official YouTube channel (output: nasa_youtube_channel_id)\n  \u2192 keyword search query: \"find youtube channel nasa official\"\n- get latest videos from nasa_youtube_channel_id (input: nasa_youtube_channel_id) (output: latest_nasa_videos)\n  \u2192 keyword search query: \"get youtube videos channel latest\"\n```"
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "plan": "```\n- calculate the specific date and time for the upcoming Thursday afternoon (output: meeting_datetime)\n- find the Microsoft Teams group named \"marketing\" (output: marketing_group_id)\n  \u2192 keyword search query: \"find get group microsoft teams marketing\"\n- create a Microsoft Teams meeting with marketing_group_id for meeting_datetime (input: marketing_group_id, meeting_datetime) (output: meeting_confirmation)\n  \u2192 keyword search query: \"create schedule meeting microsoft teams group\"\n```"
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Remind my team about the deadline via Outlook",
+    "plan": "```\n- Get team members' email addresses (output: team_emails)\n  \u2192 keyword search query: \"get contacts outlook team group email\"\n- Generate reminder message content about the deadline (output: reminder_message)\n- Send reminder_message to team_emails via Outlook (input: team_emails, reminder_message) (output: email_confirmation)\n  \u2192 keyword search query: \"send email outlook message to recipients\"\n```"
+  },
+  {
+    "provider": "Slack",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "plan": "```\n- Get Slack channel ID for #general (output: general_channel_id)\n  \u2192 keyword search query: \"get slack channel id name general\"\n- Send message \"Good morning!\" to Slack channel (input: general_channel_id) (output: message_confirmation)\n  \u2192 keyword search query: \"send slack message channel post content\"\n```"
+  },
+  {
+    "provider": "Twilio",
+    "goal": "Text me a 2FA code with Twilio",
+    "plan": "```\n- generate a 2FA code (output: two_factor_code)\n- send two_factor_code via SMS using Twilio (input: two_factor_code) (output: sms_confirmation)\n  \u2192 keyword search query: \"send sms message twilio phone number text code\"\n```"
+  },
+  {
+    "provider": "GitHub",
+    "goal": "Open a bug for the website\u2019s contact form on GitHub",
+    "plan": "```\n- create a bug issue on GitHub for the website's contact form (output: github_issue_creation_confirmation)\n  \u2192 keyword search query: \"create issue github bug report\"\n```"
+  },
+  {
+    "provider": "Discord",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "plan": "```\n- fetch recent member join events from Discord (output: new_members_data)\n  \u2192 keyword search query: \"fetch discord member join events recent\"\n- generate welcome message content for new_members_data (input: new_members_data) (output: welcome_message)\n- post welcome_message to Discord introductions channel (input: welcome_message) (output: post_confirmation)\n  \u2192 keyword search query: \"post message discord channel send content\"\n```"
+  },
+  {
+    "provider": "Stripe",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "plan": "```\n- Create a Stripe payment link for a $50 donation (output: stripe_payment_link)\n  \u2192 keyword search query: \"create payment link stripe donation amount\"\n- Send the stripe_payment_link to the donor (input: stripe_payment_link) (output: send_link_confirmation)\n  \u2192 keyword search query: \"send email link to recipient\"\n```"
+  },
+  {
+    "provider": "Notion",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "plan": "```\n- Create a new Notion page titled \"2024 Goals\" (output: notion_page_id)\n  \u2192 keyword search query: \"create page notion new title\"\n- Add a checklist block to the Notion page (input: notion_page_id) (output: checklist_block_confirmation)\n  \u2192 keyword search query: \"add block notion checklist content\"\n```"
+  },
+  {
+    "provider": "Asana",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "plan": "```\n- Get user details for \"Alex\" in Asana (output: alex_user_details)\n  \u2192 keyword search query: \"get user asana find details\"\n- Create task \"review the Q2 budget\" in Asana, assigned to Alex and due next Monday (input: alex_user_details) (output: task_creation_confirmation)\n  \u2192 keyword search query: \"create task asana assign due date\"\n```"
+  },
+  {
+    "provider": "Trello",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "plan": "```\n- Create a Trello card named \"Update the homepage\" (output: trello_card_details)\n  \u2192 keyword search query: \"create card trello add new item\"\n```"
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "plan": "```\n- Get new emails from Gmail (output: new_emails)\n  \u2192 keyword search query: \"get email gmail new inbox monitor\"\n- Extract attachments from new_emails (input: new_emails) (output: email_attachments)\n  \u2192 keyword search query: \"get attachment gmail email file\"\n- Save email_attachments to Dropbox (input: email_attachments) (output: dropbox_upload_confirmation)\n  \u2192 keyword search query: \"upload file dropbox save attachment\"\n```"
+  },
+  {
+    "provider": "Jira",
+    "goal": "File a login bug in the Mobile App project on Jira",
+    "plan": "```\n- create Jira issue (output: jira_issue_details)\n  \u2192 keyword search query: \"create issue jira bug mobile app\"\n```"
+  },
+  {
+    "provider": "Salesforce",
+    "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+    "plan": "```\n- Create lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: lead_creation_result)\n  \u2192 keyword search query: \"create lead salesforce add new record\"\n```"
+  },
+  {
+    "provider": "HubSpot",
+    "goal": "Log a new contact from the conference in HubSpot",
+    "plan": "```\n- Create a new contact in HubSpot (output: new_contact_record)\n  \u2192 keyword search query: \"create contact hubspot new record crm\"\n```"
+  },
+  {
+    "provider": "Dropbox",
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "plan": "```\n- Get the latest team photo file (output: team_photo_file)\n  \u2192 keyword search query: \"get file photo latest retrieve\"\n- Upload team_photo_file to Dropbox Team Photos folder (input: team_photo_file) (output: upload_confirmation)\n  \u2192 keyword search query: \"upload file dropbox folder team photos\"\n```"
+  },
+  {
+    "provider": "Shopify",
+    "goal": "Get my most recent Shopify orders",
+    "plan": "```\n- Get most recent Shopify orders (output: shopify_orders)\n  \u2192 keyword search query: \"get orders shopify recent list fetch\"\n```"
+  },
+  {
+    "provider": "Zoom",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "plan": "```\n- Create a Zoom meeting titled \"Product Team Call\" for next Wednesday at 10am (output: zoom_meeting_details)\n  \u2192 keyword search query: \"create schedule meeting zoom call\"\n- Add product team members as attendees to the meeting (input: zoom_meeting_details) (output: attendee_confirmation)\n  \u2192 keyword search query: \"add invite participants zoom meeting\"\n```"
+  },
+  {
+    "provider": "SendGrid",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "plan": "```\n- retrieve newsletter subscriber list (output: subscriber_list)\n  \u2192 keyword search query: \"get fetch list subscribers contacts\"\n- compose email subject and body for product launch (output: email_content)\n- send email to newsletter list using SendGrid (input: subscriber_list, email_content) (output: sendgrid_confirmation)\n  \u2192 keyword search query: \"send email sendgrid marketing campaign\"\n```"
+  },
+  {
+    "provider": "Mailchimp",
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "plan": "```\n- add newuser@example.com to Mailchimp list (output: mailchimp_add_confirmation)\n  \u2192 keyword search query: \"add member subscriber mailchimp list email\"\n```"
+  },
+  {
+    "provider": "Airtable",
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "plan": "```\n- Add a new record for \"Blue Widget\" to the \"Inventory\" base in Airtable (output: add_record_confirmation)\n  \u2192 keyword search query: \"add record airtable create item inventory\"\n```"
+  },
+  {
+    "provider": "Box",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "plan": "```\n- Access the signed contract (output: signed_contract_file)\n- Upload signed_contract_file to the 'Contracts' folder in Box (input: signed_contract_file) (output: upload_confirmation)\n  \u2192 keyword search query: \"upload file box folder put content\"\n```"
+  },
+  {
+    "provider": "OneDrive",
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "plan": "```\n- Save the updated project plan to OneDrive in the 'Projects/2024' folder (input: updated_project_plan_content) (output: save_confirmation)\n  \u2192 keyword search query: \"save file onedrive upload document project plan\"\n```"
+  },
+  {
+    "provider": "Twitter",
+    "goal": "Tweet that our new app is live!",
+    "plan": "```\n- create a tweet announcing \"our new app is live!\" (output: tweet_confirmation)\n  \u2192 keyword search query: \"create post tweet twitter message content\"\n```"
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "plan": "```\n- search for the track \"Here Comes the Sun\" on Spotify (output: song_details)\n  \u2192 keyword search query: \"search track song spotify find music\"\n- search for the playlist \"Morning Motivation\" on Spotify (output: playlist_details)\n  \u2192 keyword search query: \"search playlist spotify find music\"\n- add the track from song_details to the playlist from playlist_details (input: song_details, playlist_details) (output: add_confirmation)\n  \u2192 keyword search query: \"add track song playlist spotify music\"\n```"
+  },
+  {
+    "provider": "Telegram",
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "plan": "```\n- send message \"the meeting starts in 10 minutes\" to Telegram group (output: message_confirmation)\n  \u2192 keyword search query: \"send message telegram group post content\"\n```"
+  },
+  {
+    "provider": "OpenAI",
+    "goal": "Summarize this article about climate change in 2024 using OpenAI",
+    "plan": "```\n- summarize article content about climate change in 2024 using OpenAI (input: article_content) (output: summary_text)\n```"
+  }
+]
