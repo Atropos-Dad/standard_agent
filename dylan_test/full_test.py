@@ -96,6 +96,8 @@ def select_tool(entry):
     # Remove tool_search_results from the output
     if "tool_search_results" in result:
         del result["tool_search_results"]
+    if "id" in result and result["id"] == result.get("selected_tool_id"):
+        del result["id"]
     return result
 
 if __name__ == "__main__":
