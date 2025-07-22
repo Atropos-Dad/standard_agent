@@ -13,8 +13,8 @@ TOP_K = 10
 MAX_WORKERS = 60  # Safe for Gemini Flash paid tier
 
 PLAN_RESULTS_FILE = "dylan_test/llm_bullet_plans.json"
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "dylan_test/keyword_tool_search_results.json"
-SELECTION_RESULTS_FILE = "dylan_test/tool_selection_results.json"
+KEYWORD_TOOL_SEARCH_RESULTS_FILE = "dylan_test/data/keyword_tool_search_results.json"
+SELECTION_RESULTS_FILE = "dylan_test/data/tool_selection_results.json"
 
 client = JenticClient(api_key=API_KEY)
 llm = LiteLLMChatLLM(model=model_name, temperature=0.2)
