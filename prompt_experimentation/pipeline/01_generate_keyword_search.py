@@ -5,7 +5,7 @@ from tqdm import tqdm
 import concurrent.futures
 from jentic_agents.platform.jentic_client import JenticClient
 from jentic_agents.utils.llm import LiteLLMChatLLM
-from dylan_test._prompts import SEARCH_QUERIES, LLM_BULLET_PROMPT
+from prompt_experimentation._prompts import SEARCH_QUERIES, LLM_BULLET_PROMPT
 
 API_KEY = os.getenv("JENTIC_API_KEY")
 model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
@@ -13,8 +13,8 @@ TOP_K = 10
 MAX_WORKERS = 60
 TOOL_SEARCH_WORKERS = 8
 
-PLAN_RESULTS_FILE = "dylan_test/data/llm_bullet_plans.json"
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "dylan_test/data/keyword_tool_search_results.json"
+PLAN_RESULTS_FILE = "prompt_experimentation/data/llm_bullet_plans.json"
+KEYWORD_TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/keyword_tool_search_results.json"
 
 client = JenticClient(api_key=API_KEY)
 llm = LiteLLMChatLLM(model=model_name, temperature=0.2)

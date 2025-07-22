@@ -1,9 +1,9 @@
 import json
 
-EXPECTED_FILE = "dylan_test/data/expected_tool_selections.json"
-ACTUAL_FILE = "dylan_test/data/tool_selection_results.json"
-TOOL_SEARCH_FILE = "dylan_test/data/keyword_tool_search_results.json"
-REPORT_FILE = "dylan_test/data/tool_selection_comparison_report.json"
+EXPECTED_FILE = "prompt_experimentation/data/expected_tool_selections.json"
+ACTUAL_FILE = "prompt_experimentation/data/tool_selection_results.json"
+TOOL_SEARCH_FILE = "prompt_experimentation/data/keyword_tool_search_results.json"
+REPORT_FILE = "prompt_experimentation/data/tool_selection_comparison_report.json"
 
 # Load files
 with open(EXPECTED_FILE) as f:

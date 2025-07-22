@@ -1,13 +1,3 @@
-import json
-from jentic_agents.platform.jentic_client import JenticClient
-import os
-from jentic_agents.utils.llm import LiteLLMChatLLM
-import re
-
-QUERIES_FILE = "search_queries.json"
-RESULTS_FILE = "search_results.json"
-TOP_K = 10
-
 SEARCH_QUERIES = [
     {"provider": "Google", "goal": "Email John about the project update using Gmail"},
     {"provider": "Google", "goal": "Add a team sync to my Google Calendar for next Friday at 2pm"},
@@ -40,25 +30,6 @@ SEARCH_QUERIES = [
     {"provider": "Telegram", "goal": "Let my Telegram group know the meeting starts in 10 minutes"},
     {"provider": "OpenAI", "goal": "Summarize this article about climate change in 2024 using OpenAI"},
 ]
-
-def save_queries_to_file(filename, queries):
-    with open(filename, 'w') as f:
-        json.dump(queries, f, indent=2)
-
-def load_queries_from_file(filename):
-    with open(filename, 'r') as f:
-        return json.load(f)
-
-def save_results_to_file(filename, results):
-    with open(filename, 'w') as f:
-        json.dump(results, f, indent=2)
-
-# Save queries to file if not already present
-if not os.path.exists(QUERIES_FILE):
-    save_queries_to_file(QUERIES_FILE, SEARCH_QUERIES)
-    print(f"Saved {len(SEARCH_QUERIES)} queries to {QUERIES_FILE}")
-
-API_KEY = os.getenv("JENTIC_API_KEY")
 
 LLM_BULLET_PROMPT = """
     <role>
@@ -133,70 +104,59 @@ LLM_BULLET_PROMPT = """
     </goal>
 """
 
-LLM_RESULTS_FILE = "llm_tool_selection_results.json"
+TOOL_SELECTION_PROMPT = (
+   """
+   <role>
+   You are an expert orchestrator working within the Jentic API ecosystem.
+   Your job is to select the best tool to execute a specific plan step, using a list of available tools. Each tool may vary in API domain, supported actions, and required parameters. You must evaluate each tool's suitability and return the **single best matching tool** — or the word none if none qualify.
 
-PLAN_RESULTS_FILE = "llm_bullet_plans.json"
-KEYWORD_QUERIES_FILE = "llm_keyword_search_queries.json"
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "keyword_tool_search_results.json"
+   Your selection will be executed by an agent, so precision and compatibility are critical.
+   </role>
 
-model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
+   <instructions>
+   Analyze the provided step and evaluate all candidate tools. Use the scoring criteria to assess each tool’s fitness for executing the step. Return the tool `id` with the highest total score. If no tool scores ≥60, return the word none.
+   You are selecting the **most execution-ready** tool, not simply the closest match.
+   </instructions>
 
-if __name__ == "__main__":
-    queries = load_queries_from_file(QUERIES_FILE)
-    client = JenticClient(api_key=API_KEY)
-    llm = LiteLLMChatLLM(model=model_name, temperature=0.2)
-    all_results = []
-    all_plans = []
-    all_keyword_queries = []
-    all_keyword_tool_search_results = []
-    for entry in queries:
-        provider = entry["provider"]
-        goal = entry["goal"]
-        print(f"\n=== Provider: {provider} | Goal: {goal} ===")
-        prompt = LLM_BULLET_PROMPT.format(goal=goal)
-        llm_messages = [
-            {"role": "system", "content": "You are a world-class planning assistant operating within the Jentic platform."},
-            {"role": "user", "content": prompt}
-        ]
-        try:
-            plan = llm.chat(llm_messages).strip()
-        except Exception as e:
-            plan = f"llm_error: {e}"
-        all_plans.append({
-            "provider": provider,
-            "goal": goal,
-            "plan": plan
-        })
-        # Extract keyword search queries from the plan
-        keyword_queries = []
-        if plan.startswith("```"):
-            plan_body = plan.strip('`\n')
-        else:
-            plan_body = plan
-        for match in re.finditer(r'→ keyword search query: "([^"]+)"', plan_body):
-            keyword_queries.append(match.group(1))
-        all_keyword_queries.append({
-            "provider": provider,
-            "goal": goal,
-            "keyword_search_queries": keyword_queries
-        })
-        # For each keyword search query, perform a tool search and save results
-        for keyword_query in keyword_queries:
-            try:
-                search_results = client.search(keyword_query, top_k=10)
-            except Exception as e:
-                search_results = f"search_error: {e}"
-            all_keyword_tool_search_results.append({
-                "provider": provider,
-                "goal": goal,
-                "keyword_search_query": keyword_query,
-                "tool_search_results": search_results
-            })
-    save_results_to_file(PLAN_RESULTS_FILE, all_plans)
-    save_results_to_file(KEYWORD_QUERIES_FILE, all_keyword_queries)
-    save_results_to_file(KEYWORD_TOOL_SEARCH_RESULTS_FILE, all_keyword_tool_search_results)
-    print(f"\nSaved all LLM bullet plans to {PLAN_RESULTS_FILE}")
-    print(f"Saved all extracted keyword search queries to {KEYWORD_QUERIES_FILE}")
-    print(f"Saved all tool search results for keyword queries to {KEYWORD_TOOL_SEARCH_RESULTS_FILE}")
+   <input>
+   Step:
+   {step}
 
+   Tools (JSON):
+   {tools_json}
+   </input>
 
+   <scoring_criteria>
+   - **Action Compatibility** (35 pts): Evaluate how well the tool’s primary action matches the step’s intent. Consider synonyms (e.g., "send" ≈ "post", "create" ≈ "add"), but prioritize tools that closely reflect the intended verb-object structure and scope. Penalize mismatches in type, scope, or intent (e.g., "get all members" for "get new members").
+
+   - **API Domain Match** (30 pts): This is a critical criterion.
+       - **If the step EXPLICITLY mentions a specific platform or system (e.g., "Gmail", "Asana", "Microsoft Teams")**:
+           - **Perfect Match (30 pts):** If the tool's `api_name` directly matches the explicitly mentioned platform.
+           - **Severe Penalty (0 pts):** If the tool's `api_name` does *not* match the explicitly mentioned platform. Do NOT select tools from other domains in this scenario.
+       - **If NO specific platform or system is EXPLICITLY mentioned (e.g., "book a flight", "send an email")**:
+           - **Relevant Match (25-30 pts):** If the tool's `api_name` is generally relevant to the task (e.g., a flight booking tool for "book a flight"). Prefer tools with broader applicability if multiple options exist.
+           - **Irrelevant Match (0-10 pts):** If the tool's `api_name` is clearly irrelevant.
+
+   - **Parameter Compatibility** (20 pts): Determine if the tool’s required parameters are explicitly present in the step or clearly inferable. Penalize tools with ambiguous, unsupported, or overly strict input requirements.
+
+   - **Workflow Fit** (10 pts): Assess how logically the tool integrates into the surrounding workflow. Does it build upon prior steps or prepare outputs needed for future ones?
+
+   - **Simplicity & Efficiency** (5 pts): Prefer tools that accomplish the task directly and without unnecessary complexity. Penalize overly complex workflows if a simpler operation would suffice. This includes preferring a single-purpose tool over a multi-purpose tool if the single-purpose tool directly addresses the step's need (e.g., "Get a user" over "Get multiple users" if only one user is needed).
+   </scoring_criteria>
+
+   <rules>
+   1. Score each tool using the weighted criteria above. Max score: 100 points.
+   2. Select the tool with the highest total score.
+   3. If no tool scores at least 60 points, return none.
+   4. Do **not** include any explanation, formatting, or metadata — only the tool `id` or none.
+   5. Use available step context and known inputs to inform scoring.
+   6. Penalize tools severely if they are misaligned with the intended action or platform (if mentioned in the step).
+   7. Never select a tool from an incorrect domain if the step explicitly specifies a specific one.
+   </rules>
+
+   <output_format>
+   Respond with a **single line** which only includes the selected tool’s `id`
+   **No additional text** should be included.
+   </output_format>
+   """
+)

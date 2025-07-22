@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_success": 36,
+    "total_success": 37,
     "total": 45,
-    "accuracy": 0.8
+    "accuracy": 0.8222
   },
   "results": [
     {
@@ -344,14 +344,10 @@
         "parameters": {}
       },
       "actual": {
-        "id": "9ba302a5eeb9815103e9794a3ae8c815",
-        "name": "create-and-send-email",
-        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
-        "type": "workflow",
-        "api_name": "googleapis.com/gmail",
-        "parameters": {}
+        "id": "9ba302a5eeb9815103e97974a3ae8c815",
+        "not_found": true
       },
-      "success": true
+      "success": false
     },
     {
       "goal": "Start a 2024 Goals page in Notion with a checklist",
@@ -608,14 +604,10 @@
         "not_found": true
       },
       "actual": {
-        "id": "43c3310030f1fee37cb88f99b9300415",
-        "name": "POST for meeting",
-        "description": "Add meeting into the system",
-        "type": "operation",
-        "api_name": "data2crm.com",
-        "parameters": {}
+        "id": "none",
+        "not_found": true
       },
-      "success": false
+      "success": true
     },
     {
       "goal": "Email my newsletter list about our new product launch using SendGrid",
@@ -702,14 +694,10 @@
         "not_found": true
       },
       "actual": {
-        "id": "bf9461b5ef4e576a373e294e13a119b8",
-        "name": "Upload file",
-        "description": "Upload file (max 100MB). Please use the [Upload Sessions API](#operation/uploadSessionsStart) to upload bigger files. For more information on uploads, refer to the [file upload guide](/guides/file-upload).",
-        "type": "operation",
-        "api_name": "apideck.com/file-storage",
-        "parameters": {}
+        "id": "none",
+        "not_found": true
       },
-      "success": false
+      "success": true
     },
     {
       "goal": "Save the updated project plan to OneDrive, Projects/2024",

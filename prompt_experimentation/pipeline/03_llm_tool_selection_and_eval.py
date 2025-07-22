@@ -3,14 +3,14 @@ import os
 from tqdm import tqdm
 import concurrent.futures
 from jentic_agents.utils.llm import LiteLLMChatLLM
-from dylan_test._prompts import TOOL_SELECTION_PROMPT
+from prompt_experimentation._prompts import TOOL_SELECTION_PROMPT
 
 model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
 LLM_WORKERS = 60
 
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "dylan_test/data/keyword_tool_search_results.json"
-EXPECTED_RESULTS_FILE = "dylan_test/data/expected_tool_selections.json"
-SELECTION_RESULTS_FILE = "dylan_test/data/tool_selection_results.json"
+KEYWORD_TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/keyword_tool_search_results.json"
+EXPECTED_RESULTS_FILE = "prompt_experimentation/data/expected_tool_selections.json"
+SELECTION_RESULTS_FILE = "prompt_experimentation/data/tool_selection_results.json"
 
 llm = LiteLLMChatLLM(model=model_name, temperature=0.2)
 
