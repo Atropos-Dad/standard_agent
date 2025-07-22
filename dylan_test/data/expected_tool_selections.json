@@ -2,29 +2,29 @@
   {
     "pair_id": "1",
     "goal": "Email John about the project update using Gmail",
-    "step": "send email to John about the project update (output: email_confirmation)",
-    "keyword_search_query": "send email gmail to user subject content",
+    "step": "send an email via Gmail to John regarding the project update (output: email_confirmation)",
+    "keyword_search_query": "send email gmail to recipient subject body",
     "expected_tool_id": "9ba302a5eeb9815103e9794a3ae8c815"
   },
   {
     "pair_id": "2",
     "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
-    "step": "create a calendar event titled \"team sync\" on Google Calendar for next_friday_date at 2pm (input: next_friday_date) (output: event_creation_confirmation)",
+    "step": "create a calendar event on Google Calendar for \"team sync\" at 2pm (input: next_friday_date) (output: event_creation_confirmation)",
     "keyword_search_query": "create event google calendar add schedule",
     "expected_tool_id": "f8c5c06335dd1fc79b33d164a60a5fb3"
   },
   {
     "pair_id": "3",
     "goal": "Put the quarterly report in my Drive, in the Reports folder",
-    "step": "Upload quarterly_report_file to 'Reports' folder in Google Drive (input: quarterly_report_file) (output: upload_confirmation)",
+    "step": "upload quarterly report file to \"Reports\" folder in Google Drive (input: quarterly_report_file) (output: upload_confirmation)",
     "keyword_search_query": "upload file google drive folder create",
     "expected_tool_id": "af0012c5d493ab1059b6eb0154ce327e"
   },
   {
     "pair_id": "4",
     "goal": "Show me NASA\u2019s latest YouTube videos",
-    "step": "search YouTube for NASA's official channel (output: nasa_youtube_channel_id)",
-    "keyword_search_query": "search youtube channel nasa official",
+    "step": "find NASA's official YouTube channel (output: nasa_youtube_channel_id)",
+    "keyword_search_query": "find youtube channel nasa official",
     "expected_tool_id": "f973d9ffbe558d73ecf907fcdcfde4d3"
   },
   {
@@ -37,281 +37,274 @@
   {
     "pair_id": "6",
     "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
-    "step": "retrieve the contact information for the \"marketing\" team (output: marketing_contacts)",
-    "keyword_search_query": "get contacts microsoft teams group marketing",
-    "expected_tool_id": "none"
+    "step": "find the Microsoft Teams group named \"marketing\" (output: marketing_group_id)",
+    "keyword_search_query": "find get group microsoft teams marketing",
+    "expected_tool_id": "9e5cbb4b33c20f49eb425e6c127bd19b"
   },
   {
     "pair_id": "7",
     "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
-    "step": "create a Microsoft Teams meeting for the marketing team on thursday_date afternoon (input: thursday_date, marketing_contacts) (output: meeting_confirmation)",
-    "keyword_search_query": "create meeting microsoft teams schedule invite",
-    "expected_tool_id": "none"
+    "step": "create a Microsoft Teams meeting with marketing_group_id for meeting_datetime (input: marketing_group_id, meeting_datetime) (output: meeting_confirmation)",
+    "keyword_search_query": "create schedule meeting microsoft teams group",
+    "expected_tool_id": "43c3310030f1fee37cb88f99b9300415"
   },
   {
     "pair_id": "8",
     "goal": "Remind my team about the deadline via Outlook",
-    "step": "Get team contact list from Outlook (output: team_contacts)",
-    "keyword_search_query": "get outlook team contact list distribution group",
-    "expected_tool_id": "none"
+    "step": "Get team members' email addresses (output: team_emails)",
+    "keyword_search_query": "get contacts outlook team group email",
+    "expected_tool_id": "b0de0fccbd704d69e9d7a9f829767866"
   },
   {
     "pair_id": "9",
     "goal": "Remind my team about the deadline via Outlook",
-    "step": "Send reminder email via Outlook (input: team_contacts) (output: email_confirmation)",
-    "keyword_search_query": "send outlook email reminder message",
-    "expected_tool_id": "none"
+    "step": "Send reminder_message to team_emails via Outlook (input: team_emails, reminder_message) (output: email_confirmation)",
+    "keyword_search_query": "send email outlook message to recipients",
+    "expected_tool_id": "12689ac3a6f72194105f6587569c5387"
   },
   {
     "pair_id": "10",
     "goal": "Say good morning to everyone in #general on Slack",
-    "step": "find Slack channel named \"general\" (output: general_channel_id)",
-    "keyword_search_query": "find get slack channel by name",
+    "step": "Get Slack channel ID for #general (output: general_channel_id)",
+    "keyword_search_query": "get slack channel id name general",
     "expected_tool_id": "none"
   },
   {
     "pair_id": "11",
     "goal": "Say good morning to everyone in #general on Slack",
-    "step": "post message \"Good morning everyone!\" to Slack channel (input: general_channel_id) (output: message_post_confirmation)",
-    "keyword_search_query": "post send slack message channel content",
+    "step": "Send message \"Good morning!\" to Slack channel (input: general_channel_id) (output: message_confirmation)",
+    "keyword_search_query": "send slack message channel post content",
     "expected_tool_id": "6aec8aab3fbdb191ed7d5642ed988e65"
   },
   {
     "pair_id": "12",
     "goal": "Text me a 2FA code with Twilio",
-    "step": "send two_factor_code as an SMS message using Twilio (input: two_factor_code) (output: sms_sent_confirmation)",
-    "keyword_search_query": "send sms message text twilio",
-    "expected_tool_id": "ce9ea28e6ef78b2aae23b0fba06e35a0"
+    "step": "send two_factor_code via SMS using Twilio (input: two_factor_code) (output: sms_confirmation)",
+    "keyword_search_query": "send sms message twilio phone number text code",
+    "expected_tool_id": "56b8fe05624fba1071a38a06cb6cb0e8"
   },
   {
     "pair_id": "13",
     "goal": "Open a bug for the website\u2019s contact form on GitHub",
-    "step": "Create a new bug issue on GitHub for the website's contact form (output: github_issue)",
-    "keyword_search_query": "create issue github bug report new",
+    "step": "create a bug issue on GitHub for the website's contact form (output: github_issue_creation_confirmation)",
+    "keyword_search_query": "create issue github bug report",
     "expected_tool_id": "1acc39726dcfeafeebb70b744dedceb5"
   },
   {
     "pair_id": "14",
     "goal": "Welcome new members in the introductions channel on Discord",
-    "step": "Get new members from Discord server (output: new_members)",
-    "keyword_search_query": "get new members discord server list",
-    "expected_tool_id": "6c0847f856183b841cea6617a87ba238"
+    "step": "fetch recent member join events from Discord (output: new_members_data)",
+    "keyword_search_query": "fetch discord member join events recent",
+    "expected_tool_id": "none"
   },
   {
     "pair_id": "15",
     "goal": "Welcome new members in the introductions channel on Discord",
-    "step": "Send welcome message to introductions channel on Discord (input: new_members) (output: message_confirmation)",
-    "keyword_search_query": "send message discord channel post content",
+    "step": "post welcome_message to Discord introductions channel (input: welcome_message) (output: post_confirmation)",
+    "keyword_search_query": "post message discord channel send content",
     "expected_tool_id": "afcc911d281312c77c143230e84c06a6"
   },
   {
     "pair_id": "16",
     "goal": "Make a $50 donation link with Stripe and send it to the donor",
-    "step": "create a Stripe payment link for a $50 donation (output: payment_link_details)",
+    "step": "Create a Stripe payment link for a $50 donation (output: stripe_payment_link)",
     "keyword_search_query": "create payment link stripe donation amount",
-    "expected_tool_id": "fc2343a417dd2bfacabc89ba70da802a"
+    "expected_tool_id": "2f633e8e989084c82f8ef76cd2a8997f"
   },
   {
     "pair_id": "17",
     "goal": "Make a $50 donation link with Stripe and send it to the donor",
-    "step": "send the payment link to the donor (input: payment_link_details) (output: send_confirmation)",
-    "keyword_search_query": "send email link to donor",
+    "step": "Send the stripe_payment_link to the donor (input: stripe_payment_link) (output: send_link_confirmation)",
+    "keyword_search_query": "send email link to recipient",
     "expected_tool_id": "9ba302a5eeb9815103e9794a3ae8c815"
   },
   {
     "pair_id": "18",
     "goal": "Start a 2024 Goals page in Notion with a checklist",
-    "step": "Create a new Notion page titled \"2024 Goals\" (output: notion_page)",
+    "step": "Create a new Notion page titled \"2024 Goals\" (output: notion_page_id)",
     "keyword_search_query": "create page notion new title",
     "expected_tool_id": "none"
   },
   {
     "pair_id": "19",
     "goal": "Start a 2024 Goals page in Notion with a checklist",
-    "step": "Add a checklist block to the Notion page (input: notion_page) (output: checklist_block_confirmation)",
-    "keyword_search_query": "add block notion checklist page content",
+    "step": "Add a checklist block to the Notion page (input: notion_page_id) (output: checklist_block_confirmation)",
+    "keyword_search_query": "add block notion checklist content",
     "expected_tool_id": "none"
   },
   {
     "pair_id": "20",
     "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
-    "step": "Get user ID for \"Alex\" in Asana (output: alex_user_id)",
-    "keyword_search_query": "get user id asana find user",
-    "expected_tool_id": "3b6c2eb8ab8caec636e1247234e2bb9b"
+    "step": "Get user details for \"Alex\" in Asana (output: alex_user_details)",
+    "keyword_search_query": "get user asana find details",
+    "expected_tool_id": "2b22a3993beccd294ed7f6caa14d85c9"
   },
   {
     "pair_id": "21",
     "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
-    "step": "Create a task in Asana titled \"Review Q2 budget\" assigned to alex_user_id with a due date of next Monday (input: alex_user_id) (output: asana_task_confirmation)",
+    "step": "Create task \"review the Q2 budget\" in Asana, assigned to Alex and due next Monday (input: alex_user_details) (output: task_creation_confirmation)",
     "keyword_search_query": "create task asana assign due date",
     "expected_tool_id": "0a5b17884a281a715f4ba834869f3012"
   },
   {
     "pair_id": "22",
     "goal": "Add a card to update the homepage on my Trello board",
-    "step": "Get lists from the user's default Trello board (output: trello_lists)",
-    "keyword_search_query": "get lists trello board user default",
-    "expected_tool_id": "75aa2ba4b3e6a9358caf743efea73bbd"
+    "step": "Create a Trello card named \"Update the homepage\" (output: trello_card_details)",
+    "keyword_search_query": "create card trello add new item",
+    "expected_tool_id": "803b7490688d3bbc595f60d773d08bde"
   },
   {
     "pair_id": "23",
-    "goal": "Add a card to update the homepage on my Trello board",
-    "step": "Create a Trello card named \"Update the homepage\" on a list (input: trello_lists) (output: new_card)",
-    "keyword_search_query": "create card trello list name",
-    "expected_tool_id": "06fb45f3bd12d28ff037e3d0044775d5"
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "step": "Get new emails from Gmail (output: new_emails)",
+    "keyword_search_query": "get email gmail new inbox monitor",
+    "expected_tool_id": "336be851c786bff514b8378fc074d8af"
   },
   {
     "pair_id": "24",
     "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
-    "step": "Get new emails from Gmail inbox (output: new_gmail_emails)",
-    "keyword_search_query": "get email gmail new inbox",
-    "expected_tool_id": "336be851c786bff514b8378fc074d8af"
+    "step": "Extract attachments from new_emails (input: new_emails) (output: email_attachments)",
+    "keyword_search_query": "get attachment gmail email file",
+    "expected_tool_id": "e276b569a115ad56753e91525750368c"
   },
   {
     "pair_id": "25",
     "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
-    "step": "Upload extracted_attachments to Dropbox (input: extracted_attachments) (output: dropbox_upload_results)",
-    "keyword_search_query": "upload file dropbox save document",
+    "step": "Save email_attachments to Dropbox (input: email_attachments) (output: dropbox_upload_confirmation)",
+    "keyword_search_query": "upload file dropbox save attachment",
     "expected_tool_id": "none"
   },
   {
     "pair_id": "26",
     "goal": "File a login bug in the Mobile App project on Jira",
-    "step": "create a bug issue in Jira for the \"Mobile App\" project with the summary \"Login Bug\" (output: jira_bug_issue)",
-    "keyword_search_query": "create issue bug jira mobile app",
+    "step": "create Jira issue (output: jira_issue_details)",
+    "keyword_search_query": "create issue jira bug mobile app",
     "expected_tool_id": "a540511f8373e32d8c38a05acea60246"
   },
   {
     "pair_id": "27",
     "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
-    "step": "Create a new lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: salesforce_lead_creation_status)",
-    "keyword_search_query": "create lead salesforce add new contact",
-    "expected_tool_id": "none"
+    "step": "Create lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: lead_creation_result)",
+    "keyword_search_query": "create lead salesforce add new record",
+    "expected_tool_id": "24ae918dd7f97a2577a24bdcff1edc98"
   },
   {
     "pair_id": "28",
     "goal": "Log a new contact from the conference in HubSpot",
-    "step": "Create a contact in HubSpot (output: contact_creation_confirmation)",
-    "keyword_search_query": "create contact hubspot crm add new",
-    "expected_tool_id": "none"
+    "step": "Create a new contact in HubSpot (output: new_contact_record)",
+    "keyword_search_query": "create contact hubspot new record crm",
+    "expected_tool_id": "d674e46e6d22110a46f80e85c2457315"
   },
   {
     "pair_id": "29",
     "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
-    "step": "upload team_photo_content to the \"Team Photos\" folder in Dropbox (input: team_photo_content) (output: dropbox_upload_status)",
-    "keyword_search_query": "upload file dropbox folder create",
-    "expected_tool_id": "none"
+    "step": "Get the latest team photo file (output: team_photo_file)",
+    "keyword_search_query": "get file photo latest retrieve",
+    "expected_tool_id": "a53d9228c8c6f36b014677cee8ddde0e"
   },
   {
     "pair_id": "30",
-    "goal": "Get my most recent Shopify orders",
-    "step": "Get most recent Shopify orders (output: shopify_orders)",
-    "keyword_search_query": "get orders shopify recent list",
-    "expected_tool_id": "none"
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "step": "Upload team_photo_file to Dropbox Team Photos folder (input: team_photo_file) (output: upload_confirmation)",
+    "keyword_search_query": "upload file dropbox folder team photos",
+    "expected_tool_id": "f41797e6b1a7af32efa46004713a8ce7"
   },
   {
     "pair_id": "31",
-    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
-    "step": "create a Zoom meeting for the product team next Wednesday at 10am (input: next_wednesday_date) (output: zoom_meeting_details)",
-    "keyword_search_query": "create meeting zoom schedule call",
-    "expected_tool_id": "none"
+    "goal": "Get my most recent Shopify orders",
+    "step": "Get most recent Shopify orders (output: shopify_orders)",
+    "keyword_search_query": "get orders shopify recent list fetch",
+    "expected_tool_id": "c400a95ee57c5f8e53228ce5719e0102"
   },
   {
     "pair_id": "32",
-    "goal": "Email my newsletter list about our new product launch using SendGrid",
-    "step": "Get SendGrid contact list named \"My Newsletter List\" (output: newsletter_list_details)",
-    "keyword_search_query": "get contact list sendgrid marketing email",
-    "expected_tool_id": "none"
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "step": "Create a Zoom meeting titled \"Product Team Call\" for next Wednesday at 10am (output: zoom_meeting_details)",
+    "keyword_search_query": "create schedule meeting zoom call",
+    "expected_tool_id": "43c3310030f1fee37cb88f99b9300415"
   },
   {
     "pair_id": "33",
-    "goal": "Email my newsletter list about our new product launch using SendGrid",
-    "step": "Create and send email marketing campaign using newsletter_list_details for product launch (input: newsletter_list_details) (output: campaign_confirmation)",
-    "keyword_search_query": "create send email campaign sendgrid marketing launch",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "step": "Add product team members as attendees to the meeting (input: zoom_meeting_details) (output: attendee_confirmation)",
+    "keyword_search_query": "add invite participants zoom meeting",
     "expected_tool_id": "none"
   },
   {
     "pair_id": "34",
-    "goal": "Add newuser@example.com to my Mailchimp list",
-    "step": "Add newuser@example.com as a member to a Mailchimp list (output: mailchimp_add_confirmation)",
-    "keyword_search_query": "add member mailchimp list email subscribe",
-    "expected_tool_id": "ef61f881d3786760db9cb09e8148c8d6, e088e94f379f310756850920927e944f"
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "step": "retrieve newsletter subscriber list (output: subscriber_list)",
+    "keyword_search_query": "get fetch list subscribers contacts",
+    "expected_tool_id": "ecd478ce483efac37500de78150d4480"
   },
   {
     "pair_id": "35",
-    "goal": "Add Blue Widget to my Inventory base in Airtable",
-    "step": "Create record in Airtable Inventory base for \"Blue Widget\" (output: airtable_record_creation_result)",
-    "keyword_search_query": "create record airtable base inventory add item",
-    "expected_tool_id": "none"
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "step": "send email to newsletter list using SendGrid (input: subscriber_list, email_content) (output: sendgrid_confirmation)",
+    "keyword_search_query": "send email sendgrid marketing campaign",
+    "expected_tool_id": "5867278c7b79a816651765aca9f87610"
   },
   {
     "pair_id": "36",
-    "goal": "Put the signed contract in my Box Contracts folder",
-    "step": "Upload the signed contract file to the 'Contracts' folder in Box (output: upload_confirmation)",
-    "keyword_search_query": "upload file box contract document folder",
-    "expected_tool_id": "none"
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "step": "add newuser@example.com to Mailchimp list (output: mailchimp_add_confirmation)",
+    "keyword_search_query": "add member subscriber mailchimp list email",
+    "expected_tool_id": "e088e94f379f310756850920927e944f"
   },
   {
     "pair_id": "37",
-    "goal": "Save the updated project plan to OneDrive, Projects/2024",
-    "step": "Save updated project plan to OneDrive folder \"Projects/2024\" (output: save_confirmation)",
-    "keyword_search_query": "save file onedrive upload document folder path",
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "step": "Add a new record for \"Blue Widget\" to the \"Inventory\" base in Airtable (output: add_record_confirmation)",
+    "keyword_search_query": "add record airtable create item inventory",
     "expected_tool_id": "none"
   },
   {
     "pair_id": "38",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "step": "Upload signed_contract_file to the 'Contracts' folder in Box (input: signed_contract_file) (output: upload_confirmation)",
+    "keyword_search_query": "upload file box folder put content",
+    "expected_tool_id": "f41797e6b1a7af32efa46004713a8ce7"
+  },
+  {
+    "pair_id": "39",
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "step": "Save the updated project plan to OneDrive in the 'Projects/2024' folder (input: updated_project_plan_content) (output: save_confirmation)",
+    "keyword_search_query": "save file onedrive upload document project plan",
+    "expected_tool_id": "af0012c5d493ab1059b6eb0154ce327e"
+  },
+  {
+    "pair_id": "40",
     "goal": "Tweet that our new app is live!",
-    "step": "Create a tweet with the message \"Our new app is live!\" (output: tweet_confirmation)",
+    "step": "create a tweet announcing \"our new app is live!\" (output: tweet_confirmation)",
     "keyword_search_query": "create post tweet twitter message content",
     "expected_tool_id": "b3bb5eff9bb626305424fc2c9322231f"
   },
   {
-    "pair_id": "39",
-    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
-    "step": "Search Spotify for the track \"Here Comes the Sun\" (output: track_details)",
-    "keyword_search_query": "spotify search track song find",
-    "expected_tool_id": "5a32f4d4d7115ee27e3a8b26dec7a08b, 9f47dacced4d3b4b438bcdd7a127645b"
-  },
-  {
-    "pair_id": "40",
-    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
-    "step": "Find the Spotify playlist named \"Morning Motivation\" (output: playlist_details)",
-    "keyword_search_query": "spotify get playlist find retrieve",
-    "expected_tool_id": "8e81e689d62056a5a6d9d94af630aacf"
-  },
-  {
     "pair_id": "41",
     "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
-    "step": "Add the track to the Spotify playlist (input: track_details, playlist_details) (output: add_confirmation)",
-    "keyword_search_query": "spotify add track song playlist item",
-    "expected_tool_id": "329810731e0cdddfa0ff673af6ad8e1d, 1320831bd2fc24dbe8a34d75c0e53c93"
+    "step": "search for the track \"Here Comes the Sun\" on Spotify (output: song_details)",
+    "keyword_search_query": "search track song spotify find music",
+    "expected_tool_id": "9f47dacced4d3b4b438bcdd7a127645b"
   },
   {
     "pair_id": "42",
-    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
-    "step": "send message to Telegram group with content \"the meeting starts in 10 minutes\" (output: telegram_message_confirmation)",
-    "keyword_search_query": "send message telegram group post content",
-    "expected_tool_id": "1e961ba6f9c44bc1e91d5f652164cfc7"
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "search for the playlist \"Morning Motivation\" on Spotify (output: playlist_details)",
+    "keyword_search_query": "search playlist spotify find music",
+    "expected_tool_id": "none"
   },
   {
     "pair_id": "43",
-    "goal": "Summarize this article about climate change in 2024 using OpenAI",
-    "step": "Search for an article about \"climate change in 2024\" (output: article_search_results)",
-    "keyword_search_query": "search article news web climate change 2024",
-    "expected_tool_id": "none"
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "add the track from song_details to the playlist from playlist_details (input: song_details, playlist_details) (output: add_confirmation)",
+    "keyword_search_query": "add track song playlist spotify music",
+    "expected_tool_id": "1320831bd2fc24dbe8a34d75c0e53c93"
   },
   {
     "pair_id": "44",
-    "goal": "Summarize this article about climate change in 2024 using OpenAI",
-    "step": "Extract content from the most relevant article (input: article_search_results) (output: article_content)",
-    "keyword_search_query": "extract content article webpage parse",
-    "expected_tool_id": "f825eebf689772250e7d270d007b13d2, 7a2f52180a9cb9079b489c64467ee948"
-  },
-  {
-    "pair_id": "45",
-    "goal": "Summarize this article about climate change in 2024 using OpenAI",
-    "step": "Summarize article_content using OpenAI (input: article_content) (output: summary_text)",
-    "keyword_search_query": "summarize text openai large language model",
-    "expected_tool_id": "none"
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "step": "send message \"the meeting starts in 10 minutes\" to Telegram group (output: message_confirmation)",
+    "keyword_search_query": "send message telegram group post content",
+    "expected_tool_id": "1e961ba6f9c44bc1e91d5f652164cfc7"
   }
 ]

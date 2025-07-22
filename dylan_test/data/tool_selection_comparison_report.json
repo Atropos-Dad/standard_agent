@@ -1,0 +1,929 @@
+{
+  "summary": {
+    "total_success": 39,
+    "total": 44,
+    "accuracy": 0.8864
+  },
+  "results": [
+    {
+      "goal": "Email John about the project update using Gmail",
+      "step": "send an email via Gmail to John regarding the project update (output: email_confirmation)",
+      "keyword_search_query": "send email gmail to recipient subject body",
+      "expected": {
+        "id": "9ba302a5eeb9815103e9794a3ae8c815",
+        "name": "create-and-send-email",
+        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "9ba302a5eeb9815103e9794a3ae8c815",
+        "name": "create-and-send-email",
+        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+      "step": "create a calendar event on Google Calendar for \"team sync\" at 2pm (input: next_friday_date) (output: event_creation_confirmation)",
+      "keyword_search_query": "create event google calendar add schedule",
+      "expected": {
+        "id": "f8c5c06335dd1fc79b33d164a60a5fb3",
+        "name": "",
+        "description": "Creates an event.",
+        "type": "operation",
+        "api_name": "googleapis.com/calendar",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "f8c5c06335dd1fc79b33d164a60a5fb3",
+        "name": "",
+        "description": "Creates an event.",
+        "type": "operation",
+        "api_name": "googleapis.com/calendar",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Put the quarterly report in my Drive, in the Reports folder",
+      "step": "upload quarterly report file to \"Reports\" folder in Google Drive (input: quarterly_report_file) (output: upload_confirmation)",
+      "keyword_search_query": "upload file google drive folder create",
+      "expected": {
+        "id": "af0012c5d493ab1059b6eb0154ce327e",
+        "name": "",
+        "description": " Creates a new file. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:*`*/*` Note: Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information on uploading files, see [Upload file data](/drive/api/guides/manage-uploads). Apps creating shortcuts with `files.create` must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `title` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the title. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "af0012c5d493ab1059b6eb0154ce327e",
+        "name": "",
+        "description": " Creates a new file. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:*`*/*` Note: Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information on uploading files, see [Upload file data](/drive/api/guides/manage-uploads). Apps creating shortcuts with `files.create` must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `title` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the title. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Show me NASA\u2019s latest YouTube videos",
+      "step": "find NASA's official YouTube channel (output: nasa_youtube_channel_id)",
+      "keyword_search_query": "find youtube channel nasa official",
+      "expected": {
+        "id": "f973d9ffbe558d73ecf907fcdcfde4d3",
+        "name": "find-content-and-get-details",
+        "description": "Searches for channels based on a query, then retrieves detailed information about the first channel found.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "f973d9ffbe558d73ecf907fcdcfde4d3",
+        "name": "find-content-and-get-details",
+        "description": "Searches for channels based on a query, then retrieves detailed information about the first channel found.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Show me NASA\u2019s latest YouTube videos",
+      "step": "get latest videos from nasa_youtube_channel_id (input: nasa_youtube_channel_id) (output: latest_nasa_videos)",
+      "keyword_search_query": "get youtube videos channel latest",
+      "expected": {
+        "id": "58f62a51440e58130f601cb024f61ec6",
+        "name": "",
+        "description": "Retrieves a list of resources, possibly filtered.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "58f62a51440e58130f601cb024f61ec6",
+        "name": "",
+        "description": "Retrieves a list of resources, possibly filtered.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+      "step": "find the Microsoft Teams group named \"marketing\" (output: marketing_group_id)",
+      "keyword_search_query": "find get group microsoft teams marketing",
+      "expected": {
+        "id": "9e5cbb4b33c20f49eb425e6c127bd19b",
+        "name": "",
+        "description": "Returns the list of all teams in this org",
+        "type": "operation",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "9e5cbb4b33c20f49eb425e6c127bd19b",
+        "name": "",
+        "description": "Returns the list of all teams in this org",
+        "type": "operation",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+      "step": "create a Microsoft Teams meeting with marketing_group_id for meeting_datetime (input: marketing_group_id, meeting_datetime) (output: meeting_confirmation)",
+      "keyword_search_query": "create schedule meeting microsoft teams group",
+      "expected": {
+        "id": "43c3310030f1fee37cb88f99b9300415",
+        "name": "POST for meeting",
+        "description": "Add meeting into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": false
+    },
+    {
+      "goal": "Remind my team about the deadline via Outlook",
+      "step": "Get team members' email addresses (output: team_emails)",
+      "keyword_search_query": "get contacts outlook team group email",
+      "expected": {
+        "id": "b0de0fccbd704d69e9d7a9f829767866",
+        "name": "view-team-member-details",
+        "description": "An authorized user (likely admin) logs in and retrieves the details of all team members or a specific team member.",
+        "type": "workflow",
+        "api_name": "c19qrserver.local",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "b0de0fccbd704d69e9d7a9f829767866",
+        "name": "view-team-member-details",
+        "description": "An authorized user (likely admin) logs in and retrieves the details of all team members or a specific team member.",
+        "type": "workflow",
+        "api_name": "c19qrserver.local",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Remind my team about the deadline via Outlook",
+      "step": "Send reminder_message to team_emails via Outlook (input: team_emails, reminder_message) (output: email_confirmation)",
+      "keyword_search_query": "send email outlook message to recipients",
+      "expected": {
+        "id": "12689ac3a6f72194105f6587569c5387",
+        "name": "Send emails",
+        "description": "POST /apps/{appId}/email/batch",
+        "type": "operation",
+        "api_name": "sinao.app",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "12689ac3a6f72194105f6587569c5387",
+        "name": "Send emails",
+        "description": "POST /apps/{appId}/email/batch",
+        "type": "operation",
+        "api_name": "sinao.app",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Say good morning to everyone in #general on Slack",
+      "step": "Get Slack channel ID for #general (output: general_channel_id)",
+      "keyword_search_query": "get slack channel id name general",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Say good morning to everyone in #general on Slack",
+      "step": "Send message \"Good morning!\" to Slack channel (input: general_channel_id) (output: message_confirmation)",
+      "keyword_search_query": "send slack message channel post content",
+      "expected": {
+        "id": "6aec8aab3fbdb191ed7d5642ed988e65",
+        "name": "",
+        "description": "Sends a message to a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "6aec8aab3fbdb191ed7d5642ed988e65",
+        "name": "",
+        "description": "Sends a message to a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Text me a 2FA code with Twilio",
+      "step": "send two_factor_code via SMS using Twilio (input: two_factor_code) (output: sms_confirmation)",
+      "keyword_search_query": "send sms message twilio phone number text code",
+      "expected": {
+        "id": "56b8fe05624fba1071a38a06cb6cb0e8",
+        "name": "Send a message",
+        "description": "Send a message",
+        "type": "operation",
+        "api_name": "twilio.com/api",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "ce9ea28e6ef78b2aae23b0fba06e35a0",
+        "name": "",
+        "description": "POST /v1/a2p/BrandRegistrations/{BrandRegistrationSid}/SmsOtp",
+        "type": "operation",
+        "api_name": "twilio.com/twilio_messaging_v1",
+        "parameters": {}
+      },
+      "success": false
+    },
+    {
+      "goal": "Open a bug for the website\u2019s contact form on GitHub",
+      "step": "create a bug issue on GitHub for the website's contact form (output: github_issue_creation_confirmation)",
+      "keyword_search_query": "create issue github bug report",
+      "expected": {
+        "id": "1acc39726dcfeafeebb70b744dedceb5",
+        "name": "Add sub-issue",
+        "description": "You can use the REST API to add sub-issues to issues.\n\nCreating content too quickly using this endpoint may result in secondary rate limiting.\n For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\"\nand \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.\n- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.\n - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.\n- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.",
+        "type": "operation",
+        "api_name": "github.com/api.github.com.2022-11-28",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "1acc39726dcfeafeebb70b744dedceb5",
+        "name": "Add sub-issue",
+        "description": "You can use the REST API to add sub-issues to issues.\n\nCreating content too quickly using this endpoint may result in secondary rate limiting.\n For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\"\nand \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.\n- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.\n - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.\n- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.",
+        "type": "operation",
+        "api_name": "github.com/api.github.com.2022-11-28",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Welcome new members in the introductions channel on Discord",
+      "step": "fetch recent member join events from Discord (output: new_members_data)",
+      "keyword_search_query": "fetch discord member join events recent",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Welcome new members in the introductions channel on Discord",
+      "step": "post welcome_message to Discord introductions channel (input: welcome_message) (output: post_confirmation)",
+      "keyword_search_query": "post message discord channel send content",
+      "expected": {
+        "id": "afcc911d281312c77c143230e84c06a6",
+        "name": "",
+        "description": "POST /channels/{channel_id}/messages",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "afcc911d281312c77c143230e84c06a6",
+        "name": "",
+        "description": "POST /channels/{channel_id}/messages",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Make a $50 donation link with Stripe and send it to the donor",
+      "step": "Create a Stripe payment link for a $50 donation (output: stripe_payment_link)",
+      "keyword_search_query": "create payment link stripe donation amount",
+      "expected": {
+        "id": "2f633e8e989084c82f8ef76cd2a8997f",
+        "name": "Create a payment link",
+        "description": "<p>Creates a payment link.</p>",
+        "type": "operation",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "2f633e8e989084c82f8ef76cd2a8997f",
+        "name": "Create a payment link",
+        "description": "<p>Creates a payment link.</p>",
+        "type": "operation",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Make a $50 donation link with Stripe and send it to the donor",
+      "step": "Send the stripe_payment_link to the donor (input: stripe_payment_link) (output: send_link_confirmation)",
+      "keyword_search_query": "send email link to recipient",
+      "expected": {
+        "id": "9ba302a5eeb9815103e9794a3ae8c815",
+        "name": "create-and-send-email",
+        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "9ba302a5eeb9815103e9794a3ae8c815",
+        "name": "create-and-send-email",
+        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Start a 2024 Goals page in Notion with a checklist",
+      "step": "Create a new Notion page titled \"2024 Goals\" (output: notion_page_id)",
+      "keyword_search_query": "create page notion new title",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Start a 2024 Goals page in Notion with a checklist",
+      "step": "Add a checklist block to the Notion page (input: notion_page_id) (output: checklist_block_confirmation)",
+      "keyword_search_query": "add block notion checklist content",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+      "step": "Get user details for \"Alex\" in Asana (output: alex_user_details)",
+      "keyword_search_query": "get user asana find details",
+      "expected": {
+        "id": "2b22a3993beccd294ed7f6caa14d85c9",
+        "name": "Get multiple users",
+        "description": "Returns the user records for all users in all workspaces and organizations accessible to the authenticated user. Accepts an optional workspace ID parameter.\nResults are sorted by user ID.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "3b6c2eb8ab8caec636e1247234e2bb9b",
+        "name": "Get a user",
+        "description": "Returns the full user record for the single user with the provided ID.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      "success": false
+    },
+    {
+      "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+      "step": "Create task \"review the Q2 budget\" in Asana, assigned to Alex and due next Monday (input: alex_user_details) (output: task_creation_confirmation)",
+      "keyword_search_query": "create task asana assign due date",
+      "expected": {
+        "id": "0a5b17884a281a715f4ba834869f3012",
+        "name": "Create a task",
+        "description": "Creating a new task is as easy as POSTing to the `/tasks` endpoint with a\ndata block containing the fields you\u2019d like to set on the task. Any\nunspecified fields will take on default values.\n\nEvery task is required to be created in a specific workspace, and this\nworkspace cannot be changed once set. The workspace need not be set\nexplicitly if you specify `projects` or a `parent` task instead.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "0a5b17884a281a715f4ba834869f3012",
+        "name": "Create a task",
+        "description": "Creating a new task is as easy as POSTing to the `/tasks` endpoint with a\ndata block containing the fields you\u2019d like to set on the task. Any\nunspecified fields will take on default values.\n\nEvery task is required to be created in a specific workspace, and this\nworkspace cannot be changed once set. The workspace need not be set\nexplicitly if you specify `projects` or a `parent` task instead.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add a card to update the homepage on my Trello board",
+      "step": "Create a Trello card named \"Update the homepage\" (output: trello_card_details)",
+      "keyword_search_query": "create card trello add new item",
+      "expected": {
+        "id": "803b7490688d3bbc595f60d773d08bde",
+        "name": "manage-card-details-and-progress",
+        "description": "This workflow demonstrates how to create a new card, enrich it with details like description, due date, and a checklist, and then track its progress by completing checklist items and adding comments, finally archiving it.",
+        "type": "workflow",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "803b7490688d3bbc595f60d773d08bde",
+        "name": "manage-card-details-and-progress",
+        "description": "This workflow demonstrates how to create a new card, enrich it with details like description, due date, and a checklist, and then track its progress by completing checklist items and adding comments, finally archiving it.",
+        "type": "workflow",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+      "step": "Get new emails from Gmail (output: new_emails)",
+      "keyword_search_query": "get email gmail new inbox monitor",
+      "expected": {
+        "id": "336be851c786bff514b8378fc074d8af",
+        "name": "monitor-mailbox-for-new-messages",
+        "description": "Sets up push notifications for mailbox changes and retrieves the history of changes since the last check.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "336be851c786bff514b8378fc074d8af",
+        "name": "monitor-mailbox-for-new-messages",
+        "description": "Sets up push notifications for mailbox changes and retrieves the history of changes since the last check.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+      "step": "Extract attachments from new_emails (input: new_emails) (output: email_attachments)",
+      "keyword_search_query": "get attachment gmail email file",
+      "expected": {
+        "id": "e276b569a115ad56753e91525750368c",
+        "name": "retrieve-email-attachment",
+        "description": "Finds a specific email message and retrieves a specific attachment from it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "e276b569a115ad56753e91525750368c",
+        "name": "retrieve-email-attachment",
+        "description": "Finds a specific email message and retrieves a specific attachment from it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+      "step": "Save email_attachments to Dropbox (input: email_attachments) (output: dropbox_upload_confirmation)",
+      "keyword_search_query": "upload file dropbox save attachment",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "3527dd8515a0ac5e046f852ba65ad2b8",
+        "name": "upload-file",
+        "description": "Upload a file by first creating its metadata record, then uploading the content, and finally marking it as available.",
+        "type": "workflow",
+        "api_name": "agco-ats.com",
+        "parameters": {}
+      },
+      "success": false
+    },
+    {
+      "goal": "File a login bug in the Mobile App project on Jira",
+      "step": "create Jira issue (output: jira_issue_details)",
+      "keyword_search_query": "create issue jira bug mobile app",
+      "expected": {
+        "id": "a540511f8373e32d8c38a05acea60246",
+        "name": "Create issue",
+        "description": "Creates an issue or, where the option to create subtasks is enabled in Jira, a subtask. A transition may be applied, to move the issue or subtask to a workflow step other than the default start step, and issue properties set.\n\nThe content of the issue or subtask is defined using `update` and `fields`. The fields that can be set in the issue or subtask are determined using the [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get). These are the same fields that appear on the issue's create screen. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.\n \nCreating a subtask differs from creating an issue as follows:\n\n *  `issueType` must be set to a subtask issue type (use [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get) to find subtask issue types).\n *  `parent` must contain the ID or key of the parent issue.\n\nIn a next-gen project any issue may be made a child providing that the parent and child are members of the same project.\n\n**[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which the issue or subtask is created.",
+        "type": "operation",
+        "api_name": "atlassian.com/jira",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "a540511f8373e32d8c38a05acea60246",
+        "name": "Create issue",
+        "description": "Creates an issue or, where the option to create subtasks is enabled in Jira, a subtask. A transition may be applied, to move the issue or subtask to a workflow step other than the default start step, and issue properties set.\n\nThe content of the issue or subtask is defined using `update` and `fields`. The fields that can be set in the issue or subtask are determined using the [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get). These are the same fields that appear on the issue's create screen. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.\n \nCreating a subtask differs from creating an issue as follows:\n\n *  `issueType` must be set to a subtask issue type (use [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get) to find subtask issue types).\n *  `parent` must contain the ID or key of the parent issue.\n\nIn a next-gen project any issue may be made a child providing that the parent and child are members of the same project.\n\n**[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which the issue or subtask is created.",
+        "type": "operation",
+        "api_name": "atlassian.com/jira",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+      "step": "Create lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: lead_creation_result)",
+      "keyword_search_query": "create lead salesforce add new record",
+      "expected": {
+        "id": "24ae918dd7f97a2577a24bdcff1edc98",
+        "name": "Create lead",
+        "description": "Create lead",
+        "type": "operation",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "24ae918dd7f97a2577a24bdcff1edc98",
+        "name": "Create lead",
+        "description": "Create lead",
+        "type": "operation",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Log a new contact from the conference in HubSpot",
+      "step": "Create a new contact in HubSpot (output: new_contact_record)",
+      "keyword_search_query": "create contact hubspot new record crm",
+      "expected": {
+        "id": "d674e46e6d22110a46f80e85c2457315",
+        "name": "Create contact",
+        "description": "Create contact",
+        "type": "operation",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "d674e46e6d22110a46f80e85c2457315",
+        "name": "Create contact",
+        "description": "Create contact",
+        "type": "operation",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+      "step": "Get the latest team photo file (output: team_photo_file)",
+      "keyword_search_query": "get file photo latest retrieve",
+      "expected": {
+        "id": "a53d9228c8c6f36b014677cee8ddde0e",
+        "name": "search-detail-and-download-creative-image",
+        "description": "This workflow enables users to search for creative images using a text phrase and various filters, retrieve detailed metadata for a selected image including its available download options, and then proceed to download the image.",
+        "type": "workflow",
+        "api_name": "gettyimages.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "a53d9228c8c6f36b014677cee8ddde0e",
+        "name": "search-detail-and-download-creative-image",
+        "description": "This workflow enables users to search for creative images using a text phrase and various filters, retrieve detailed metadata for a selected image including its available download options, and then proceed to download the image.",
+        "type": "workflow",
+        "api_name": "gettyimages.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+      "step": "Upload team_photo_file to Dropbox Team Photos folder (input: team_photo_file) (output: upload_confirmation)",
+      "keyword_search_query": "upload file dropbox folder team photos",
+      "expected": {
+        "id": "f41797e6b1a7af32efa46004713a8ce7",
+        "name": "organize-file-into-custom-folder",
+        "description": "Enables users to create a new custom folder and then upload a file directly into that specific folder, facilitating better organization of documents beyond the default inbox.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "604a93877da815e91688b4673837caa9",
+        "name": "upload-and-download-media-file",
+        "description": "This workflow enables users to upload media files (e.g., images for MMS) to their account and then retrieve or download these files.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      "success": false
+    },
+    {
+      "goal": "Get my most recent Shopify orders",
+      "step": "Get most recent Shopify orders (output: shopify_orders)",
+      "keyword_search_query": "get orders shopify recent list fetch",
+      "expected": {
+        "id": "c400a95ee57c5f8e53228ce5719e0102",
+        "name": "Get a list of all orders optionally filtered by date",
+        "description": "GET /api/v1/orders",
+        "type": "operation",
+        "api_name": "billbee.io",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "c400a95ee57c5f8e53228ce5719e0102",
+        "name": "Get a list of all orders optionally filtered by date",
+        "description": "GET /api/v1/orders",
+        "type": "operation",
+        "api_name": "billbee.io",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+      "step": "Create a Zoom meeting titled \"Product Team Call\" for next Wednesday at 10am (output: zoom_meeting_details)",
+      "keyword_search_query": "create schedule meeting zoom call",
+      "expected": {
+        "id": "43c3310030f1fee37cb88f99b9300415",
+        "name": "POST for meeting",
+        "description": "Add meeting into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "43c3310030f1fee37cb88f99b9300415",
+        "name": "POST for meeting",
+        "description": "Add meeting into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+      "step": "Add product team members as attendees to the meeting (input: zoom_meeting_details) (output: attendee_confirmation)",
+      "keyword_search_query": "add invite participants zoom meeting",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Email my newsletter list about our new product launch using SendGrid",
+      "step": "retrieve newsletter subscriber list (output: subscriber_list)",
+      "keyword_search_query": "get fetch list subscribers contacts",
+      "expected": {
+        "id": "ecd478ce483efac37500de78150d4480",
+        "name": "GET for contact",
+        "description": "Returns all contacts from the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "ecd478ce483efac37500de78150d4480",
+        "name": "GET for contact",
+        "description": "Returns all contacts from the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Email my newsletter list about our new product launch using SendGrid",
+      "step": "send email to newsletter list using SendGrid (input: subscriber_list, email_content) (output: sendgrid_confirmation)",
+      "keyword_search_query": "send email sendgrid marketing campaign",
+      "expected": {
+        "id": "5867278c7b79a816651765aca9f87610",
+        "name": "create-and-send-a-regular-campaign",
+        "description": "This workflow allows a user to create a new regular email campaign, define its content, check if it's ready to send, and then send it to the target audience. Finally, it retrieves the campaign's performance report.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "5867278c7b79a816651765aca9f87610",
+        "name": "create-and-send-a-regular-campaign",
+        "description": "This workflow allows a user to create a new regular email campaign, define its content, check if it's ready to send, and then send it to the target audience. Finally, it retrieves the campaign's performance report.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add newuser@example.com to my Mailchimp list",
+      "step": "add newuser@example.com to Mailchimp list (output: mailchimp_add_confirmation)",
+      "keyword_search_query": "add member subscriber mailchimp list email",
+      "expected": {
+        "id": "e088e94f379f310756850920927e944f",
+        "name": "Add member to list",
+        "description": "Add a new member to the list.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "e088e94f379f310756850920927e944f",
+        "name": "Add member to list",
+        "description": "Add a new member to the list.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add Blue Widget to my Inventory base in Airtable",
+      "step": "Add a new record for \"Blue Widget\" to the \"Inventory\" base in Airtable (output: add_record_confirmation)",
+      "keyword_search_query": "add record airtable create item inventory",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Put the signed contract in my Box Contracts folder",
+      "step": "Upload signed_contract_file to the 'Contracts' folder in Box (input: signed_contract_file) (output: upload_confirmation)",
+      "keyword_search_query": "upload file box folder put content",
+      "expected": {
+        "id": "f41797e6b1a7af32efa46004713a8ce7",
+        "name": "organize-file-into-custom-folder",
+        "description": "Enables users to create a new custom folder and then upload a file directly into that specific folder, facilitating better organization of documents beyond the default inbox.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "f41797e6b1a7af32efa46004713a8ce7",
+        "name": "organize-file-into-custom-folder",
+        "description": "Enables users to create a new custom folder and then upload a file directly into that specific folder, facilitating better organization of documents beyond the default inbox.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Save the updated project plan to OneDrive, Projects/2024",
+      "step": "Save the updated project plan to OneDrive in the 'Projects/2024' folder (input: updated_project_plan_content) (output: save_confirmation)",
+      "keyword_search_query": "save file onedrive upload document project plan",
+      "expected": {
+        "id": "af0012c5d493ab1059b6eb0154ce327e",
+        "name": "",
+        "description": " Creates a new file. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:*`*/*` Note: Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information on uploading files, see [Upload file data](/drive/api/guides/manage-uploads). Apps creating shortcuts with `files.create` must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `title` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the title. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "af0012c5d493ab1059b6eb0154ce327e",
+        "name": "",
+        "description": " Creates a new file. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:*`*/*` Note: Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information on uploading files, see [Upload file data](/drive/api/guides/manage-uploads). Apps creating shortcuts with `files.create` must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `title` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the title. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Tweet that our new app is live!",
+      "step": "create a tweet announcing \"our new app is live!\" (output: tweet_confirmation)",
+      "keyword_search_query": "create post tweet twitter message content",
+      "expected": {
+        "id": "b3bb5eff9bb626305424fc2c9322231f",
+        "name": "Creation of a Post",
+        "description": "Causes the User to create a Post under the authorized account.",
+        "type": "operation",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "b3bb5eff9bb626305424fc2c9322231f",
+        "name": "Creation of a Post",
+        "description": "Causes the User to create a Post under the authorized account.",
+        "type": "operation",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+      "step": "search for the track \"Here Comes the Sun\" on Spotify (output: song_details)",
+      "keyword_search_query": "search track song spotify find music",
+      "expected": {
+        "id": "9f47dacced4d3b4b438bcdd7a127645b",
+        "name": "Search for Item\n",
+        "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks\nthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "9f47dacced4d3b4b438bcdd7a127645b",
+        "name": "Search for Item\n",
+        "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks\nthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+      "step": "search for the playlist \"Morning Motivation\" on Spotify (output: playlist_details)",
+      "keyword_search_query": "search playlist spotify find music",
+      "expected": {
+        "ids": [
+          "none"
+        ],
+        "not_found": true
+      },
+      "actual": {
+        "id": "none",
+        "not_found": true
+      },
+      "success": true
+    },
+    {
+      "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+      "step": "add the track from song_details to the playlist from playlist_details (input: song_details, playlist_details) (output: add_confirmation)",
+      "keyword_search_query": "add track song playlist spotify music",
+      "expected": {
+        "id": "1320831bd2fc24dbe8a34d75c0e53c93",
+        "name": "Add Items to Playlist\n",
+        "description": "Add one or more items to a user's playlist.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "1320831bd2fc24dbe8a34d75c0e53c93",
+        "name": "Add Items to Playlist\n",
+        "description": "Add one or more items to a user's playlist.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      "success": true
+    },
+    {
+      "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+      "step": "send message \"the meeting starts in 10 minutes\" to Telegram group (output: message_confirmation)",
+      "keyword_search_query": "send message telegram group post content",
+      "expected": {
+        "id": "1e961ba6f9c44bc1e91d5f652164cfc7",
+        "name": "",
+        "description": "Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      "actual": {
+        "id": "1e961ba6f9c44bc1e91d5f652164cfc7",
+        "name": "",
+        "description": "Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      "success": true
+    }
+  ]
+}
