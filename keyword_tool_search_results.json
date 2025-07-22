@@ -1,0 +1,3830 @@
+[
+  {
+    "provider": "Google",
+    "goal": "Email John about the project update using Gmail",
+    "keyword_search_query": "send email gmail to recipient subject",
+    "tool_search_results": [
+      {
+        "id": "9ba302a5eeb9815103e9794a3ae8c815",
+        "name": "create-and-send-email",
+        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "ba36c474ea41fbcc95a3ee4636c784d3",
+        "name": "import-email-and-apply-label",
+        "description": "Imports an email message into the user's mailbox using the import method (which performs scanning/classification) and then applies specific labels.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "8315083e6829f5af3c5d12f0eadb2643",
+        "name": "configure-smime-for-send-as-alias",
+        "description": "Sets up S/MIME signing/encryption for a specific custom 'From' address by uploading certificate information and setting it as the default for that alias.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "c443e507da65278e77dc2f860d96aa2b",
+        "name": "add-recipient-and-send-card",
+        "description": "Adds a new recipient to the user's address book and immediately sends them a card.",
+        "type": "workflow",
+        "api_name": "handwrytten.com",
+        "parameters": {}
+      },
+      {
+        "id": "e276b569a115ad56753e91525750368c",
+        "name": "retrieve-email-attachment",
+        "description": "Finds a specific email message and retrieves a specific attachment from it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "7f37d7ee3918fbaadab6de8617dbaeb8",
+        "name": "send-batch-emails-using-existing-template",
+        "description": "Retrieves the details of a specific email template and then uses it to send a batch of personalized emails.",
+        "type": "workflow",
+        "api_name": "postmarkapp.com/server",
+        "parameters": {}
+      },
+      {
+        "id": "f45e7ec5be5af99c4c52e9b1b186a406",
+        "name": "",
+        "description": "Creates a custom \"from\" send-as alias. If an SMTP MSA is specified, Gmail will attempt to connect to the SMTP service to validate the configuration before creating the alias. If ownership verification is required for the alias, a message will be sent to the email address and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. This method is only available to service account clients that have been delegated domain-wide authority.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "27148ca4f394ddda2c98d3a519d4d2eb",
+        "name": "",
+        "description": "Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "08949c1d5b2a39b752fa033e3358178d",
+        "name": "",
+        "description": "Gets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "c2202edff10064a700ebd6dd2434deaa",
+        "name": "",
+        "description": "Sends a verification email to the specified send-as alias address. The verification status must be `pending`. This method is only available to service account clients that have been delegated domain-wide authority.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+    "keyword_search_query": "create event google calendar add schedule",
+    "tool_search_results": [
+      {
+        "id": "6bd6d4149618db1ecf5bc9ee9b04b984",
+        "name": "event-setup-with-task-assignment",
+        "description": "Automate the creation of a new event and immediately assign a critical initial task to a specific user. This workflow streamlines the onboarding of new events into the ExhibitDay system.",
+        "type": "workflow",
+        "api_name": "exhibitday.com",
+        "parameters": {}
+      },
+      {
+        "id": "9a94477414345caf88f4420924355fd0",
+        "name": "schedule-and-complete-patient-check-in",
+        "description": "Schedules a 'plan-check-in' calendar event for a patient and their coach, retrieves the event, and marks it as complete.",
+        "type": "workflow",
+        "api_name": "twinehealth.com",
+        "parameters": {}
+      },
+      {
+        "id": "0775297674aa64811127c7fb9344492e",
+        "name": "get-channel-schedule-for-a-specific-day",
+        "description": "Find a specific BBC TV or Radio service (channel) and retrieve its broadcast schedule for a given day.",
+        "type": "workflow",
+        "api_name": "bbc.com",
+        "parameters": {}
+      },
+      {
+        "id": "085f96026eda96728db3d1ac3508a06f",
+        "name": "find-events-by-venue",
+        "description": "Search for a specific venue and then retrieve the list of events scheduled at that venue.",
+        "type": "workflow",
+        "api_name": "ticketmaster.com/discovery",
+        "parameters": {}
+      },
+      {
+        "id": "47daabccad0294f40f1c5a1cd84df245",
+        "name": "manage-guild-scheduled-event",
+        "description": "Creates a scheduled event for a guild, lists the users interested, and then retrieves the event details.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "3688087252510c12e286a2284cb008ed",
+        "name": "schedule-an-actor-task",
+        "description": "Creates a schedule that periodically runs a specified Actor Task.",
+        "type": "workflow",
+        "api_name": "apify.com",
+        "parameters": {}
+      },
+      {
+        "id": "f8c5c06335dd1fc79b33d164a60a5fb3",
+        "name": "",
+        "description": "Creates an event.",
+        "type": "operation",
+        "api_name": "googleapis.com/calendar",
+        "parameters": {}
+      },
+      {
+        "id": "c532415e9a877624c65206999e588ede",
+        "name": "Update Calendar",
+        "description": "<p>Use this endpoint to <b>Update</b> a calendar object. A valid <b>calendar id</b> is required. When your company was created a calendar object was automatically created with 24-hour weekly availability. Its <b>name = Main</b>, the <b>type = resource</b> and by default the <b>interval = 30 mins</b>. We are currently supporting resource calendar type. Other types were part of our Legacy Application and has no relevance in the API product.</p>",
+        "type": "operation",
+        "api_name": "onsched.com/setup",
+        "parameters": {}
+      },
+      {
+        "id": "077e85ac162e4892728194e9bf68933d",
+        "name": "Create calendar event",
+        "description": "Create a calendar event for a patient. Attribute `all_day` must be set to `true` and `end_at` cannot be set for `plan-check-in` event type.",
+        "type": "operation",
+        "api_name": "twinehealth.com",
+        "parameters": {}
+      },
+      {
+        "id": "dadf058add81ec8aa4861838e443fd9d",
+        "name": "",
+        "description": "Imports an event. This operation is used to add a private copy of an existing event to a calendar. Only events with an eventType of default may be imported.\nDeprecated behavior: If a non-default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped.",
+        "type": "operation",
+        "api_name": "googleapis.com/calendar",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "keyword_search_query": "search folder google drive by name",
+    "tool_search_results": [
+      {
+        "id": "d936b30d747d32603adee1d519c0cba5",
+        "name": "get-video-search-suggestions",
+        "description": "Provides autocomplete suggestions for a partial video search query, which can then be used in a full search.",
+        "type": "workflow",
+        "api_name": "shutterstock.com",
+        "parameters": {}
+      },
+      {
+        "id": "bb7d7e82fb62f5267016065eb683b284",
+        "name": "get-image-search-suggestions",
+        "description": "Provides autocomplete suggestions for a partial image search query, which can then be used in a full search.",
+        "type": "workflow",
+        "api_name": "shutterstock.com",
+        "parameters": {}
+      },
+      {
+        "id": "6dfa833f3f6836d3106f575e8d5cdb96",
+        "name": "find-and-archive-file",
+        "description": "Searches for a file based on specific criteria (e.g., name, path) and then archives (soft deletes) the found file.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "0c402c7aa48ea582929b55e39c398a95",
+        "name": "explore-book-series",
+        "description": "Retrieve details for a specific book, identify its series, fetch metadata for the series, and list all volumes belonging to that series.",
+        "type": "workflow",
+        "api_name": "googleapis.com/books",
+        "parameters": {}
+      },
+      {
+        "id": "77fa0a42859dc821ba462933b0eaf0e9",
+        "name": "discover-and-add-book-to-personal-library",
+        "description": "Search for books based on a query, view details of a specific book, list the user's bookshelves, and add the chosen book to a selected bookshelf.",
+        "type": "workflow",
+        "api_name": "googleapis.com/books",
+        "parameters": {}
+      },
+      {
+        "id": "8d22fbb22626185e4b27a582b76cbd8d",
+        "name": "trash-specific-emails",
+        "description": "Searches for emails based on a query and moves the found emails to the trash.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "ca558572568e98699ec81dd7b35342dc",
+        "name": "",
+        "description": " Lists the user's files. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for files & folders](/drive/api/guides/search-files) guide. *Note:* This method returns *all* files by default, including trashed files. If you don't want trashed files to appear in the list, use the `trashed=false` query parameter to remove trashed files from the results.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      {
+        "id": "75818a014044f2b0f5b8803b5a358a87",
+        "name": "",
+        "description": " Lists the user's shared drives. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for shared drives](/drive/api/guides/search-shareddrives) guide.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      {
+        "id": "26f413752a21761cf63c9b8a5ef7150e",
+        "name": "",
+        "description": "Search for folders that match specific filter criteria. `search()` provides an eventually consistent view of the folders a user has access to which meet the specified filter criteria. This will only return folders on which the caller has the permission `resourcemanager.folders.get`.",
+        "type": "operation",
+        "api_name": "googleapis.com/cloudresourcemanager",
+        "parameters": {}
+      },
+      {
+        "id": "279d7595dcf2aa845a4300ab2337cdaf",
+        "name": "",
+        "description": "Creates a search application. **Note:** This API requires an admin account to execute.",
+        "type": "operation",
+        "api_name": "googleapis.com/cloudsearch",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "keyword_search_query": "upload file google drive to folder",
+    "tool_search_results": [
+      {
+        "id": "7d679c4eee804330cd878ebca734115e",
+        "name": "organize-and-upload-content-to-cd-drive",
+        "description": "Utility workflow to create a folder structure in CD Drive and upload files into it.",
+        "type": "workflow",
+        "api_name": "prss.org",
+        "parameters": {}
+      },
+      {
+        "id": "5f9797aafa224201e97a2a34d8e4399e",
+        "name": "upload-and-organize-new-file",
+        "description": "Creates a new folder and uploads a file directly into that newly created folder. This is useful for organizing assets as they are added.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "604a93877da815e91688b4673837caa9",
+        "name": "upload-and-download-media-file",
+        "description": "This workflow enables users to upload media files (e.g., images for MMS) to their account and then retrieve or download these files.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      {
+        "id": "cea95a3bc0c1d45d46a6f3bb8fcb1a67",
+        "name": "export-table-data-to-cloud-storage",
+        "description": "Initiates a batch job to export data from a BigQuery table to Google Cloud Storage in a specified format.",
+        "type": "workflow",
+        "api_name": "googleapis.com/bigquery",
+        "parameters": {}
+      },
+      {
+        "id": "c75be33af3b788cbf76a810f426103c1",
+        "name": "send-sms-with-attachment",
+        "description": "Uploads a file to BulkSMS storage and sends an SMS containing a link to the hosted file.",
+        "type": "workflow",
+        "api_name": "bulksms.com",
+        "parameters": {}
+      },
+      {
+        "id": "961e63f8b12f3915f508446da16505c0",
+        "name": "export-trained-model",
+        "description": "Finds an existing model and exports it to a specified Google Cloud Storage location or Google Container Registry.",
+        "type": "workflow",
+        "api_name": "googleapis.com/automl",
+        "parameters": {}
+      },
+      {
+        "id": "af0012c5d493ab1059b6eb0154ce327e",
+        "name": "",
+        "description": " Creates a new file. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:*`*/*` Note: Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information on uploading files, see [Upload file data](/drive/api/guides/manage-uploads). Apps creating shortcuts with `files.create` must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `title` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the title. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      {
+        "id": "2a2075fc656c5893a5e21f29dfbe451b",
+        "name": "",
+        "description": "Generates a set of file IDs which can be provided in create or copy requests.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      {
+        "id": "5336580d117339701aa407a592a19435",
+        "name": "",
+        "description": "Downloads content of a file. Operations are valid for 24 hours from the time of creation.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      {
+        "id": "5fb8a3d70daa4c5ee76162302c2903ec",
+        "name": "",
+        "description": "Creates a copy of a file and applies any requested updates with patch semantics.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "keyword_search_query": "youtube search channel nasa official",
+    "tool_search_results": [
+      {
+        "id": "f973d9ffbe558d73ecf907fcdcfde4d3",
+        "name": "find-content-and-get-details",
+        "description": "Searches for channels based on a query, then retrieves detailed information about the first channel found.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "2e0270d88246a6a941b731c1b618fbfd",
+        "name": "manage-video-comments",
+        "description": "Fetches comment threads for a video, posts a new top-level comment, and replies to an existing comment.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "b9c77dfd4dd80e29668ca65aa081fa2d",
+        "name": "manage-channel-appearance",
+        "description": "Updates the visual elements of a channel, including the banner, watermark, and channel sections.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "49468e0c2a1515256a1d2bfc6a6ec4d3",
+        "name": "report-abusive-video",
+        "description": "Retrieves the valid reasons for reporting abuse and then submits a report for a specific video.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "2201c6099f576ec236080632079f3edf",
+        "name": "manage-channel-subscriptions",
+        "description": "Allows a user to subscribe to a channel and later list their subscriptions.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "08443b6dc9f8da56753e0b58f2ef8df9",
+        "name": "moderate-live-chat",
+        "description": "Finds an active live broadcast, fetches its chat messages, deletes an inappropriate message, and bans the user who sent it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "58f62a51440e58130f601cb024f61ec6",
+        "name": "",
+        "description": "Retrieves a list of resources, possibly filtered.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "240e97a4db16c0b28dbf6a26d279cdfd",
+        "name": "",
+        "description": "Deletes a chat moderator.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "ededc8aada5965f02fc2268ee1424942",
+        "name": "",
+        "description": "Updates an existing resource.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "ecb5b94ecbea8c00442998ba9b5eda23",
+        "name": "",
+        "description": "Retrieves a list of members that match the request criteria for a channel.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "keyword_search_query": "youtube get videos channel latest",
+    "tool_search_results": [
+      {
+        "id": "f973d9ffbe558d73ecf907fcdcfde4d3",
+        "name": "find-content-and-get-details",
+        "description": "Searches for channels based on a query, then retrieves detailed information about the first channel found.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "2201c6099f576ec236080632079f3edf",
+        "name": "manage-channel-subscriptions",
+        "description": "Allows a user to subscribe to a channel and later list their subscriptions.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "2e0270d88246a6a941b731c1b618fbfd",
+        "name": "manage-video-comments",
+        "description": "Fetches comment threads for a video, posts a new top-level comment, and replies to an existing comment.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "b9c77dfd4dd80e29668ca65aa081fa2d",
+        "name": "manage-channel-appearance",
+        "description": "Updates the visual elements of a channel, including the banner, watermark, and channel sections.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "08443b6dc9f8da56753e0b58f2ef8df9",
+        "name": "moderate-live-chat",
+        "description": "Finds an active live broadcast, fetches its chat messages, deletes an inappropriate message, and bans the user who sent it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "49468e0c2a1515256a1d2bfc6a6ec4d3",
+        "name": "report-abusive-video",
+        "description": "Retrieves the valid reasons for reporting abuse and then submits a report for a specific video.",
+        "type": "workflow",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      },
+      {
+        "id": "e7a385eafbd164ef81d9e642b3b22290",
+        "name": "Get a specific video in a channel",
+        "description": "This method returns a specific video in a channel. You can use it to determine whether the video is in the channel.",
+        "type": "operation",
+        "api_name": "vimeo.com",
+        "parameters": {}
+      },
+      {
+        "id": "4627f985b51d57a47c122fbe5b8be3cb",
+        "name": "Get a specific channel",
+        "description": "This method gets a single channel.",
+        "type": "operation",
+        "api_name": "vimeo.com",
+        "parameters": {}
+      },
+      {
+        "id": "af4891067b537503a295c4405031b1f3",
+        "name": "Get all the videos in a channel",
+        "description": "This method gets all the videos in a specific channel.",
+        "type": "operation",
+        "api_name": "vimeo.com",
+        "parameters": {}
+      },
+      {
+        "id": "58f62a51440e58130f601cb024f61ec6",
+        "name": "",
+        "description": "Retrieves a list of resources, possibly filtered.",
+        "type": "operation",
+        "api_name": "googleapis.com/youtube",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "keyword_search_query": "find group members microsoft teams",
+    "tool_search_results": [
+      {
+        "id": "8ed40d73391b8ac39288d80d61d0673e",
+        "name": "manage-organization-teams",
+        "description": "Creates a team within an organization, adds users and apps to it.",
+        "type": "workflow",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      {
+        "id": "b0de0fccbd704d69e9d7a9f829767866",
+        "name": "view-team-member-details",
+        "description": "An authorized user (likely admin) logs in and retrieves the details of all team members or a specific team member.",
+        "type": "workflow",
+        "api_name": "c19qrserver.local",
+        "parameters": {}
+      },
+      {
+        "id": "9a7c4c61c886110f5c69be54eab3441c",
+        "name": "manage-project-groups",
+        "description": "Allows for the creation of new project groups and the linking of existing classic projects and quotes to these groups for better organization and management.",
+        "type": "workflow",
+        "api_name": "xtrf.eu",
+        "parameters": {}
+      },
+      {
+        "id": "1e9c015bee864b02641f3012fdaeaca0",
+        "name": "onboard-team-member-to-product",
+        "description": "This workflow streamlines the process of inviting a new team member to a specific product and assigning them to a predefined permission group, ensuring they have the correct access from the start.",
+        "type": "workflow",
+        "api_name": "configcat.com",
+        "parameters": {}
+      },
+      {
+        "id": "00522b048cb8d936346634fea5190b5c",
+        "name": "manage-distribution-group-members",
+        "description": "Adds or removes users from an app-specific distribution group.",
+        "type": "workflow",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      {
+        "id": "94a01422ef8dc75f86697b587e128a9a",
+        "name": "find-programmes-by-contributor",
+        "description": "Search for a specific person (cast, crew, guest) and retrieve a list of BBC programmes they have contributed to.",
+        "type": "workflow",
+        "api_name": "bbc.com",
+        "parameters": {}
+      },
+      {
+        "id": "9e5cbb4b33c20f49eb425e6c127bd19b",
+        "name": "",
+        "description": "Returns the list of all teams in this org",
+        "type": "operation",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      {
+        "id": "36eef75b284ddf98f12bbb2cd7cf7db8",
+        "name": "List all teams",
+        "description": "Get a paginated list of all the Teams the authenticated User is a member of.",
+        "type": "operation",
+        "api_name": "vercel.com",
+        "parameters": {}
+      },
+      {
+        "id": "7c28f156486b48fa8f7f6e5b52227643",
+        "name": "Get team membership for a user",
+        "description": "Team members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`.\n \n**Note:**\nThe response contains the `state` of the membership and the member's `role`.\n\nThe `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/enterprise-server@3.7/rest/teams/teams#create-a-team).",
+        "type": "operation",
+        "api_name": "github.com/ghes-3.7",
+        "parameters": {}
+      },
+      {
+        "id": "b8a9e74342d312ad0e81d09af757d53c",
+        "name": "Get team membership for a user",
+        "description": "Team members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`.\n \n**Note:**\nThe response contains the `state` of the membership and the member's `role`.\n\nThe `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see see [Create a team](https://docs.github.com/enterprise-server@3.4/rest/reference/teams#create-a-team).",
+        "type": "operation",
+        "api_name": "github.com/ghes-3.4",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "keyword_search_query": "create schedule meeting microsoft teams",
+    "tool_search_results": [
+      {
+        "id": "8ed40d73391b8ac39288d80d61d0673e",
+        "name": "manage-organization-teams",
+        "description": "Creates a team within an organization, adds users and apps to it.",
+        "type": "workflow",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      {
+        "id": "163046d60ab214026f9a0f773e3de21c",
+        "name": "project-creation-and-team-assignment",
+        "description": "This workflow outlines the process of creating a new project for an existing customer, defining its initial phase, and assigning a team member to that phase.",
+        "type": "workflow",
+        "api_name": "visma.com",
+        "parameters": {}
+      },
+      {
+        "id": "ae091d76504d434192226449512bcef1",
+        "name": "manage-group-membership-lifecycle",
+        "description": "Provides a comprehensive workflow for creating a new user group, adding members, listing current members, and subsequently removing members, enabling dynamic community organization.",
+        "type": "workflow",
+        "api_name": "discourse.local",
+        "parameters": {}
+      },
+      {
+        "id": "47daabccad0294f40f1c5a1cd84df245",
+        "name": "manage-guild-scheduled-event",
+        "description": "Creates a scheduled event for a guild, lists the users interested, and then retrieves the event details.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "4c0a84472315cf9c3938504c51ab3cbb",
+        "name": "user-onboarding-and-group-assignment",
+        "description": "Automate the process of creating a new user account and then assigning them to one or more existing groups for role-based access or community segmentation. This streamlines user setup for administrators.",
+        "type": "workflow",
+        "api_name": "discourse.local",
+        "parameters": {}
+      },
+      {
+        "id": "6bd6d4149618db1ecf5bc9ee9b04b984",
+        "name": "event-setup-with-task-assignment",
+        "description": "Automate the creation of a new event and immediately assign a critical initial task to a specific user. This workflow streamlines the onboarding of new events into the ExhibitDay system.",
+        "type": "workflow",
+        "api_name": "exhibitday.com",
+        "parameters": {}
+      },
+      {
+        "id": "43c3310030f1fee37cb88f99b9300415",
+        "name": "POST for meeting",
+        "description": "Add meeting into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "ffef67dfa7d4554e69442705622c48e2",
+        "name": "POST bulk  for meeting",
+        "description": "Add meeting into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "273f677f07c0533987fb348e3361954b",
+        "name": "Returns information of the duty schedule with the specified Id.",
+        "description": "GET /teams/{teamId}/schedules/{scheduleId}",
+        "type": "operation",
+        "api_name": "signl4.com",
+        "parameters": {}
+      },
+      {
+        "id": "9ed0732196587c469696eda238b16e67",
+        "name": "Create/Update given duty schedule.",
+        "description": "POST /teams/{teamId}/schedules",
+        "type": "operation",
+        "api_name": "signl4.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Remind my team about the deadline via Outlook",
+    "keyword_search_query": "get team members outlook contact group list",
+    "tool_search_results": [
+      {
+        "id": "b0de0fccbd704d69e9d7a9f829767866",
+        "name": "view-team-member-details",
+        "description": "An authorized user (likely admin) logs in and retrieves the details of all team members or a specific team member.",
+        "type": "workflow",
+        "api_name": "c19qrserver.local",
+        "parameters": {}
+      },
+      {
+        "id": "ecb4db9b4a25e72a809a415f74cfc56c",
+        "name": "invite-user-to-team",
+        "description": "Invites a user via email to join an existing team, and the user accepts the invitation.",
+        "type": "workflow",
+        "api_name": "devopness.com",
+        "parameters": {}
+      },
+      {
+        "id": "7ee73a2944ff68eb21203a5512bc7ba3",
+        "name": "onboard-new-user-to-a-team",
+        "description": "Invites a new user via email to join a specific SIGNL4 team and checks the status of the invitation.",
+        "type": "workflow",
+        "api_name": "signl4.com",
+        "parameters": {}
+      },
+      {
+        "id": "94a01422ef8dc75f86697b587e128a9a",
+        "name": "find-programmes-by-contributor",
+        "description": "Search for a specific person (cast, crew, guest) and retrieve a list of BBC programmes they have contributed to.",
+        "type": "workflow",
+        "api_name": "bbc.com",
+        "parameters": {}
+      },
+      {
+        "id": "ef61f881d3786760db9cb09e8148c8d6",
+        "name": "manage-audience-list-and-members",
+        "description": "This workflow demonstrates the lifecycle management of an audience list and its members, including creating a list, adding/updating members, managing member tags, and archiving/deleting members.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "a633b2ad819170fa22b599ded0b25ba2",
+        "name": "manage-list-segments",
+        "description": "This workflow demonstrates how to create and manage segments within an audience list, including adding and removing members from static segments.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "99daa7750885d9cdc39b43ed6604756f",
+        "name": "",
+        "description": "List all contact groups owned by the authenticated user. Members of the contact groups are not populated.",
+        "type": "operation",
+        "api_name": "googleapis.com/people",
+        "parameters": {}
+      },
+      {
+        "id": "9e5cbb4b33c20f49eb425e6c127bd19b",
+        "name": "",
+        "description": "Returns the list of all teams in this org",
+        "type": "operation",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      {
+        "id": "cb53b27975a68b07b785d9a0e69b1f6a",
+        "name": "Return a list of all members belonging to a team",
+        "description": "GET /teams/{team_id}/members",
+        "type": "operation",
+        "api_name": "devopness.com",
+        "parameters": {}
+      },
+      {
+        "id": "a948baf7f11ae06d5931104ffdeb2150",
+        "name": "",
+        "description": "Get a list of contact groups owned by the authenticated user by specifying a list of contact group resource names.",
+        "type": "operation",
+        "api_name": "googleapis.com/people",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Remind my team about the deadline via Outlook",
+    "keyword_search_query": "send email outlook reminder message",
+    "tool_search_results": [
+      {
+        "id": "5c99a1b1286c7ac08e82769d495b2e5b",
+        "name": "add-and-confirm-sender-signature",
+        "description": "Creates a new sender signature (email address), checks its confirmation status, and optionally resends the confirmation email if it hasn't been confirmed.",
+        "type": "workflow",
+        "api_name": "postmarkapp.com/account",
+        "parameters": {}
+      },
+      {
+        "id": "9057d73c6787230207e3601b1fc83cfa",
+        "name": "configure-vacation-responder",
+        "description": "Retrieves current vacation settings and then updates them to enable or modify the auto-reply.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "fcd0ea0cef85701d7ee5322cb100a0b9",
+        "name": "schedule-and-manage-message",
+        "description": "Schedules a message to be sent in the future, lists scheduled messages for verification, and potentially deletes it before sending.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "f705ab7d4e7b8cc9b8db6dc3bf48c368",
+        "name": "send-personalized-bulk-sms-campaign",
+        "description": "Sends customized SMS messages to multiple recipients using templates and checks the account profile first.",
+        "type": "workflow",
+        "api_name": "bulksms.com",
+        "parameters": {}
+      },
+      {
+        "id": "8a985044dfd02dfb2e4afd59116405f5",
+        "name": "send-customer-statement",
+        "description": "Retrieves a customer's details and sends them an email statement for a specified period.",
+        "type": "workflow",
+        "api_name": "bigredcloud.com",
+        "parameters": {}
+      },
+      {
+        "id": "6d4454c5245c42372f44f55de6c9bcb9",
+        "name": "scheduled-email-management",
+        "description": "This workflow allows users to list all scheduled emails and then perform actions such as canceling or rescheduling a specific email.",
+        "type": "workflow",
+        "api_name": "mandrillapp.com",
+        "parameters": {}
+      },
+      {
+        "id": "0f19c84ba314214a56be04980edf4198",
+        "name": "Sends password reset email to the user's registered email address",
+        "description": "POST /users/send-password-reminder",
+        "type": "operation",
+        "api_name": "motaword.com",
+        "parameters": {}
+      },
+      {
+        "id": "d87d41098f2211c947b15c5d63a18238",
+        "name": "",
+        "description": "Adds the Email address to the list of Recipients for the Notification.",
+        "type": "operation",
+        "api_name": "azure.com/apimanagement-apimnotifications",
+        "parameters": {}
+      },
+      {
+        "id": "773ffb11a8ae048da1e1834f68c1c9a4",
+        "name": "Sends an email message.",
+        "description": "No Documentation Found.",
+        "type": "operation",
+        "api_name": "agco-ats.com",
+        "parameters": {}
+      },
+      {
+        "id": "2dc2dd571741280f36e1e8b5d90544cb",
+        "name": "",
+        "description": "Creates a reminder.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Slack",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "keyword_search_query": "get channel id slack general",
+    "tool_search_results": [
+      {
+        "id": "01013ab7506822019871fd791c0b0bdc",
+        "name": "manage-channel-access-via-idp-group",
+        "description": "Adds an Identity Provider (IDP) group to the allowlist for a private channel, then verifies the configuration.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "5fd44cbd2c0426387b2adb649b383337",
+        "name": "create-and-configure-admin-channel",
+        "description": "Creates a new channel as an admin, invites users, and sets specific conversation preferences.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "47b8541b0483029f9af749315bb24260",
+        "name": "manage-org-wide-channel-connections",
+        "description": "Sets the workspaces an org-wide channel is connected to and verifies the connection.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "9ecc1e626d189d05eec187d01938d45e",
+        "name": "pin-message-in-channel",
+        "description": "Pins a message to a channel and then lists the pinned items to confirm.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "7eb1406c2a34f8c5e34866075a4f89a9",
+        "name": "oauth-v2-token-exchange",
+        "description": "Exchanges a temporary OAuth code, obtained during the user authorization flow, for permanent bot and/or user access tokens.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "434f6625c9da232bc7d4fbfd4ea97fbd",
+        "name": "configure-slack-integration-for-product",
+        "description": "This workflow automates the setup of a Slack integration for a specific product, allowing ConfigCat to send notifications to a designated Slack channel via an incoming webhook.",
+        "type": "workflow",
+        "api_name": "configcat.com",
+        "parameters": {}
+      },
+      {
+        "id": "0f472aa2a8921f2cb01eec6172d346f7",
+        "name": "",
+        "description": "Add one or more default channels to an IDP group.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "6aec8aab3fbdb191ed7d5642ed988e65",
+        "name": "",
+        "description": "Sends a message to a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "2221b45394f2c0b08d83a6e7126f5acd",
+        "name": "",
+        "description": "Get a user's identity.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "f6af3b0ec61a91efcd34bff321111dfb",
+        "name": "",
+        "description": "List the channels linked to an org-level IDP group (user group).",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Slack",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "keyword_search_query": "send message slack channel post content",
+    "tool_search_results": [
+      {
+        "id": "9ecc1e626d189d05eec187d01938d45e",
+        "name": "pin-message-in-channel",
+        "description": "Pins a message to a channel and then lists the pinned items to confirm.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "5fd44cbd2c0426387b2adb649b383337",
+        "name": "create-and-configure-admin-channel",
+        "description": "Creates a new channel as an admin, invites users, and sets specific conversation preferences.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "fcd0ea0cef85701d7ee5322cb100a0b9",
+        "name": "schedule-and-manage-message",
+        "description": "Schedules a message to be sent in the future, lists scheduled messages for verification, and potentially deletes it before sending.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "b37bb650e9ea0031c65615f98017548d",
+        "name": "react-to-message",
+        "description": "Adds a reaction to a specific message and then retrieves the message to confirm the reaction.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "c6d14db3ad93ebfa900e6cba4a2e45b8",
+        "name": "set-user-profile-status",
+        "description": "Sets a custom status (text and emoji) for a user and verifies it.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "434f6625c9da232bc7d4fbfd4ea97fbd",
+        "name": "configure-slack-integration-for-product",
+        "description": "This workflow automates the setup of a Slack integration for a specific product, allowing ConfigCat to send notifications to a designated Slack channel via an incoming webhook.",
+        "type": "workflow",
+        "api_name": "configcat.com",
+        "parameters": {}
+      },
+      {
+        "id": "6aec8aab3fbdb191ed7d5642ed988e65",
+        "name": "",
+        "description": "Sends a message to a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "5d07cfeb2b438e712d7fd7f59710b0b9",
+        "name": "",
+        "description": "Sends an ephemeral message to a user in a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "ca745103d4f3df0dbfc3840d53420af8",
+        "name": "",
+        "description": "Share a me message into a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "00026beca5000603dfc9f53b6d5544d1",
+        "name": "",
+        "description": "Schedules a message to be sent to a channel.",
+        "type": "operation",
+        "api_name": "slack.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Twilio",
+    "goal": "Text me a 2FA code with Twilio",
+    "keyword_search_query": "send sms message twilio two factor code",
+    "tool_search_results": [
+      {
+        "id": "099231fa4c1389abbb60c628b78cec99",
+        "name": "send-and-monitor-sms-command-to-sim",
+        "description": "This workflow enables sending an SMS command to a Super SIM and then monitoring its delivery status. Useful for remote device control or configuration.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_supersim_v1",
+        "parameters": {}
+      },
+      {
+        "id": "093046bc4cca18696d2de1d50aa4ed37",
+        "name": "provision-messaging-service-with-sender",
+        "description": "Creates a new Twilio Messaging Service and associates a sender (e.g., a phone number) with it, enabling the service to send and receive messages. This is a fundamental setup for using Twilio Messaging.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_messaging_v1",
+        "parameters": {}
+      },
+      {
+        "id": "857138f8e81312fa66b2e739efee543f",
+        "name": "activate-and-configure-sim",
+        "description": "This workflow allows a user to find a new SIM, select an existing rate plan, and then activate and configure the SIM with a friendly name and callback URLs for commands.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_wireless_v1",
+        "parameters": {}
+      },
+      {
+        "id": "dfd731678f33fd349439b987c9e152fc",
+        "name": "create-and-configure-messaging-service",
+        "description": "Establishes a new Twilio IP Messaging Service and configures its default roles and settings. This workflow is valuable for the initial setup of a messaging application, ensuring proper permissions and service behavior from the start.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_ip_messaging_v1",
+        "parameters": {}
+      },
+      {
+        "id": "83bacab91cf298725ef8ffb3580fe2e3",
+        "name": "manage-channel-members-and-send-messages",
+        "description": "This workflow demonstrates how to add a user as a member to a channel, send messages within that channel, and then retrieve the message history. It also includes the ability to update a message.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_chat_v2",
+        "parameters": {}
+      },
+      {
+        "id": "8f7f7e3f9a0a5d5c9b7082826f2511b6",
+        "name": "create-and-populate-a-chat-channel",
+        "description": "This workflow enables the creation of a new chat channel, adding a user as a member, and then sending a message within that channel, simulating a basic chat interaction.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_ip_messaging_v2",
+        "parameters": {}
+      },
+      {
+        "id": "49d75604ab4aaead1cc3c17e63d65519",
+        "name": "Send SMS Command to a Sim.",
+        "description": "Send SMS Command to a Sim.",
+        "type": "operation",
+        "api_name": "twilio.com/twilio_supersim_v1",
+        "parameters": {}
+      },
+      {
+        "id": "9b66e277963f3c066e73d9901a8298e3",
+        "name": "Retrieve a list of SMS Commands from your account.",
+        "description": "Retrieve a list of SMS Commands from your account.",
+        "type": "operation",
+        "api_name": "twilio.com/twilio_supersim_v1",
+        "parameters": {}
+      },
+      {
+        "id": "ce9ea28e6ef78b2aae23b0fba06e35a0",
+        "name": "",
+        "description": "POST /v1/a2p/BrandRegistrations/{BrandRegistrationSid}/SmsOtp",
+        "type": "operation",
+        "api_name": "twilio.com/twilio_messaging_v1",
+        "parameters": {}
+      },
+      {
+        "id": "56b8fe05624fba1071a38a06cb6cb0e8",
+        "name": "Send a message",
+        "description": "Send a message",
+        "type": "operation",
+        "api_name": "twilio.com/api",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "GitHub",
+    "goal": "Open a bug for the website\u2019s contact form on GitHub",
+    "keyword_search_query": "create issue github bug report website contact form",
+    "tool_search_results": [
+      {
+        "id": "358fc7f768267f74b42ea845f2bd0f3c",
+        "name": "issue-management-and-time-tracking",
+        "description": "This workflow covers the lifecycle of an issue within a project, from creation and commenting to time tracking and final resolution. It's essential for project managers and development teams to manage tasks effectively.",
+        "type": "workflow",
+        "api_name": "gitlab.com",
+        "parameters": {}
+      },
+      {
+        "id": "5e4245be69ba9572a1fe0ea348345cce",
+        "name": "student-contact-information-retrieval",
+        "description": "Retrieve a specific student's contact information and the district they belong to. This is useful for emergency contact systems or communication platforms.",
+        "type": "workflow",
+        "api_name": "clever.com",
+        "parameters": {}
+      },
+      {
+        "id": "fab9331d48e4486900dfcc02aab70af3",
+        "name": "troubleshoot-failed-webhook-delivery",
+        "description": "Identifies failed delivery attempts for a specific endpoint within an application and allows resending a specific failed message.",
+        "type": "workflow",
+        "api_name": "svix.com",
+        "parameters": {}
+      },
+      {
+        "id": "ed607c27b8e614718baa8d35900e5c1e",
+        "name": "investigate-failed-message-delivery",
+        "description": "Retrieves a list of messages, identifies a failed message, and then fetches its specific details to investigate the cause of the failure using the error information.",
+        "type": "workflow",
+        "api_name": "apideck.com/sms",
+        "parameters": {}
+      },
+      {
+        "id": "2a6fdfc5a3ac3c850cb7880438e131f5",
+        "name": "clean-user-content",
+        "description": "Detects and censors profanity in user-generated text, then sanitizes any HTML content to prevent XSS or other vulnerabilities before displaying it on a website.",
+        "type": "workflow",
+        "api_name": "neutrinoapi.net",
+        "parameters": {}
+      },
+      {
+        "id": "afcc8f1f54f9f9f558781c45c4713e5c",
+        "name": "generate-cra-check-report",
+        "description": "Creates a user, initiates Link for CRA products, and retrieves the generated Base Report after receiving a webhook notification.",
+        "type": "workflow",
+        "api_name": "plaid.com",
+        "parameters": {}
+      },
+      {
+        "id": "1acc39726dcfeafeebb70b744dedceb5",
+        "name": "Add sub-issue",
+        "description": "You can use the REST API to add sub-issues to issues.\n\nCreating content too quickly using this endpoint may result in secondary rate limiting.\n For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\"\nand \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.\n- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.\n - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.\n- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.",
+        "type": "operation",
+        "api_name": "github.com/api.github.com.2022-11-28",
+        "parameters": {}
+      },
+      {
+        "id": "3b060c18afedd7566cff63cc57df3133",
+        "name": "Disable private vulnerability reporting for a repository",
+        "description": "Disables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see \"[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)\".",
+        "type": "operation",
+        "api_name": "github.com/api.github.com",
+        "parameters": {}
+      },
+      {
+        "id": "688bd8ac327f8c5c505c27624e341ea3",
+        "name": "Reprioritize sub-issue",
+        "description": "You can use the REST API to reprioritize a sub-issue to a different position in the parent list.",
+        "type": "operation",
+        "api_name": "github.com/api.github.com",
+        "parameters": {}
+      },
+      {
+        "id": "107555fc4b3195754c1bd65699697d41",
+        "name": "Reprioritize sub-issue",
+        "description": "You can use the REST API to reprioritize a sub-issue to a different position in the parent list.",
+        "type": "operation",
+        "api_name": "github.com/api.github.com.2022-11-28",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Discord",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "keyword_search_query": "get new members discord server join events",
+    "tool_search_results": [
+      {
+        "id": "47daabccad0294f40f1c5a1cd84df245",
+        "name": "manage-guild-scheduled-event",
+        "description": "Creates a scheduled event for a guild, lists the users interested, and then retrieves the event details.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "4319f0114459e9e84868ddc4441444ce",
+        "name": "manage-thread-membership",
+        "description": "Creates a thread from a message, lists its members, and adds a new member to the thread.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "bcfa6d233982a59ac83181e5e786a181",
+        "name": "interact-with-a-message",
+        "description": "Retrieves a specific message, adds a reaction from the current user, and then lists users who added that reaction.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "f85969c07eb09c9c32bacf4cbfec1a7d",
+        "name": "start-and-manage-stage-event",
+        "description": "Creates a new stage instance in a channel, likely for an event, and then updates its topic.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "70f15070419aee61599c84614c29430d",
+        "name": "create-role-and-assign-to-member",
+        "description": "Defines a new role within a guild and then assigns that role to a specific guild member.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "50b8c2a8d60ba2c66530e8dc55bbbe98",
+        "name": "get-authenticated-user-details",
+        "description": "Retrieves the profile, guilds, and connections for the currently authenticated user.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "6c0847f856183b841cea6617a87ba238",
+        "name": "",
+        "description": "GET /guilds/{guild_id}/new-member-welcome",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "58f1314b46f39a48e26a5c4ada06d07a",
+        "name": "",
+        "description": "POST /guilds/{guild_id}/scheduled-events",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "01bf43a4badd072ddc852d48368a9fb3",
+        "name": "",
+        "description": "GET /guilds/{guild_id}/scheduled-events",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "990bd1d0c6429bec7085b3620158db47",
+        "name": "",
+        "description": "GET /guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/users",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Discord",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "keyword_search_query": "post message discord channel send content",
+    "tool_search_results": [
+      {
+        "id": "4fa3dafbf678366756c75e6361dbd30b",
+        "name": "create-and-send-webhook-message",
+        "description": "Creates a webhook in a specified channel and then uses it to send a message.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "bcfa6d233982a59ac83181e5e786a181",
+        "name": "interact-with-a-message",
+        "description": "Retrieves a specific message, adds a reaction from the current user, and then lists users who added that reaction.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "4319f0114459e9e84868ddc4441444ce",
+        "name": "manage-thread-membership",
+        "description": "Creates a thread from a message, lists its members, and adds a new member to the thread.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "6739f0eb35a1d226e27e269730bf9eeb",
+        "name": "basic-chat-interaction",
+        "description": "Creates or retrieves a channel, sends a message to it, and marks the message as read by the user.",
+        "type": "workflow",
+        "api_name": "stream-io-api.com",
+        "parameters": {}
+      },
+      {
+        "id": "9ecc1e626d189d05eec187d01938d45e",
+        "name": "pin-message-in-channel",
+        "description": "Pins a message to a channel and then lists the pinned items to confirm.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "034ec5a766d82651c7a1e2f61c8dec53",
+        "name": "initiate-direct-message-with-a-user",
+        "description": "Find a specific user by their username and send them a direct message, initiating a new DM conversation.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "4bf970d246b2a287df42b3c46bce075f",
+        "name": "",
+        "description": "POST /channels/{channel_id}/messages/{message_id}/crosspost",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "afcc911d281312c77c143230e84c06a6",
+        "name": "",
+        "description": "POST /channels/{channel_id}/messages",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "1e961ba6f9c44bc1e91d5f652164cfc7",
+        "name": "",
+        "description": "Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "c17ace51f796510d1ae582bb2d45cd98",
+        "name": "",
+        "description": "POST /channels/{channel_id}/send-soundboard-sound",
+        "type": "operation",
+        "api_name": "discord.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Stripe",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "keyword_search_query": "create payment link stripe donation amount",
+    "tool_search_results": [
+      {
+        "id": "723ee475a25c926eb729b69af289597c",
+        "name": "process-and-manage-one-time-payments",
+        "description": "This workflow covers the core process of creating a payment intent, confirming it, and then optionally capturing the funds if manual capture is desired. It also includes steps for refunding the payment.",
+        "type": "workflow",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "2bb4f55e686e64b0befc0c28172d242a",
+        "name": "manage-financial-account-balances",
+        "description": "This workflow allows for the creation of a financial account, retrieving its balance, and initiating an inbound transfer to fund it.",
+        "type": "workflow",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "389f45adef17cc3ce0447332eaa027ef",
+        "name": "in-person-payment-and-refund-with-terminal",
+        "description": "This workflow demonstrates setting up a physical terminal location and reader, processing a payment using a PaymentIntent, and then initiating a refund directly through the reader.",
+        "type": "workflow",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "d94433d4956b001336fc50b88b8a7dfa",
+        "name": "manage-account-billing-stripe",
+        "description": "Create a Stripe setup intent, attach the payment method to the account, and set it as default.",
+        "type": "workflow",
+        "api_name": "gsmtasks.com",
+        "parameters": {}
+      },
+      {
+        "id": "f2434abd5e644c1b5498b34d28017a19",
+        "name": "onboard-custom-connected-account",
+        "description": "This workflow enables a platform to create a new custom Stripe account for a user and then generate a link to guide them through the Connect onboarding process. Finally, it retrieves the account status to confirm onboarding progress.",
+        "type": "workflow",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "530aa9570210ecc5edff06d3f7f679ca",
+        "name": "create-and-manage-one-off-invoices",
+        "description": "This workflow outlines the process of creating a draft invoice for a customer, adding line items to it, finalizing the invoice, and then marking it as paid.",
+        "type": "workflow",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "2f633e8e989084c82f8ef76cd2a8997f",
+        "name": "Create a payment link",
+        "description": "<p>Creates a payment link.</p>",
+        "type": "operation",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "fc2343a417dd2bfacabc89ba70da802a",
+        "name": "Create a payout",
+        "description": "<p>To send funds to your own bank account, create a new payout object. Your <a href=\"#balance\">Stripe balance</a> must cover the payout amount. If it doesn\u2019t, you receive an \u201cInsufficient Funds\u201d error.</p>\n\n <p>If your API key is in test mode, money won\u2019t actually be sent, though every other action occurs as if you\u2019re in live mode.</p>\n\n<p>If you create a manual payout on a Stripe account that uses multiple payment source types, you need to specify the source type balance that the payout draws from. The <a href=\"#balance_object\">balance object</a> details available and pending amounts by source type.</p>",
+        "type": "operation",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "7340b274a3e40fdb205b22dd9e63c626",
+        "name": "Create an account link",
+        "description": "<p>Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.</p>",
+        "type": "operation",
+        "api_name": "stripe.com",
+        "parameters": {}
+      },
+      {
+        "id": "3e269e91ac5dccada321e4b287fca2cb",
+        "name": "Create a PaymentIntent",
+        "description": "<p>Creates a PaymentIntent object.</p>\n\n<p>After the PaymentIntent is created, attach a payment method and <a href=\"/docs/api/payment_intents/confirm\">confirm</a>\nto continue the payment. Learn more about <a href=\"/docs/payments/payment-intents\">the available payment flows\nwith the Payment Intents API</a>.</p>\n\n<p>When you use <code>confirm=true</code> during creation, it\u2019s equivalent to creating\n and confirming the PaymentIntent in the same call. You can use any parameters\n available in the <a href=\"/docs/api/payment_intents/confirm\">confirm API</a> when you supply\n<code>confirm=true</code>.</p>",
+        "type": "operation",
+        "api_name": "stripe.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Stripe",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "keyword_search_query": "send link communication donor",
+    "tool_search_results": [
+      {
+        "id": "034ec5a766d82651c7a1e2f61c8dec53",
+        "name": "initiate-direct-message-with-a-user",
+        "description": "Find a specific user by their username and send them a direct message, initiating a new DM conversation.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "47c6e1e0f15eefe60ead582017d77c09",
+        "name": "private-message-communication",
+        "description": "Enables users to send private messages to other individuals or groups and then retrieve lists of their received and sent private messages, facilitating direct communication within the platform.",
+        "type": "workflow",
+        "api_name": "discourse.local",
+        "parameters": {}
+      },
+      {
+        "id": "83bacab91cf298725ef8ffb3580fe2e3",
+        "name": "manage-channel-members-and-send-messages",
+        "description": "This workflow demonstrates how to add a user as a member to a channel, send messages within that channel, and then retrieve the message history. It also includes the ability to update a message.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_chat_v2",
+        "parameters": {}
+      },
+      {
+        "id": "4cc1936a7f45469a25ad96fb63ab8783",
+        "name": "initiate-conversation-with-participants",
+        "description": "Create a new conversation and immediately add multiple participants to it, then send an initial message. This workflow is ideal for starting group chats or customer support interactions.",
+        "type": "workflow",
+        "api_name": "twilio.com/twilio_conversations_v1",
+        "parameters": {}
+      },
+      {
+        "id": "3c24512d2f15558c7f7e5c2bc81aa4a6",
+        "name": "send-a-card-with-a-gift-card",
+        "description": "Authenticates a user, allows selection of a standard card, font, and a gift card denomination, then sends the card with the included gift card.",
+        "type": "workflow",
+        "api_name": "handwrytten.com",
+        "parameters": {}
+      },
+      {
+        "id": "4fa3dafbf678366756c75e6361dbd30b",
+        "name": "create-and-send-webhook-message",
+        "description": "Creates a webhook in a specified channel and then uses it to send a message.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "8b054009883765207849fbb5a450c15a",
+        "name": "Send the password reset link to user's email",
+        "description": "POST /users/password/send-reset-link",
+        "type": "operation",
+        "api_name": "devopness.com",
+        "parameters": {}
+      },
+      {
+        "id": "9bbf3cd8dcf538fc7c86b8d7264907c4",
+        "name": "",
+        "description": "Use this method to copy messages of any kind. The method is analogous to the method [forwardMessages](https://core.telegram.org/bots/api/#forwardmessages), but the copied message doesn't have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent message on success.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "c7ec368c28ef843e9cc8945e21433060",
+        "name": "",
+        "description": "Sends a new direct\nmessage to the specified user from the authenticating user. Requires both the user and text\nparameters and must be a POST. Returns the sent message in the requested format if successful.",
+        "type": "operation",
+        "api_name": "twitter.com/legacy",
+        "parameters": {}
+      },
+      {
+        "id": "73b0750a74d2fc5f9636e3eaecaba3ff",
+        "name": "",
+        "description": "Use this method to send information about a venue. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Notion",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "keyword_search_query": "create page notion new title",
+    "tool_search_results": [
+      {
+        "id": "027cf03ea9c7a9c53cc939a0fc8353dc",
+        "name": "create-and-populate-new-document",
+        "description": "Creates a new Google Doc with a specified title and then populates it with initial text content using a batch update.",
+        "type": "workflow",
+        "api_name": "googleapis.com/docs",
+        "parameters": {}
+      },
+      {
+        "id": "13c4eccb558842b6dcd2f8493ada0e94",
+        "name": "create-and-initialize-custom-vision-project",
+        "description": "This workflow allows a user to set up a new custom vision project, optionally choosing a specific domain, and creating the initial set of tags required for image labeling. This is a foundational workflow for any new custom vision task.",
+        "type": "workflow",
+        "api_name": "microsoft.com/cognitiveservices-Training",
+        "parameters": {}
+      },
+      {
+        "id": "8d6b595d6da74b38f721561527cd7526",
+        "name": "setup-new-offering-from-course",
+        "description": "Finds an existing course, creates a new offering based on it, and configures basic metadata.",
+        "type": "workflow",
+        "api_name": "iqualify.com",
+        "parameters": {}
+      },
+      {
+        "id": "6ead2da27396308e3434c7756565009f",
+        "name": "define-and-populate-a-custom-object-type",
+        "description": "Creates a new custom object type, adds fields to it, and then creates a record for that custom object type.",
+        "type": "workflow",
+        "api_name": "zendesk.com",
+        "parameters": {}
+      },
+      {
+        "id": "b4a40cc7fc33368b9deed492ac0a387f",
+        "name": "onboard-new-software-product-with-basic-licensing",
+        "description": "Sets up the fundamental structure for licensing a new software product by creating the product, an associated product module, and a basic license template.",
+        "type": "workflow",
+        "api_name": "netlicensing.io",
+        "parameters": {}
+      },
+      {
+        "id": "a3ace8a617711aec1c84cda53642ba02",
+        "name": "provision-new-physical-device",
+        "description": "Registers a new physical network device within NetBox. This workflow covers the creation of necessary foundational entities like Manufacturer, Device Type, Device Role, Site, and Rack, if they don't already exist, before finally creating and placing the device itself. This is a core process for populating the DCIM inventory.",
+        "type": "workflow",
+        "api_name": "netboxdemo.com",
+        "parameters": {}
+      },
+      {
+        "id": "b3a200c9c884560d6d2382151b9625bd",
+        "name": "",
+        "description": "Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns *True* on success.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "a0e033c6df0ce59e3833ec5606963169",
+        "name": "",
+        "description": "Create a new form using the title given in the provided form message in the request. *Important:* Only the form.info.title and form.info.document_title fields are copied to the new form. All other fields including the form description, items and settings are disallowed. To create a new form and add items, you must first call forms.create to create an empty form with a title and (optional) document title, and then call forms.update to add the items.",
+        "type": "operation",
+        "api_name": "googleapis.com/forms",
+        "parameters": {}
+      },
+      {
+        "id": "8edd9382ddf0179623b5308eba18ea98",
+        "name": "pages",
+        "description": "This endpoint allows the client to create a new page.",
+        "type": "operation",
+        "api_name": "dev.to",
+        "parameters": {}
+      },
+      {
+        "id": "6eaca002e0aefd4544d1dd23c402c4c3",
+        "name": "Create a new Page.",
+        "description": "POST /pages.json",
+        "type": "operation",
+        "api_name": "jumpseller.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Notion",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "keyword_search_query": "add block notion checklist content page",
+    "tool_search_results": [
+      {
+        "id": "24d54b7637b3ee67acf956cab0e243b1",
+        "name": "apply-blocklist-to-channel-type",
+        "description": "Creates a new blocklist and then updates a specific channel type to use this blocklist for moderation.",
+        "type": "workflow",
+        "api_name": "stream-io-api.com",
+        "parameters": {}
+      },
+      {
+        "id": "20719f9240144101d6a91d4c0a713ed9",
+        "name": "discover-blockchain-check-status-and-view-latest-block",
+        "description": "Allows a user to discover available blockchains, select one to view its current status (like best height), and then inspect details of its most recent block.",
+        "type": "workflow",
+        "api_name": "chain49.com",
+        "parameters": {}
+      },
+      {
+        "id": "11d2e935ca269be22d4c0bbdf29f8ae6",
+        "name": "extract-and-secure-confidential-pages",
+        "description": "Extracts a specific range of pages from a larger PDF document and then applies strong restrictions and password protection to the extracted confidential document, ideal for creating secure excerpts.",
+        "type": "workflow",
+        "api_name": "pdfblocks.com",
+        "parameters": {}
+      },
+      {
+        "id": "2faeff14a91961ddcd13992078d7e251",
+        "name": "screen-individual-against-watchlists",
+        "description": "Creates a watchlist screening for an individual, retrieves the screening details and hits, and allows for review submission.",
+        "type": "workflow",
+        "api_name": "plaid.com",
+        "parameters": {}
+      },
+      {
+        "id": "a68bf54891e9bf79bc91bb2ff366a290",
+        "name": "reorganize-and-protect-document-pages",
+        "description": "Reverses the order of pages in a PDF document, then applies an image watermark and password protection to the modified document, useful for preparing documents for specific presentation or security needs.",
+        "type": "workflow",
+        "api_name": "pdfblocks.com",
+        "parameters": {}
+      },
+      {
+        "id": "b7cb152fece6c3d9dd28760355923506",
+        "name": "view-detailed-listing-information",
+        "description": "Retrieves a list of listings (potentially filtered or paginated) and then fetches the full details for a specific listing selected from that list.",
+        "type": "workflow",
+        "api_name": "apideck.com/ecosystem",
+        "parameters": {}
+      },
+      {
+        "id": "e8e5dfadd029966f54d880cefa449b31",
+        "name": "addChecklistsCheckItemsByIdChecklist()",
+        "description": "POST /checklists/{idChecklist}/checkItems",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "bf81e6dc5972a9f8dee900084c3326db",
+        "name": "addChecklists()",
+        "description": "POST /checklists",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "6c28e790a245276326832c5d97307f4f",
+        "name": "getChecklistsCardsByIdChecklistByFilter()",
+        "description": "GET /checklists/{idChecklist}/cards/{filter}",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "4b6fdcbacaaad82738a7af94cdbe8af0",
+        "name": "getChecklistsBoardByIdChecklist()",
+        "description": "GET /checklists/{idChecklist}/board",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Asana",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "keyword_search_query": "get user id asana find by name",
+    "tool_search_results": [
+      {
+        "id": "15f4234f76e01f0f3861c20effbe9d77",
+        "name": "team-creation-and-user-assignment",
+        "description": "Creates a new team within an organization and adds an existing user from the workspace to that team.",
+        "type": "workflow",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "9280aa293dfae43b3c2539793b75f128",
+        "name": "find-and-follow-user",
+        "description": "Search for a specific user by query and then follow them.",
+        "type": "workflow",
+        "api_name": "clubhouseapi.com",
+        "parameters": {}
+      },
+      {
+        "id": "5d0b5d76c0702317f60884aa5fd42d0f",
+        "name": "find-user-by-email-and-get-presence",
+        "description": "Looks up a user by their email address and then checks their current presence status.",
+        "type": "workflow",
+        "api_name": "slack.com",
+        "parameters": {}
+      },
+      {
+        "id": "29619b1bdf89195d0349a8055f05f773",
+        "name": "user-login-and-profile-check",
+        "description": "Authenticate an existing user using their phone number and retrieve their current profile information and authentication tokens.",
+        "type": "workflow",
+        "api_name": "clubhouseapi.com",
+        "parameters": {}
+      },
+      {
+        "id": "13221ab020c7a4d3173a040735c2803e",
+        "name": "explore-documents-by-author",
+        "description": "Enables users to discover authors (senders or addressees) through available facets, then find all documents associated with a selected author, and finally view the details of a specific document. This workflow is crucial for navigating the edition by person.",
+        "type": "workflow",
+        "api_name": "weber-gesamtausgabe.de",
+        "parameters": {}
+      },
+      {
+        "id": "81e6265d39b9810ffce9c7a997508aaa",
+        "name": "company-verification",
+        "description": "Searches for a company using its registration number and retrieves its details, including significant ownership information.",
+        "type": "workflow",
+        "api_name": "credas.co.uk/pi",
+        "parameters": {}
+      },
+      {
+        "id": "3b6c2eb8ab8caec636e1247234e2bb9b",
+        "name": "Get a user",
+        "description": "Returns the full user record for the single user with the provided ID.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "2b22a3993beccd294ed7f6caa14d85c9",
+        "name": "Get multiple users",
+        "description": "Returns the user records for all users in all workspaces and organizations accessible to the authenticated user. Accepts an optional workspace ID parameter.\nResults are sorted by user ID.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "d4e020deb272d1bdb514fdb0c30830d8",
+        "name": "Find by username",
+        "description": "GET /api/v1/users/{username}",
+        "type": "operation",
+        "api_name": "id4i.de",
+        "parameters": {}
+      },
+      {
+        "id": "0ddb0e9a9f065c4e70b1ea809f6a89eb",
+        "name": "Get a user's task list",
+        "description": "Returns the full record for a user's task list.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Asana",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "keyword_search_query": "create task asana assign due date",
+    "tool_search_results": [
+      {
+        "id": "610c8fae4fd7c034d5486b75dc551e05",
+        "name": "create-dependent-tasks",
+        "description": "Creates two tasks and establishes a dependency relationship where one task must be completed before the other can start.",
+        "type": "workflow",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "d93dc2672dfff1b942ccaa80bfcebe08",
+        "name": "apply-custom-field-to-project-and-update-task",
+        "description": "Finds a workspace-level custom field, applies it to a specific project, and then updates a task within that project with a value for the custom field.",
+        "type": "workflow",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "42d8944a7471ab0c4cb4f9b9f2402a54",
+        "name": "create-project-add-sections-and-tasks",
+        "description": "Sets up a new project structure by creating the project, adding organizational sections within it, and then populating a section with an initial task.",
+        "type": "workflow",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "8f60aee63c5953b78732e21ea7321360",
+        "name": "goal-setup-and-metric-definition",
+        "description": "Creates a new organizational or team goal, associates it with a time period, and defines its initial metric for tracking progress.",
+        "type": "workflow",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "5ff9fed5f4a70eec83b023786c7110aa",
+        "name": "manage-project-tasks",
+        "description": "Retrieve tasks for a project, add a new task, and then add a note to that task.",
+        "type": "workflow",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "837d7fdd672f1bfd24eb63e4a709edbb",
+        "name": "instantiate-project-from-template",
+        "description": "Creates a new project based on a predefined template, waits for the asynchronous creation job to complete, and retrieves the new project details.",
+        "type": "workflow",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "3074a975d4a51f20d8bce637276358ca",
+        "name": "Update the due dates for a learner's quiz attempt",
+        "description": "Updates the due dates for a learner's quiz attempt specified by the assessmentId.",
+        "type": "operation",
+        "api_name": "iqualify.com",
+        "parameters": {}
+      },
+      {
+        "id": "fefee34d732b983f662e93d3ba7e6def",
+        "name": "Copy an assignment",
+        "description": "Copy an assignment to a specified class.\n\nIf the original assignment has a due date in the past, this new assingment will be created without a due date.\n\nIf the new class is synchronized with an external app (e.g. Google Classroom), the copied assignment will also be posted on the external app.\n",
+        "type": "operation",
+        "api_name": "flat.io",
+        "parameters": {}
+      },
+      {
+        "id": "60fbdf06c526d2b7cf9b041e32ca6a65",
+        "name": "Add a project to a task",
+        "description": "Adds the task to the specified project, in the optional location\nspecified. If no location arguments are given, the task will be added to\nthe end of the project.\n\n`addProject` can also be used to reorder a task within a project or\nsection that already contains it.\n\nAt most one of `insert_before`, `insert_after`, or `section` should be\nspecified. Inserting into a section in an non-order-dependent way can be\ndone by specifying section, otherwise, to insert within a section in a\nparticular place, specify `insert_before` or `insert_after` and a task\nwithin the section to anchor the position of this task.\n\nReturns an empty data block.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      },
+      {
+        "id": "0a5b17884a281a715f4ba834869f3012",
+        "name": "Create a task",
+        "description": "Creating a new task is as easy as POSTing to the `/tasks` endpoint with a\ndata block containing the fields you\u2019d like to set on the task. Any\nunspecified fields will take on default values.\n\nEvery task is required to be created in a specific workspace, and this\nworkspace cannot be changed once set. The workspace need not be set\nexplicitly if you specify `projects` or a `parent` task instead.",
+        "type": "operation",
+        "api_name": "asana.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Trello",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "keyword_search_query": "add card trello board create task",
+    "tool_search_results": [
+      {
+        "id": "6359f29ecc6f52d28f7ddc7eacc9c360",
+        "name": "create-and-configure-trello-board",
+        "description": "This workflow allows a user to create a new Trello board, add essential lists (To Do, Doing, Done), define custom labels, and invite members, setting up a complete project space.",
+        "type": "workflow",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "803b7490688d3bbc595f60d773d08bde",
+        "name": "manage-card-details-and-progress",
+        "description": "This workflow demonstrates how to create a new card, enrich it with details like description, due date, and a checklist, and then track its progress by completing checklist items and adding comments, finally archiving it.",
+        "type": "workflow",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "13c4eccb558842b6dcd2f8493ada0e94",
+        "name": "create-and-initialize-custom-vision-project",
+        "description": "This workflow allows a user to set up a new custom vision project, optionally choosing a specific domain, and creating the initial set of tags required for image labeling. This is a foundational workflow for any new custom vision task.",
+        "type": "workflow",
+        "api_name": "microsoft.com/cognitiveservices-Training",
+        "parameters": {}
+      },
+      {
+        "id": "5a91f2f25c18a8191a8c565075f34e44",
+        "name": "create-and-send-a-custom-branded-card",
+        "description": "Allows a user to upload branding assets (logo/cover), create a custom card design based on a template, and then send that custom card.",
+        "type": "workflow",
+        "api_name": "handwrytten.com",
+        "parameters": {}
+      },
+      {
+        "id": "a9ad0b6db78c241bef7233c40dec5e1f",
+        "name": "manage-board-webhooks",
+        "description": "This workflow demonstrates how to create a webhook to monitor changes on a specific Trello board, retrieve its details, and then delete it when no longer needed.",
+        "type": "workflow",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "5ff9fed5f4a70eec83b023786c7110aa",
+        "name": "manage-project-tasks",
+        "description": "Retrieve tasks for a project, add a new task, and then add a note to that task.",
+        "type": "workflow",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "5fb58e57e034ba0639730c7829bc132d",
+        "name": "addCardsLabelsByIdCard()",
+        "description": "POST /cards/{idCard}/labels",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "62d761e27b2a4c883eb97b0de9109abb",
+        "name": "addCardsIdLabelsByIdCard()",
+        "description": "POST /cards/{idCard}/idLabels",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "e8e1a6e3e989e82ffce54ad835bd764d",
+        "name": "addCardsChecklistsByIdCard()",
+        "description": "POST /cards/{idCard}/checklists",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      },
+      {
+        "id": "06fb45f3bd12d28ff037e3d0044775d5",
+        "name": "addListsCardsByIdList()",
+        "description": "POST /lists/{idList}/cards",
+        "type": "operation",
+        "api_name": "trello.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_query": "monitor new email gmail trigger",
+    "tool_search_results": [
+      {
+        "id": "336be851c786bff514b8378fc074d8af",
+        "name": "monitor-mailbox-for-new-messages",
+        "description": "Sets up push notifications for mailbox changes and retrieves the history of changes since the last check.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "37ad1cc57066a8e659bbd9c8935831f1",
+        "name": "trigger-and-monitor-a-new-alert",
+        "description": "Creates a new alert (Signl) within a team and then retrieves its details and status, potentially for logging or initial tracking in an external system.",
+        "type": "workflow",
+        "api_name": "signl4.com",
+        "parameters": {}
+      },
+      {
+        "id": "9ba302a5eeb9815103e9794a3ae8c815",
+        "name": "create-and-send-email",
+        "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "49d07517b95f9a53520d88a0e6864e45",
+        "name": "trigger-build-via-hook-and-monitor",
+        "description": "Creates a build hook for a site, triggers it (externally), and then monitors the resulting build status.",
+        "type": "workflow",
+        "api_name": "netlify.com",
+        "parameters": {}
+      },
+      {
+        "id": "c95a388d6ddee5ded583be0571041887",
+        "name": "check-for-annunciator-content-updates",
+        "description": "Allows an application to efficiently check for new annunciator messages by first retrieving the current message's timestamp and then querying for any messages published after that specific time. This is particularly useful for polling mechanisms to keep displays up-to-date without redundant data retrieval.",
+        "type": "workflow",
+        "api_name": "parliament.uk/now",
+        "parameters": {}
+      },
+      {
+        "id": "e4b0ad5e238d711b8b3118f484c9b20c",
+        "name": "monitor-dataset-triggered-run",
+        "description": "Creates a dataset event and then monitors for DAG runs triggered by this event, finally confirming the triggering event for a specific run.",
+        "type": "workflow",
+        "api_name": "apache.org/airflow",
+        "parameters": {}
+      },
+      {
+        "id": "5c5b965725ad058a58fff72764936060",
+        "name": "",
+        "description": "Set up or update a push notification watch on the given user mailbox.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "a3aa3b7ebfe9cba339d98aaa531855e2",
+        "name": "",
+        "description": "Sets the default S/MIME config for the specified send-as alias.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "08949c1d5b2a39b752fa033e3358178d",
+        "name": "",
+        "description": "Gets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "27148ca4f394ddda2c98d3a519d4d2eb",
+        "name": "",
+        "description": "Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_query": "get attachment email gmail retrieve file",
+    "tool_search_results": [
+      {
+        "id": "e276b569a115ad56753e91525750368c",
+        "name": "retrieve-email-attachment",
+        "description": "Finds a specific email message and retrieves a specific attachment from it.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "89f6aba63ed6d5a3c7769ddf322a199b",
+        "name": "retrieve-transaction-attachment-receipt",
+        "description": "Fetches a specific transaction, checks if it has an attachment, and retrieves the attachment details including the temporary download URL.",
+        "type": "workflow",
+        "api_name": "up.com.au",
+        "parameters": {}
+      },
+      {
+        "id": "c75be33af3b788cbf76a810f426103c1",
+        "name": "send-sms-with-attachment",
+        "description": "Uploads a file to BulkSMS storage and sends an SMS containing a link to the hosted file.",
+        "type": "workflow",
+        "api_name": "bulksms.com",
+        "parameters": {}
+      },
+      {
+        "id": "a81dd3ceced3dbe78bfea9cd21027126",
+        "name": "export-task-data",
+        "description": "Initiate a task data export and retrieve the download link.",
+        "type": "workflow",
+        "api_name": "gsmtasks.com",
+        "parameters": {}
+      },
+      {
+        "id": "39efac1afb6857c8e25a8fe0dcdb0a98",
+        "name": "account-activity-data-export",
+        "description": "This workflow enables users to initiate an export of their email activity history, monitor the export job's status, and retrieve the URL to download the completed export file.",
+        "type": "workflow",
+        "api_name": "mandrillapp.com",
+        "parameters": {}
+      },
+      {
+        "id": "336be851c786bff514b8378fc074d8af",
+        "name": "monitor-mailbox-for-new-messages",
+        "description": "Sets up push notifications for mailbox changes and retrieves the history of changes since the last check.",
+        "type": "workflow",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "4dcffd792576973951c9721567b4fe0a",
+        "name": "",
+        "description": "Gets the specified message attachment.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "9d7953af5ad6b69075e5cf7bfb9129f8",
+        "name": "List Email Incoming Messages",
+        "description": "List Email Incoming Messages",
+        "type": "operation",
+        "api_name": "files.com",
+        "parameters": {}
+      },
+      {
+        "id": "08949c1d5b2a39b752fa033e3358178d",
+        "name": "",
+        "description": "Gets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "ffe004d9af2c62ae596547c921b27f5c",
+        "name": "",
+        "description": "Gets the specified S/MIME config for the specified send-as alias.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_query": "upload file dropbox save attachment",
+    "tool_search_results": [
+      {
+        "id": "604a93877da815e91688b4673837caa9",
+        "name": "upload-and-download-media-file",
+        "description": "This workflow enables users to upload media files (e.g., images for MMS) to their account and then retrieve or download these files.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      {
+        "id": "c75be33af3b788cbf76a810f426103c1",
+        "name": "send-sms-with-attachment",
+        "description": "Uploads a file to BulkSMS storage and sends an SMS containing a link to the hosted file.",
+        "type": "workflow",
+        "api_name": "bulksms.com",
+        "parameters": {}
+      },
+      {
+        "id": "187cfdf2005721c04e6cbe84278609fd",
+        "name": "manage-record-attachment-add",
+        "description": "Attaches a file or data to an existing remote setting record.",
+        "type": "workflow",
+        "api_name": "mozilla.com/kinto",
+        "parameters": {}
+      },
+      {
+        "id": "89f6aba63ed6d5a3c7769ddf322a199b",
+        "name": "retrieve-transaction-attachment-receipt",
+        "description": "Fetches a specific transaction, checks if it has an attachment, and retrieves the attachment details including the temporary download URL.",
+        "type": "workflow",
+        "api_name": "up.com.au",
+        "parameters": {}
+      },
+      {
+        "id": "0391a4a3dc52ab15a32b8cd7685f14c1",
+        "name": "manage-transaction-attachments",
+        "description": "Allows a user to upload a new attachment (e.g., a receipt) and then associate it with an existing transaction for better record-keeping and auditing.",
+        "type": "workflow",
+        "api_name": "pocketsmith.com",
+        "parameters": {}
+      },
+      {
+        "id": "3527dd8515a0ac5e046f852ba65ad2b8",
+        "name": "upload-file",
+        "description": "Upload a file by first creating its metadata record, then uploading the content, and finally marking it as available.",
+        "type": "workflow",
+        "api_name": "agco-ats.com",
+        "parameters": {}
+      },
+      {
+        "id": "9526600b2974b5a8e2c6e3565ce246bb",
+        "name": "",
+        "description": "Create a file attachment on a case or Cloud resource. The attachment must have the following fields set: `filename`. EXAMPLES: cURL: ```shell echo \"This text is in a file I'm uploading using CSAPI.\" \\ > \"./example_file.txt\" case=\"projects/some-project/cases/43594844\" curl \\ --header \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ --data-binary @\"./example_file.txt\" \\ \"https://cloudsupport.googleapis.com/upload/v2beta/$case/attachments?attachment.filename=uploaded_via_curl.txt\" ``` Python: ```python import googleapiclient.discovery api_version = \"v2\" supportApiService = googleapiclient.discovery.build( serviceName=\"cloudsupport\", version=api_version, discoveryServiceUrl=f\"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}\", ) file_path = \"./example_file.txt\" with open(file_path, \"w\") as file: file.write( \"This text is inside a file I'm going to upload using the Cloud Support API.\", ) request = supportApiService.media().upload( parent=\"projects/some-project/cases/43595344\", media_body=file_path ) request.uri = request.uri.split(\"?\")[0] + \"?attachment.filename=uploaded_via_python.txt\" print(request.execute()) ```",
+        "type": "operation",
+        "api_name": "googleapis.com/cloudsupport",
+        "parameters": {}
+      },
+      {
+        "id": "2109557f1ec7f22dab2e846a6350ce63",
+        "name": "Create a new custom file from a cached presign upload",
+        "description": "POST /custom_files",
+        "type": "operation",
+        "api_name": "formapi.io",
+        "parameters": {}
+      },
+      {
+        "id": "8e95c4dab80fe374de84905432b563a2",
+        "name": "Attach a file on an object",
+        "description": "POST /apps/{appId}/attachments",
+        "type": "operation",
+        "api_name": "sinao.app",
+        "parameters": {}
+      },
+      {
+        "id": "e58c233a3a9a7c312f20b0e0363efdb6",
+        "name": "Create the metadata for a file before uploading. The State of the File should be 'Created'.",
+        "description": "No Documentation Found.",
+        "type": "operation",
+        "api_name": "agco-ats.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Jira",
+    "goal": "File a login bug in the Mobile App project on Jira",
+    "keyword_search_query": "create issue jira bug project summary",
+    "tool_search_results": [
+      {
+        "id": "358fc7f768267f74b42ea845f2bd0f3c",
+        "name": "issue-management-and-time-tracking",
+        "description": "This workflow covers the lifecycle of an issue within a project, from creation and commenting to time tracking and final resolution. It's essential for project managers and development teams to manage tasks effectively.",
+        "type": "workflow",
+        "api_name": "gitlab.com",
+        "parameters": {}
+      },
+      {
+        "id": "ed607c27b8e614718baa8d35900e5c1e",
+        "name": "investigate-failed-message-delivery",
+        "description": "Retrieves a list of messages, identifies a failed message, and then fetches its specific details to investigate the cause of the failure using the error information.",
+        "type": "workflow",
+        "api_name": "apideck.com/sms",
+        "parameters": {}
+      },
+      {
+        "id": "6ea84ab3bcf5aa89540ce69d3cfeb98b",
+        "name": "cve-vulnerability-scan-and-reporting",
+        "description": "Keep the internal CVE database updated, trigger a vulnerability scan across managed nodes, and retrieve the latest findings for analysis and remediation planning.",
+        "type": "workflow",
+        "api_name": "rudder.example.local",
+        "parameters": {}
+      },
+      {
+        "id": "4d0817831bfbcd90bd18d1daaf0dcafa",
+        "name": "analyze-and-manage-crash-group",
+        "description": "Retrieves details and stack trace for a crash group and allows updating its status.",
+        "type": "workflow",
+        "api_name": "appcenter.ms",
+        "parameters": {}
+      },
+      {
+        "id": "fab9331d48e4486900dfcc02aab70af3",
+        "name": "troubleshoot-failed-webhook-delivery",
+        "description": "Identifies failed delivery attempts for a specific endpoint within an application and allows resending a specific failed message.",
+        "type": "workflow",
+        "api_name": "svix.com",
+        "parameters": {}
+      },
+      {
+        "id": "69b884e285fbb06817aa9f5153cf5777",
+        "name": "analyze-sitemap-coverage-and-issues",
+        "description": "Retrieves a comprehensive sitemap report for an analysis, including identified sitemaps, errors, and counts. Then, fetches sample URLs that are listed in sitemaps but were either missed by the crawl or are outside the defined crawl scope, highlighting potential sitemap or configuration issues.",
+        "type": "workflow",
+        "api_name": "botify.com",
+        "parameters": {}
+      },
+      {
+        "id": "335a444978b8eae7170f7c4f54c14f60",
+        "name": "Create issue type",
+        "description": "Creates an issue type and adds it to the default issue type scheme.\n \n**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).",
+        "type": "operation",
+        "api_name": "atlassian.com/jira",
+        "parameters": {}
+      },
+      {
+        "id": "a540511f8373e32d8c38a05acea60246",
+        "name": "Create issue",
+        "description": "Creates an issue or, where the option to create subtasks is enabled in Jira, a subtask. A transition may be applied, to move the issue or subtask to a workflow step other than the default start step, and issue properties set.\n\nThe content of the issue or subtask is defined using `update` and `fields`. The fields that can be set in the issue or subtask are determined using the [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get). These are the same fields that appear on the issue's create screen. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.\n \nCreating a subtask differs from creating an issue as follows:\n\n *  `issueType` must be set to a subtask issue type (use [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get) to find subtask issue types).\n *  `parent` must contain the ID or key of the parent issue.\n\nIn a next-gen project any issue may be made a child providing that the parent and child are members of the same project.\n\n**[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which the issue or subtask is created.",
+        "type": "operation",
+        "api_name": "atlassian.com/jira",
+        "parameters": {}
+      },
+      {
+        "id": "c7081aa6c259240e5157eac7c03a24a7",
+        "name": "Create issue link type",
+        "description": "Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link's inward and outward relationships.\n\nTo use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.\n\n**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).",
+        "type": "operation",
+        "api_name": "atlassian.com/jira",
+        "parameters": {}
+      },
+      {
+        "id": "145293363be49b6c98f44be1aa15c0bb",
+        "name": "Create issue link",
+        "description": "Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have [Issue Linking](https://confluence.atlassian.com/x/yoXKM) enabled.\n\nThis resource returns nothing on the creation of an issue link. To obtain the ID of the issue link, use `https://your-domain.atlassian.net/rest/api/3/issue/[linked issue key]?fields=issuelinks`.\n\nIf the link request duplicates a link, the response indicates that the issue link was created. If the request included a comment, the comment is added.\n\nThis operation can be accessed anonymously.\n \n**[Permissions](#permissions) required:**\n\n *  *Browse project* [project permission](https://confluence.atlassian.com/x/yodKLg) for all the projects containing the issues to be linked,\n *  *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) on the project containing the from (outward) issue,\n *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.\n *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.",
+        "type": "operation",
+        "api_name": "atlassian.com/jira",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Salesforce",
+    "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+    "keyword_search_query": "create lead salesforce add new contact",
+    "tool_search_results": [
+      {
+        "id": "e71a01e23e63f18da55610ad717f757e",
+        "name": "add-new-user-and-assign-lead",
+        "description": "Creates a new user (e.g., sales representative) in the CRM and assigns an existing unassigned lead to them.",
+        "type": "workflow",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      {
+        "id": "5c65e3cc1ac9bb64252f701496966c41",
+        "name": "manage-contacts-in-existing-list",
+        "description": "This workflow enables a user to add new contacts to an existing contact list and subsequently remove specific contacts from that list.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      {
+        "id": "eba2a11d5952d2159d92fceb26f890cf",
+        "name": "onboard-new-client",
+        "description": "Creates a new company record along with its primary contact and location.",
+        "type": "workflow",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "0d9ab0abd1c9d1f4b878828cf9d987bf",
+        "name": "customer-onboarding-and-contact-setup",
+        "description": "This workflow facilitates the complete onboarding of a new customer, including creating the customer record, adding their primary address, and setting up a key contact person with communication details.",
+        "type": "workflow",
+        "api_name": "visma.com",
+        "parameters": {}
+      },
+      {
+        "id": "84e5b6425114496a029dae1c65f24d23",
+        "name": "new-lead-to-opportunity-pipeline",
+        "description": "Captures a new lead, creates associated company and contact records, generates an initial opportunity, and logs a follow-up task.",
+        "type": "workflow",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      {
+        "id": "bbf1aff6f3f21e6d6aa358732e389bd6",
+        "name": "contact-and-contact-person-management",
+        "description": "Manages business contacts (clients, partners, suppliers) and their associated individual contact persons. This workflow supports CRM functionalities and organized communication.",
+        "type": "workflow",
+        "api_name": "apacta.com",
+        "parameters": {}
+      },
+      {
+        "id": "7d300a6139fd53d68671a720b9a4e0ba",
+        "name": "POST for lead",
+        "description": "Add lead into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "75acf84b75bcd74c60985fb219ef437a",
+        "name": "POST bulk  for lead",
+        "description": "Add lead into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "9a4d4abdb8cb031141d8c1fee2102fe8",
+        "name": "Add a new contact",
+        "description": "POST /contacts",
+        "type": "operation",
+        "api_name": "apacta.com",
+        "parameters": {}
+      },
+      {
+        "id": "1211830e05059eec670ed3fa1bbd2a11",
+        "name": "POST for contact",
+        "description": "Add contact into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "HubSpot",
+    "goal": "Log a new contact from the conference in HubSpot",
+    "keyword_search_query": "create contact hubspot crm add new",
+    "tool_search_results": [
+      {
+        "id": "4bffe51f4d2757dde2e7d440f92bd5e1",
+        "name": "create-and-retrieve-crm-contact",
+        "description": "Adds a new contact to the connected CRM system and then immediately retrieves its full details to verify successful creation and access its properties.",
+        "type": "workflow",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "96b65a2d93bc7cc5b0c880e2f4738f27",
+        "name": "subscribe-contact-to-specific-communication",
+        "description": "Find the ID for a specific subscription type (e.g., 'Monthly Newsletter' by checking its name) and then subscribe a contact to it using their email address. This is useful for handling user opt-ins via forms or other interfaces.",
+        "type": "workflow",
+        "api_name": "hubapi.com/communication-preferences",
+        "parameters": {}
+      },
+      {
+        "id": "f199f979bb25eac4d5d71cfd45418f41",
+        "name": "ensure-contact-is-subscribed-to-specific-type",
+        "description": "Check a contact's current subscription statuses, and if they are not currently subscribed to a specific, predetermined subscription type, subscribe them. Requires external logic to select the target subscription ID and evaluate the current status.",
+        "type": "workflow",
+        "api_name": "hubapi.com/communication-preferences",
+        "parameters": {}
+      },
+      {
+        "id": "eba2a11d5952d2159d92fceb26f890cf",
+        "name": "onboard-new-client",
+        "description": "Creates a new company record along with its primary contact and location.",
+        "type": "workflow",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "8a7f64a98f8e5ece82ebd034ba47c55b",
+        "name": "ensure-contact-is-unsubscribed-from-specific-type",
+        "description": "Check a contact's current subscription statuses, and if they are currently subscribed to a specific, predetermined subscription type, unsubscribe them. Requires external logic to select the target subscription ID and evaluate the current status.",
+        "type": "workflow",
+        "api_name": "hubapi.com/communication-preferences",
+        "parameters": {}
+      },
+      {
+        "id": "8ab1d4b210c4bb9524546bf8371142e3",
+        "name": "client-onboarding-and-contact-management",
+        "description": "Facilitates the process of adding new clients to the system, setting up their addresses, and creating associated contact persons with their communication details.",
+        "type": "workflow",
+        "api_name": "xtrf.eu",
+        "parameters": {}
+      },
+      {
+        "id": "1211830e05059eec670ed3fa1bbd2a11",
+        "name": "POST for contact",
+        "description": "Add contact into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "d674e46e6d22110a46f80e85c2457315",
+        "name": "Create contact",
+        "description": "Create contact",
+        "type": "operation",
+        "api_name": "apideck.com/crm",
+        "parameters": {}
+      },
+      {
+        "id": "202511aae65172ed2fac3e1d0f263462",
+        "name": "Get subscription statuses for a contact",
+        "description": "Returns a list of subscriptions and their status for a given contact.",
+        "type": "operation",
+        "api_name": "hubapi.com/communication-preferences",
+        "parameters": {}
+      },
+      {
+        "id": "4738fdb57f18e56f9f85f689d2dc29f5",
+        "name": "Get subscription definitions",
+        "description": "Get a list of all subscription definitions for the portal",
+        "type": "operation",
+        "api_name": "hubapi.com/communication-preferences",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Dropbox",
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "keyword_search_query": "upload file dropbox folder content",
+    "tool_search_results": [
+      {
+        "id": "82c580ff0061c7b99ae1ef1cf2da2a01",
+        "name": "upload-and-retrieve-file-content",
+        "description": "Allows a user to upload a new file to their inbox, then retrieve its details and subsequently download its binary content. This workflow is essential for managing documents within Xero.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "f41797e6b1a7af32efa46004713a8ce7",
+        "name": "organize-file-into-custom-folder",
+        "description": "Enables users to create a new custom folder and then upload a file directly into that specific folder, facilitating better organization of documents beyond the default inbox.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "5f9797aafa224201e97a2a34d8e4399e",
+        "name": "upload-and-organize-new-file",
+        "description": "Creates a new folder and uploads a file directly into that newly created folder. This is useful for organizing assets as they are added.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "3527dd8515a0ac5e046f852ba65ad2b8",
+        "name": "upload-file",
+        "description": "Upload a file by first creating its metadata record, then uploading the content, and finally marking it as available.",
+        "type": "workflow",
+        "api_name": "agco-ats.com",
+        "parameters": {}
+      },
+      {
+        "id": "86a40b85fcfbf3bc148fbe7f7afe7075",
+        "name": "file-content-access-and-metadata-retrieval",
+        "description": "Locate a specific file by its path, retrieve its detailed metadata, generate a secure download link, and then update its custom metadata or priority color.",
+        "type": "workflow",
+        "api_name": "files.com",
+        "parameters": {}
+      },
+      {
+        "id": "c75be33af3b788cbf76a810f426103c1",
+        "name": "send-sms-with-attachment",
+        "description": "Uploads a file to BulkSMS storage and sends an SMS containing a link to the hosted file.",
+        "type": "workflow",
+        "api_name": "bulksms.com",
+        "parameters": {}
+      },
+      {
+        "id": "3ffe7b49dda4999e962305babf7ceda4",
+        "name": "Create a folder",
+        "description": "POST /folders/",
+        "type": "operation",
+        "api_name": "formapi.io",
+        "parameters": {}
+      },
+      {
+        "id": "b1e9a5bc36c47d807918c3d4f8afc767",
+        "name": "Retrieves inbox folder",
+        "description": "Search for the user inbox",
+        "type": "operation",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "bd6deaab50e5afca2f7c954dce72059b",
+        "name": "Create Folder",
+        "description": "Create Folder",
+        "type": "operation",
+        "api_name": "apideck.com/file-storage",
+        "parameters": {}
+      },
+      {
+        "id": "2d953c394d2b039d2ca4cec5015e1d61",
+        "name": "Uploads a File to the inbox",
+        "description": "POST /Files",
+        "type": "operation",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Shopify",
+    "goal": "Get my most recent Shopify orders",
+    "keyword_search_query": "get orders shopify recent list fetch",
+    "tool_search_results": [
+      {
+        "id": "560ef2f2b26244ffc36a7362a914cde9",
+        "name": "check-recent-orders-for-a-known-customer",
+        "description": "Retrieves details for a specific customer using their ID and then lists their orders created since a specific date.",
+        "type": "workflow",
+        "api_name": "apideck.com/ecommerce",
+        "parameters": {}
+      },
+      {
+        "id": "e7e0ce7208633a1d4b7f5ea9fff10c67",
+        "name": "paginate-through-shopper-orders",
+        "description": "Enables a shopper to navigate through their order history page by page, useful for managing a large number of past transactions. This workflow demonstrates how to fetch subsequent pages of orders by utilizing the pagination links provided in the API response.",
+        "type": "workflow",
+        "api_name": "ote-godaddy.com/orders",
+        "parameters": {}
+      },
+      {
+        "id": "5a798e4026eb21d4c18922b431d9b5c8",
+        "name": "retrieve-customer-order-history",
+        "description": "Finds a customer by their email address and then retrieves all their past orders.",
+        "type": "workflow",
+        "api_name": "jumpseller.com",
+        "parameters": {}
+      },
+      {
+        "id": "651d28cdfc8525ed461f6c404fe75e5c",
+        "name": "view-customer-order-history",
+        "description": "Retrieves a specific customer's details using their email address and then lists all orders associated with that customer.",
+        "type": "workflow",
+        "api_name": "apideck.com/ecommerce",
+        "parameters": {}
+      },
+      {
+        "id": "a8342b82b9e6624fc3ba6b038a776064",
+        "name": "view-specific-order-details",
+        "description": "Retrieves a list of orders, potentially filtered by status, and then fetches the detailed information for a specific order selected from the list. Useful for users needing to check the specifics of an order they are interested in.",
+        "type": "workflow",
+        "api_name": "papinet.io/order_status",
+        "parameters": {}
+      },
+      {
+        "id": "a3ae7d0ee91225a62e6d7e931b1cf001",
+        "name": "daily-item-synchronization",
+        "description": "Downloads the daily feed files containing newly listed items and their corresponding item group details for a specific category, marketplace, and date. Used for daily updates to a local item catalog after an initial bootstrap.",
+        "type": "workflow",
+        "api_name": "ebay.com/buy-feed",
+        "parameters": {}
+      },
+      {
+        "id": "fd61ad4a96649588fc6668a57b5fbd35",
+        "name": "Returns list of shipments",
+        "description": "Returns list of shipments. By default this will return list of the last shipments ordered by dateCreated, folowed by last update date.",
+        "type": "operation",
+        "api_name": "brandlovers.com",
+        "parameters": {}
+      },
+      {
+        "id": "59d0000c6f3aaa6b765124a62f3de406",
+        "name": "Returns a list of shipments shipped",
+        "description": "Returns a list of shipments shipped. By Default returns items ordered by dateCreated folowed by last update",
+        "type": "operation",
+        "api_name": "brandlovers.com",
+        "parameters": {}
+      },
+      {
+        "id": "6b67dc3262be36b9e20416348192bdec",
+        "name": "Returns a list with orders fully sent",
+        "description": "Returns a list with orders completely fullfiled, this means orders with all items sent. Orders will ordered by dateCreated fowllowed by last update",
+        "type": "operation",
+        "api_name": "brandlovers.com",
+        "parameters": {}
+      },
+      {
+        "id": "c400a95ee57c5f8e53228ce5719e0102",
+        "name": "Get a list of all orders optionally filtered by date",
+        "description": "GET /api/v1/orders",
+        "type": "operation",
+        "api_name": "billbee.io",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Zoom",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "keyword_search_query": "create meeting zoom schedule call product team",
+    "tool_search_results": [
+      {
+        "id": "163046d60ab214026f9a0f773e3de21c",
+        "name": "project-creation-and-team-assignment",
+        "description": "This workflow outlines the process of creating a new project for an existing customer, defining its initial phase, and assigning a team member to that phase.",
+        "type": "workflow",
+        "api_name": "visma.com",
+        "parameters": {}
+      },
+      {
+        "id": "49857cfea4c2bee38a54d5215a329a55",
+        "name": "project-setup-and-team-assignment",
+        "description": "Create a new project and assign existing users from the company to it, enabling collaboration and work logging. This workflow is crucial for initiating new client engagements and allocating resources.",
+        "type": "workflow",
+        "api_name": "apacta.com",
+        "parameters": {}
+      },
+      {
+        "id": "5d60aaf155c0c968fcac73f5d36f31b7",
+        "name": "live-tv-recording-management",
+        "description": "Enables a user to browse Live TV channels and programs, and then create or manage recording timers for series.",
+        "type": "workflow",
+        "api_name": "jellyfin.local",
+        "parameters": {}
+      },
+      {
+        "id": "1e9c015bee864b02641f3012fdaeaca0",
+        "name": "onboard-team-member-to-product",
+        "description": "This workflow streamlines the process of inviting a new team member to a specific product and assigning them to a predefined permission group, ensuring they have the correct access from the start.",
+        "type": "workflow",
+        "api_name": "configcat.com",
+        "parameters": {}
+      },
+      {
+        "id": "0cb83e6a8027f67c5af1a10415295350",
+        "name": "create-and-launch-voice-broadcast-campaign",
+        "description": "This workflow enables a user to create a new voice broadcast campaign, define its message using text-to-speech, add recipients, and then initiate the campaign.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      {
+        "id": "081bf333f5a6274631a2bd97cf2546de",
+        "name": "end-to-end-voice-call-setup-and-management",
+        "description": "This workflow enables a user to fully set up voice communication. It involves creating a Call Control application, assigning a phone number to it, initiating an outbound call, and then demonstrating basic call control actions like playing audio and recording the conversation.",
+        "type": "workflow",
+        "api_name": "telnyx.com",
+        "parameters": {}
+      },
+      {
+        "id": "43c3310030f1fee37cb88f99b9300415",
+        "name": "POST for meeting",
+        "description": "Add meeting into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "ee73154721735391cdec7b435b207883",
+        "name": "Create conference",
+        "description": "Create a conference from an existing call leg using a `call_control_id` and a conference name. Upon creating the conference, the call will be automatically bridged to the conference. Conferences will expire after all participants have left the conference or after 4 hours regardless of the number of active participants.\n\n**Expected Webhooks (see [callback schema](https://developers.telnyx.com/api/call-control/create-conference#callbacks) below):**\n\n- `conference.created`\n- `conference.participant.joined`\n- `conference.participant.left`\n- `conference.ended`\n- `conference.recording.saved`\n- `conference.floor.changed`\n",
+        "type": "operation",
+        "api_name": "telnyx.com",
+        "parameters": {}
+      },
+      {
+        "id": "fd90c054a5c186fc34a72b535c78374d",
+        "name": "Speak text to conference participants",
+        "description": "Convert text to speech and play it to all or some participants.",
+        "type": "operation",
+        "api_name": "telnyx.com",
+        "parameters": {}
+      },
+      {
+        "id": "273f677f07c0533987fb348e3361954b",
+        "name": "Returns information of the duty schedule with the specified Id.",
+        "description": "GET /teams/{teamId}/schedules/{scheduleId}",
+        "type": "operation",
+        "api_name": "signl4.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "SendGrid",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "keyword_search_query": "get contacts list sendgrid retrieve users",
+    "tool_search_results": [
+      {
+        "id": "50b8c2a8d60ba2c66530e8dc55bbbe98",
+        "name": "get-authenticated-user-details",
+        "description": "Retrieves the profile, guilds, and connections for the currently authenticated user.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "eb7355fd66174b8cade44635f83f4b62",
+        "name": "record-attendee-sign-in",
+        "description": "A staff member logs in and records the details of an attendee signing into the premises for contact tracing purposes.",
+        "type": "workflow",
+        "api_name": "c19qrserver.local",
+        "parameters": {}
+      },
+      {
+        "id": "bcfa6d233982a59ac83181e5e786a181",
+        "name": "interact-with-a-message",
+        "description": "Retrieves a specific message, adds a reaction from the current user, and then lists users who added that reaction.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "47daabccad0294f40f1c5a1cd84df245",
+        "name": "manage-guild-scheduled-event",
+        "description": "Creates a scheduled event for a guild, lists the users interested, and then retrieves the event details.",
+        "type": "workflow",
+        "api_name": "discord.com",
+        "parameters": {}
+      },
+      {
+        "id": "94a01422ef8dc75f86697b587e128a9a",
+        "name": "find-programmes-by-contributor",
+        "description": "Search for a specific person (cast, crew, guest) and retrieve a list of BBC programmes they have contributed to.",
+        "type": "workflow",
+        "api_name": "bbc.com",
+        "parameters": {}
+      },
+      {
+        "id": "c443e507da65278e77dc2f860d96aa2b",
+        "name": "add-recipient-and-send-card",
+        "description": "Adds a new recipient to the user's address book and immediately sends them a card.",
+        "type": "workflow",
+        "api_name": "handwrytten.com",
+        "parameters": {}
+      },
+      {
+        "id": "a7b438c558101d33d02a2e11c435e850",
+        "name": "",
+        "description": "Lists the send-as aliases for the specified account. The result includes the primary send-as address associated with the account as well as any custom \"from\" aliases.",
+        "type": "operation",
+        "api_name": "googleapis.com/gmail",
+        "parameters": {}
+      },
+      {
+        "id": "99daa7750885d9cdc39b43ed6604756f",
+        "name": "",
+        "description": "List all contact groups owned by the authenticated user. Members of the contact groups are not populated.",
+        "type": "operation",
+        "api_name": "googleapis.com/people",
+        "parameters": {}
+      },
+      {
+        "id": "ecd478ce483efac37500de78150d4480",
+        "name": "GET for contact",
+        "description": "Returns all contacts from the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      },
+      {
+        "id": "a447027ad505a59ea85745474603c80b",
+        "name": "GET for user",
+        "description": "Returns all users from the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "SendGrid",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "keyword_search_query": "send email sendgrid marketing campaign",
+    "tool_search_results": [
+      {
+        "id": "5867278c7b79a816651765aca9f87610",
+        "name": "create-and-send-a-regular-campaign",
+        "description": "This workflow allows a user to create a new regular email campaign, define its content, check if it's ready to send, and then send it to the target audience. Finally, it retrieves the campaign's performance report.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "0a131080816ca49e3b9d02bdb9139024",
+        "name": "create-and-manage-store-email-campaign",
+        "description": "Finds available audiences, creates a new email campaign (e.g., Welcome or Item Showcase), retrieves its details, previews the email content, and potentially updates it.",
+        "type": "workflow",
+        "api_name": "ebay.com/sell-marketing",
+        "parameters": {}
+      },
+      {
+        "id": "f705ab7d4e7b8cc9b8db6dc3bf48c368",
+        "name": "send-personalized-bulk-sms-campaign",
+        "description": "Sends customized SMS messages to multiple recipients using templates and checks the account profile first.",
+        "type": "workflow",
+        "api_name": "bulksms.com",
+        "parameters": {}
+      },
+      {
+        "id": "0cb83e6a8027f67c5af1a10415295350",
+        "name": "create-and-launch-voice-broadcast-campaign",
+        "description": "This workflow enables a user to create a new voice broadcast campaign, define its message using text-to-speech, add recipients, and then initiate the campaign.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      {
+        "id": "77b41a72606b2dcbcdc991b3710ef391",
+        "name": "create-and-manage-cpc-promoted-listings-campaign",
+        "description": "Creates a Cost Per Click (CPC) Promoted Listings campaign, creates an ad group, suggests and adds keywords, suggests bids, and adds listings to the ad group.",
+        "type": "workflow",
+        "api_name": "ebay.com/sell-marketing",
+        "parameters": {}
+      },
+      {
+        "id": "8a985044dfd02dfb2e4afd59116405f5",
+        "name": "send-customer-statement",
+        "description": "Retrieves a customer's details and sends them an email statement for a specified period.",
+        "type": "workflow",
+        "api_name": "bigredcloud.com",
+        "parameters": {}
+      },
+      {
+        "id": "87b12bf875639bc92f5f12902fe7045f",
+        "name": "Add campaign",
+        "description": "Create a new Mailchimp campaign.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "84a12a9202a6309c63c9395d2c7fd391",
+        "name": "Send test email",
+        "description": "Send a test email.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "32d5cb213f531892dbdb3bbe98f4ada1",
+        "name": "Send Campaign",
+        "description": "Trigger a campaign to send asynchronously<br><br>*Rate limits*:<br>Burst: `10/s`<br>Steady: `150/m`\n\n**Scopes:**\n`campaigns:write`",
+        "type": "operation",
+        "api_name": "klaviyo.com",
+        "parameters": {}
+      },
+      {
+        "id": "848b5919d805e2e4f2f8caec5be7a43f",
+        "name": "",
+        "description": "This method returns a preview of the email sent by the email campaign indicated by the <b>email_campaign_id</b> path parameter.<br><br>Call <a href=\"/api-docs/sell/marketing/resources/campaign/methods/getEmailCampaigns\">getEmailCampaigns</a> to obtain a list of email campaigns. Use the <b>emailCampaignId</b> value of the desired email campaign as the <b>email_campaign_id</b> path parameter value.<br><br>If this call is executed successfully, the response returns a <b>content</b> field that contains the raw HTML code of the email campaign that can then be rendered anywhere.<br><br><span class=\"tablenote\"><b>Note:</b> The eBay listings in the email are sorted according to the email campaign sort criteria. The individual listings can change over time, as well.<br><br>The result of the email preview call can be treated as a snapshot of the email campaign taken at the date and time of the <b>renderDate</b> value found in the results of the call.</span>",
+        "type": "operation",
+        "api_name": "ebay.com/sell-marketing",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Mailchimp",
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "keyword_search_query": "add member mailchimp list email subscribe",
+    "tool_search_results": [
+      {
+        "id": "a633b2ad819170fa22b599ded0b25ba2",
+        "name": "manage-list-segments",
+        "description": "This workflow demonstrates how to create and manage segments within an audience list, including adding and removing members from static segments.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "ef61f881d3786760db9cb09e8148c8d6",
+        "name": "manage-audience-list-and-members",
+        "description": "This workflow demonstrates the lifecycle management of an audience list and its members, including creating a list, adding/updating members, managing member tags, and archiving/deleting members.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "1721b350cc639ef81252c44e2e0e8d22",
+        "name": "manage-sending-domains",
+        "description": "This workflow allows a user to add a new domain for sending emails, verify it using a provided code, and then delete it if no longer needed.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "5867278c7b79a816651765aca9f87610",
+        "name": "create-and-send-a-regular-campaign",
+        "description": "This workflow allows a user to create a new regular email campaign, define its content, check if it's ready to send, and then send it to the target audience. Finally, it retrieves the campaign's performance report.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "86b9d8b80fe04c6e43b9ffe761d37f8d",
+        "name": "e-commerce-store-and-order-processing",
+        "description": "This workflow simulates the process of setting up an e-commerce store in Mailchimp, adding products and customers, and then creating an order with line items.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "f6c5f238bf4d45775655d19c45793807",
+        "name": "manage-automation-workflow-lifecycle",
+        "description": "This workflow demonstrates the creation, activation, pausing, and archiving of a classic automation workflow.",
+        "type": "workflow",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "e088e94f379f310756850920927e944f",
+        "name": "Add member to list",
+        "description": "Add a new member to the list.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "6f19efdf2e23f38e3cf60a5ca370be3a",
+        "name": "Add list",
+        "description": "Create a new list in your Mailchimp account.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "1b8d01736537a500f8ea2e35c388ca5f",
+        "name": "List member events",
+        "description": "Get events for a contact.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      },
+      {
+        "id": "f8e4526790d1ffb22e619a11e2630790",
+        "name": "Get list info",
+        "description": "Get information about a specific list in your Mailchimp account. Results include list members who have signed up but haven't confirmed their subscription yet and unsubscribed or cleaned.",
+        "type": "operation",
+        "api_name": "mailchimp.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Airtable",
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "keyword_search_query": "create record airtable base inventory add item",
+    "tool_search_results": [
+      {
+        "id": "82813be33241dc61283d6e4b3b7d6823",
+        "name": "receive-inventory-via-purchase-order",
+        "description": "Creates a purchase order, adds an item, receives the item, and verifies inventory.",
+        "type": "workflow",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "03a4aa917cb6c0f5841868e8496ce38f",
+        "name": "add-manual-items-and-organize-grocery-list",
+        "description": "Manually add items to the grocery list, update their details (like quantity, unit, department), and view the organized list.",
+        "type": "workflow",
+        "api_name": "bigoven.com",
+        "parameters": {}
+      },
+      {
+        "id": "cf3a8e57dea2ac61976da6b723145253",
+        "name": "product-inventory-adjustment",
+        "description": "Allows for retrieving a product's current inventory and then updating its stock quantity. Useful for managing inventory levels.",
+        "type": "workflow",
+        "api_name": "cloud-elements.com/ecwid",
+        "parameters": {}
+      },
+      {
+        "id": "2883a8e91f72388e86866d2cf79178c3",
+        "name": "create-and-manage-cps-promoted-listings-campaign-inventory-references",
+        "description": "Creates a Cost Per Sale (CPS) Promoted Listings campaign, adds listings managed via the Inventory API using inventory references, retrieves the campaign details, and then fetches the ads within that campaign using inventory references.",
+        "type": "workflow",
+        "api_name": "ebay.com/sell-marketing",
+        "parameters": {}
+      },
+      {
+        "id": "e036d742d7a018aea97b57c82f73e56e",
+        "name": "manage-service-inventory-tags",
+        "description": "Allows a user to list service inventories, view their existing tags, and then add or remove tags from a specific inventory item for better organization and filtering.",
+        "type": "workflow",
+        "api_name": "redhat.com/catalog_inventory",
+        "parameters": {}
+      },
+      {
+        "id": "caa8e25acadb257051461a33f2f2b437",
+        "name": "add-new-product-and-use-in-invoice",
+        "description": "Adds a new product to the catalog and then immediately uses it when creating a new invoice for a partner.",
+        "type": "workflow",
+        "api_name": "billingo.hu",
+        "parameters": {}
+      },
+      {
+        "id": "f6898a174b1c183e4840575bac207868",
+        "name": "",
+        "description": "POST /V1.0/InventoryItems/{parentId}/SerialNumbers",
+        "type": "operation",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "19285cc84fcf305e0e027020404399a6",
+        "name": "",
+        "description": "PUT /V1.0/InventoryItems/{parentId}/SerialNumbers",
+        "type": "operation",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "bd75030a0bd23ce1524018becfad913b",
+        "name": "",
+        "description": "POST /V1.0/InventoryProducts/{parentId}/StockedItemsTransfer",
+        "type": "operation",
+        "api_name": "autotask.net",
+        "parameters": {}
+      },
+      {
+        "id": "20e6d8cceed09d3ea9121c1f23c98b0b",
+        "name": "",
+        "description": "POST /V1.0/InventoryProducts/{parentId}/StockedItemsAdd",
+        "type": "operation",
+        "api_name": "autotask.net",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Box",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "keyword_search_query": "get folder box search name",
+    "tool_search_results": [
+      {
+        "id": "5b2f5fa191d902c0a74d31aeb941db66",
+        "name": "find-form-by-keyword-and-get-details",
+        "description": "Searches for VA forms using a keyword or partial name/title, then retrieves the detailed information for a specific form found in the search results. Useful when the exact form name is unknown.",
+        "type": "workflow",
+        "api_name": "va.gov/forms",
+        "parameters": {}
+      },
+      {
+        "id": "6dfa833f3f6836d3106f575e8d5cdb96",
+        "name": "find-and-archive-file",
+        "description": "Searches for a file based on specific criteria (e.g., name, path) and then archives (soft deletes) the found file.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "d936b30d747d32603adee1d519c0cba5",
+        "name": "get-video-search-suggestions",
+        "description": "Provides autocomplete suggestions for a partial video search query, which can then be used in a full search.",
+        "type": "workflow",
+        "api_name": "shutterstock.com",
+        "parameters": {}
+      },
+      {
+        "id": "240d14acf19ea5b5d5717f6f3598a2df",
+        "name": "product-search-and-barcode-generation",
+        "description": "Searches for products by name and then generates a barcode image for a selected product EAN from the search results. Useful for finding an EAN by name and getting its scannable image.",
+        "type": "workflow",
+        "api_name": "ean-search.org",
+        "parameters": {}
+      },
+      {
+        "id": "977baf7e69a91f078597a5908ae77ae5",
+        "name": "discover-search-fields-and-perform-basic-search",
+        "description": "Allows a user to first understand which data fields are available for searching and retrieval, and then perform a standard relevance-based search, potentially requesting specific fields identified in the first step.",
+        "type": "workflow",
+        "api_name": "archive.org/search",
+        "parameters": {}
+      },
+      {
+        "id": "5bf3c2ccd8e9452279171baff2d4126d",
+        "name": "search-laws-and-retrieve-document",
+        "description": "Search for laws within a specific aspect (content group) based on a keyword, then retrieve the full text of a selected matching document (in HTML or XML). This allows users to find relevant legislation.",
+        "type": "workflow",
+        "api_name": "bclaws.ca/bclaws",
+        "parameters": {}
+      },
+      {
+        "id": "b1e9a5bc36c47d807918c3d4f8afc767",
+        "name": "Retrieves inbox folder",
+        "description": "Search for the user inbox",
+        "type": "operation",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "efac2de5e062a09904b9801adde57794",
+        "name": "Retrieves folders",
+        "description": "By passing in the appropriate options, you can search for available folders",
+        "type": "operation",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "f0020c91310674eefa016ebbdaed86bd",
+        "name": "Retrieves specific folder by using a unique folder ID",
+        "description": "By passing in the appropriate ID, you can search for specific folder",
+        "type": "operation",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "c5af377997e2b3c3e365be030dfebdf0",
+        "name": "Search by product name",
+        "description": "GET /product-search",
+        "type": "operation",
+        "api_name": "ean-search.org",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Box",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "keyword_search_query": "upload file box content folder",
+    "tool_search_results": [
+      {
+        "id": "f41797e6b1a7af32efa46004713a8ce7",
+        "name": "organize-file-into-custom-folder",
+        "description": "Enables users to create a new custom folder and then upload a file directly into that specific folder, facilitating better organization of documents beyond the default inbox.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "82c580ff0061c7b99ae1ef1cf2da2a01",
+        "name": "upload-and-retrieve-file-content",
+        "description": "Allows a user to upload a new file to their inbox, then retrieve its details and subsequently download its binary content. This workflow is essential for managing documents within Xero.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "5f9797aafa224201e97a2a34d8e4399e",
+        "name": "upload-and-organize-new-file",
+        "description": "Creates a new folder and uploads a file directly into that newly created folder. This is useful for organizing assets as they are added.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "7d679c4eee804330cd878ebca734115e",
+        "name": "organize-and-upload-content-to-cd-drive",
+        "description": "Utility workflow to create a folder structure in CD Drive and upload files into it.",
+        "type": "workflow",
+        "api_name": "prss.org",
+        "parameters": {}
+      },
+      {
+        "id": "86a40b85fcfbf3bc148fbe7f7afe7075",
+        "name": "file-content-access-and-metadata-retrieval",
+        "description": "Locate a specific file by its path, retrieve its detailed metadata, generate a secure download link, and then update its custom metadata or priority color.",
+        "type": "workflow",
+        "api_name": "files.com",
+        "parameters": {}
+      },
+      {
+        "id": "604a93877da815e91688b4673837caa9",
+        "name": "upload-and-download-media-file",
+        "description": "This workflow enables users to upload media files (e.g., images for MMS) to their account and then retrieve or download these files.",
+        "type": "workflow",
+        "api_name": "callfire.com",
+        "parameters": {}
+      },
+      {
+        "id": "bd6deaab50e5afca2f7c954dce72059b",
+        "name": "Create Folder",
+        "description": "Create Folder",
+        "type": "operation",
+        "api_name": "apideck.com/file-storage",
+        "parameters": {}
+      },
+      {
+        "id": "3ffe7b49dda4999e962305babf7ceda4",
+        "name": "Create a folder",
+        "description": "POST /folders/",
+        "type": "operation",
+        "api_name": "formapi.io",
+        "parameters": {}
+      },
+      {
+        "id": "b1e9a5bc36c47d807918c3d4f8afc767",
+        "name": "Retrieves inbox folder",
+        "description": "Search for the user inbox",
+        "type": "operation",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "03b944f839871d2c98592135c4aaa767",
+        "name": "Create a File",
+        "description": "To upload a file to Increase, you'll need to send a request of Content-Type `multipart/form-data`. The request should contain the file you would like to upload, as well as the parameters for creating a file.",
+        "type": "operation",
+        "api_name": "increase.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "OneDrive",
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "keyword_search_query": "save file onedrive upload folder",
+    "tool_search_results": [
+      {
+        "id": "5f9797aafa224201e97a2a34d8e4399e",
+        "name": "upload-and-organize-new-file",
+        "description": "Creates a new folder and uploads a file directly into that newly created folder. This is useful for organizing assets as they are added.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "7d679c4eee804330cd878ebca734115e",
+        "name": "organize-and-upload-content-to-cd-drive",
+        "description": "Utility workflow to create a folder structure in CD Drive and upload files into it.",
+        "type": "workflow",
+        "api_name": "prss.org",
+        "parameters": {}
+      },
+      {
+        "id": "f41797e6b1a7af32efa46004713a8ce7",
+        "name": "organize-file-into-custom-folder",
+        "description": "Enables users to create a new custom folder and then upload a file directly into that specific folder, facilitating better organization of documents beyond the default inbox.",
+        "type": "workflow",
+        "api_name": "xero.com/xero_files",
+        "parameters": {}
+      },
+      {
+        "id": "64f77b4e5996d5e7afc335f39dd03021",
+        "name": "import-file-from-url-and-retrieve-details",
+        "description": "Initiates an asynchronous import of a file from a public URL, checks the import status until completion, and then retrieves the details of the imported file.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "c9a84cbd901dd5e8c0d7c81d22a3b75f",
+        "name": "update-file-properties-eg-renamemove",
+        "description": "Modifies the metadata of an existing file, such as its name or parent folder.",
+        "type": "workflow",
+        "api_name": "hubapi.com/files",
+        "parameters": {}
+      },
+      {
+        "id": "537e1db2b6a5ab9eac8d9e4f59503f5e",
+        "name": "run-assistant-with-file-search-on-uploaded-files",
+        "description": "Uploads files, creates a vector store, adds files to it, creates an assistant configured for file search using the vector store, creates a thread, adds a user message, runs the assistant on the thread, and retrieves the assistant's response which utilizes the uploaded files.",
+        "type": "workflow",
+        "api_name": "openai.com",
+        "parameters": {}
+      },
+      {
+        "id": "af0012c5d493ab1059b6eb0154ce327e",
+        "name": "",
+        "description": " Creates a new file. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:*`*/*` Note: Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information on uploading files, see [Upload file data](/drive/api/guides/manage-uploads). Apps creating shortcuts with `files.create` must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `title` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the title. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
+        "type": "operation",
+        "api_name": "googleapis.com/drive",
+        "parameters": {}
+      },
+      {
+        "id": "3ffe7b49dda4999e962305babf7ceda4",
+        "name": "Create a folder",
+        "description": "POST /folders/",
+        "type": "operation",
+        "api_name": "formapi.io",
+        "parameters": {}
+      },
+      {
+        "id": "2109557f1ec7f22dab2e846a6350ce63",
+        "name": "Create a new custom file from a cached presign upload",
+        "description": "POST /custom_files",
+        "type": "operation",
+        "api_name": "formapi.io",
+        "parameters": {}
+      },
+      {
+        "id": "51e1c4eb05b3b4e19bb51eab2f2cd7a7",
+        "name": "",
+        "description": "Creates a new folder. Only applicable to buckets with hierarchical namespace enabled.",
+        "type": "operation",
+        "api_name": "googleapis.com/storage",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Twitter",
+    "goal": "Tweet that our new app is live!",
+    "keyword_search_query": "create tweet post twitter message content",
+    "tool_search_results": [
+      {
+        "id": "9baeadddc4c882b5d899b11491b694bf",
+        "name": "curate-and-view-a-user-list",
+        "description": "Create a new list, find relevant users via search, add one user to the list, and then view the tweets from that list's timeline.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "034ec5a766d82651c7a1e2f61c8dec53",
+        "name": "initiate-direct-message-with-a-user",
+        "description": "Find a specific user by their username and send them a direct message, initiating a new DM conversation.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "2b852ab695ca7900d6e268f6dbca7636",
+        "name": "discover-and-explore-a-space",
+        "description": "Search for Spaces based on a query, retrieve detailed information about a specific Space, and get the tweets shared within that Space.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "ec6a9340e5d74779424bcda3ee055f16",
+        "name": "tweet-lifecycle-management",
+        "description": "Enables an authenticated user to post a new tweet, retrieve their own recent tweets, and then delete a specific tweet.",
+        "type": "workflow",
+        "api_name": "twitter.com/legacy",
+        "parameters": {}
+      },
+      {
+        "id": "0697e75a12d981981409cb89eb4d4246",
+        "name": "post-tweet-with-uploaded-media",
+        "description": "Upload a media file (image/video) in chunks and then create a new tweet attaching the uploaded media.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "7ec3966da050cdaf480417760e8729d4",
+        "name": "direct-message-inbox-management",
+        "description": "Allows an authenticated user to view their incoming direct messages, inspect a specific message, and then delete it.",
+        "type": "workflow",
+        "api_name": "twitter.com/legacy",
+        "parameters": {}
+      },
+      {
+        "id": "b3bb5eff9bb626305424fc2c9322231f",
+        "name": "Creation of a Post",
+        "description": "Causes the User to create a Post under the authorized account.",
+        "type": "operation",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "c7ec368c28ef843e9cc8945e21433060",
+        "name": "",
+        "description": "Sends a new direct\nmessage to the specified user from the authenticating user. Requires both the user and text\nparameters and must be a POST. Returns the sent message in the requested format if successful.",
+        "type": "operation",
+        "api_name": "twitter.com/legacy",
+        "parameters": {}
+      },
+      {
+        "id": "734393b9dc2ca737db24c8dcc3e9a8a8",
+        "name": "",
+        "description": "Returns information allowing\nthe creation of an embedded representation of a Tweet on third party sites. See the oEmbed\nspecification (http://oembed.com) for information about the response format. Either the id or url\nparameters must be specified in a request, it is not necessary to include both. While this endpoint\nallows a bit of customization for the final appearance of the embedded Tweet, be aware that the\nappearance of the rendered Tweet may change over time to be consistent with Twitter's Display\nGuidelines (https://dev.twitter.com/terms/display-guidelines). Do not rely on any class or id\nparameters to stay constant in the returned markup.",
+        "type": "operation",
+        "api_name": "twitter.com/legacy",
+        "parameters": {}
+      },
+      {
+        "id": "bb775cc0ceb595ac7bab32b2d9ec9832",
+        "name": "Send a new message to a user",
+        "description": "Creates a new message for a DM Conversation with a participant user by ID",
+        "type": "operation",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_query": "search track spotify song music",
+    "tool_search_results": [
+      {
+        "id": "257bb1ccf422062764c748a53b385b71",
+        "name": "analyze-track-audio-features",
+        "description": "Searches for a track and retrieves its detailed audio features (like danceability, energy, tempo).",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "f502dda6a3b9af1c0d5035fff1348c09",
+        "name": "explore-artist-and-related-music",
+        "description": "Find an artist, view their details, top tracks, and discover similar artists.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "5201495e4153407899ba1564334d0f34",
+        "name": "add-searched-track-to-queue",
+        "description": "Searches for a track and adds it to the user's playback queue.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "7f9d26e5eedcfc4894ed7209d8432bfa",
+        "name": "create-playlist-from-artist-recommendations",
+        "description": "Searches for an artist, gets recommendations based on that artist, creates a new playlist for the current user, and adds the recommended tracks to it.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "52f1c581629159f38436f4eb09b1d01a",
+        "name": "find-and-follow-featured-playlist",
+        "description": "Discovers Spotify's featured playlists and allows the user to follow one.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "32be4898b2bcb0357ae91fbd57d8b0fc",
+        "name": "start-playback-on-a-specific-device",
+        "description": "Finds available playback devices, searches for content (e.g., an album), and starts playback on a chosen device.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "9f47dacced4d3b4b438bcdd7a127645b",
+        "name": "Search for Item\n",
+        "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks\nthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "5a32f4d4d7115ee27e3a8b26dec7a08b",
+        "name": "Search for Item\n",
+        "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks\nthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n",
+        "type": "operation",
+        "api_name": "spotify.com/sonallux",
+        "parameters": {}
+      },
+      {
+        "id": "923d004f87f660c2f61c6c282c432456",
+        "name": "Get User's Saved Tracks\n",
+        "description": "Get a list of the songs saved in the current Spotify user's 'Your Music' library.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "b986ec41638900b55902d3b03a9ee118",
+        "name": "Get Several Tracks' Audio Features\n",
+        "description": "Get audio features for multiple tracks based on their Spotify IDs.\n",
+        "type": "operation",
+        "api_name": "spotify.com/sonallux",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_query": "get playlist spotify user library",
+    "tool_search_results": [
+      {
+        "id": "7db6f0e9389614cffa6126ba499a61ab",
+        "name": "create-playlist-from-users-top-tracks",
+        "description": "Fetches the user's top tracks and creates a new playlist containing them.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "7f9d26e5eedcfc4894ed7209d8432bfa",
+        "name": "create-playlist-from-artist-recommendations",
+        "description": "Searches for an artist, gets recommendations based on that artist, creates a new playlist for the current user, and adds the recommended tracks to it.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "52f1c581629159f38436f4eb09b1d01a",
+        "name": "find-and-follow-featured-playlist",
+        "description": "Discovers Spotify's featured playlists and allows the user to follow one.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "f502dda6a3b9af1c0d5035fff1348c09",
+        "name": "explore-artist-and-related-music",
+        "description": "Find an artist, view their details, top tracks, and discover similar artists.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "32be4898b2bcb0357ae91fbd57d8b0fc",
+        "name": "start-playback-on-a-specific-device",
+        "description": "Finds available playback devices, searches for content (e.g., an album), and starts playback on a chosen device.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "257bb1ccf422062764c748a53b385b71",
+        "name": "analyze-track-audio-features",
+        "description": "Searches for a track and retrieves its detailed audio features (like danceability, energy, tempo).",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "a563067d87c2296a4d15c1d2b279b640",
+        "name": "Get Playlist\n",
+        "description": "Get a playlist owned by a Spotify user.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "de31ec4b3f89bb2e366aa12641497358",
+        "name": "Get Playlist\n",
+        "description": "Get a playlist owned by a Spotify user.\n",
+        "type": "operation",
+        "api_name": "spotify.com/sonallux",
+        "parameters": {}
+      },
+      {
+        "id": "1c0192f79dba8202b24f5d13f0aa414f",
+        "name": "Get Featured Playlists\n",
+        "description": "Get a list of Spotify featured playlists (shown, for example, on a Spotify player's 'Browse' tab).\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "aa3da3b028d56f998433882a0a3d4944",
+        "name": "Get User's Playlists\n",
+        "description": "Get a list of the playlists owned or followed by a Spotify user.\n",
+        "type": "operation",
+        "api_name": "spotify.com/sonallux",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_query": "add track spotify playlist song",
+    "tool_search_results": [
+      {
+        "id": "7db6f0e9389614cffa6126ba499a61ab",
+        "name": "create-playlist-from-users-top-tracks",
+        "description": "Fetches the user's top tracks and creates a new playlist containing them.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "7f9d26e5eedcfc4894ed7209d8432bfa",
+        "name": "create-playlist-from-artist-recommendations",
+        "description": "Searches for an artist, gets recommendations based on that artist, creates a new playlist for the current user, and adds the recommended tracks to it.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "5201495e4153407899ba1564334d0f34",
+        "name": "add-searched-track-to-queue",
+        "description": "Searches for a track and adds it to the user's playback queue.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "290bf3264c6d62118978f50e99633d69",
+        "name": "create-playlist-and-add-tracks",
+        "description": "Find specific tracks via search and then create a new playlist containing those tracks.",
+        "type": "workflow",
+        "api_name": "soundcloud.com",
+        "parameters": {}
+      },
+      {
+        "id": "52f1c581629159f38436f4eb09b1d01a",
+        "name": "find-and-follow-featured-playlist",
+        "description": "Discovers Spotify's featured playlists and allows the user to follow one.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "f502dda6a3b9af1c0d5035fff1348c09",
+        "name": "explore-artist-and-related-music",
+        "description": "Find an artist, view their details, top tracks, and discover similar artists.",
+        "type": "workflow",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "1320831bd2fc24dbe8a34d75c0e53c93",
+        "name": "Add Items to Playlist\n",
+        "description": "Add one or more items to a user's playlist.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      },
+      {
+        "id": "329810731e0cdddfa0ff673af6ad8e1d",
+        "name": "Add Items to Playlist\n",
+        "description": "Add one or more items to a user's playlist.\n",
+        "type": "operation",
+        "api_name": "spotify.com/sonallux",
+        "parameters": {}
+      },
+      {
+        "id": "a1c0b9d43f3c9c1ad02cd2b3c50f16fa",
+        "name": "Create Playlist\n",
+        "description": "Create a playlist for a Spotify user. (The playlist will be empty until\nyou [add tracks](/documentation/web-api/reference/add-tracks-to-playlist).)\nEach user is generally limited to a maximum of 11000 playlists.\n",
+        "type": "operation",
+        "api_name": "spotify.com/sonallux",
+        "parameters": {}
+      },
+      {
+        "id": "9daf0bd92cbd4b6481ac51abe68ab892",
+        "name": "Create Playlist\n",
+        "description": "Create a playlist for a Spotify user. (The playlist will be empty until\nyou [add tracks](/documentation/web-api/reference/add-tracks-to-playlist).)\nEach user is generally limited to a maximum of 11000 playlists.\n",
+        "type": "operation",
+        "api_name": "spotify.com",
+        "parameters": {}
+      }
+    ]
+  },
+  {
+    "provider": "Telegram",
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "keyword_search_query": "send message telegram group post content",
+    "tool_search_results": [
+      {
+        "id": "3a0f1ddfe197cc5bc42a56953649256a",
+        "name": "chat-administration-and-management",
+        "description": "This workflow allows a bot with administrative privileges to manage various aspects of a group, supergroup, or channel, including member permissions, chat information, and pinned messages.",
+        "type": "workflow",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "4b0246e931e4e274509c7bb6d77aec5d",
+        "name": "basic-message-sending-and-editing",
+        "description": "This workflow enables the bot to send various types of messages to a chat and subsequently modify or delete those messages, providing dynamic interaction capabilities.",
+        "type": "workflow",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "af844af025c500a1deecf020467d39ee",
+        "name": "bot-command-management",
+        "description": "This workflow allows a bot developer to define and retrieve the list of commands that users can send to the bot, improving user experience and discoverability of bot features.",
+        "type": "workflow",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "034ec5a766d82651c7a1e2f61c8dec53",
+        "name": "initiate-direct-message-with-a-user",
+        "description": "Find a specific user by their username and send them a direct message, initiating a new DM conversation.",
+        "type": "workflow",
+        "api_name": "twitter.com/current",
+        "parameters": {}
+      },
+      {
+        "id": "b002458e6390246d75c2aa70fabf6fd7",
+        "name": "bot-initialization-and-update-configuration",
+        "description": "This workflow allows a bot developer to set up their bot, verify its identity, and configure how it receives updates from Telegram users and chats, either via webhooks for real-time push notifications or by long polling for manual update retrieval.",
+        "type": "workflow",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "b2d31ea71e541dfc4c6e4dea296a221f",
+        "name": "interactive-inline-query-response",
+        "description": "This workflow allows a bot to respond to inline queries from users, providing a list of results that users can select to send directly into any chat.",
+        "type": "workflow",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "1e961ba6f9c44bc1e91d5f652164cfc7",
+        "name": "",
+        "description": "Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "73b0750a74d2fc5f9636e3eaecaba3ff",
+        "name": "",
+        "description": "Use this method to send information about a venue. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "79cb962ff5010b93c4b7fa5b9a7bf303",
+        "name": "",
+        "description": "Use this method for your bot to leave a group, supergroup or channel. Returns *True* on success.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      },
+      {
+        "id": "1e7ce6c66d09ebccf5662685cb396bd4",
+        "name": "",
+        "description": "Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Messages](https://core.telegram.org/bots/api/#message) that were sent is returned.",
+        "type": "operation",
+        "api_name": "telegram.org",
+        "parameters": {}
+      }
+    ]
+  }
+]

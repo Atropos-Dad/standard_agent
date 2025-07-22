@@ -1,0 +1,222 @@
+[
+  {
+    "goal": "Email John about the project update using Gmail",
+    "keyword_search_query": "send email gmail to recipient subject",
+    "selected_tool_id": "9ba302a5eeb9815103e9794a3ae8c815"
+  },
+  {
+    "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+    "keyword_search_query": "create event google calendar add schedule",
+    "selected_tool_id": "f8c5c06335dd1fc79b33d164a60a5fb3"
+  },
+  {
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "keyword_search_query": "search folder google drive by name",
+    "selected_tool_id": "ca558572568e98699ec81dd7b35342dc"
+  },
+  {
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "keyword_search_query": "upload file google drive to folder",
+    "selected_tool_id": "af0012c5d493ab1059b6eb0154ce327e"
+  },
+  {
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "keyword_search_query": "youtube search channel nasa official",
+    "selected_tool_id": "f973d9ffbe558d73ecf907fcdcfde4d3"
+  },
+  {
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "keyword_search_query": "youtube get videos channel latest",
+    "selected_tool_id": "58f62a51440e58130f601cb024f61ec6"
+  },
+  {
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "keyword_search_query": "find group members microsoft teams",
+    "selected_tool_id": "b0de0fccbd704d69e9d7a9f829767866"
+  },
+  {
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "keyword_search_query": "create schedule meeting microsoft teams",
+    "selected_tool_id": "9ed0732196587c469696eda238b16e67"
+  },
+  {
+    "goal": "Remind my team about the deadline via Outlook",
+    "keyword_search_query": "get team members outlook contact group list",
+    "selected_tool_id": "99daa7750885d9cdc39b43ed6604756f"
+  },
+  {
+    "goal": "Remind my team about the deadline via Outlook",
+    "keyword_search_query": "send email outlook reminder message",
+    "selected_tool_id": "773ffb11a8ae048da1e1834f68c1c9a4"
+  },
+  {
+    "goal": "Say good morning to everyone in #general on Slack",
+    "keyword_search_query": "get channel id slack general",
+    "selected_tool_id": "none"
+  },
+  {
+    "goal": "Say good morning to everyone in #general on Slack",
+    "keyword_search_query": "send message slack channel post content",
+    "selected_tool_id": "6aec8aab3fbdb191ed7d5642ed988e65"
+  },
+  {
+    "goal": "Text me a 2FA code with Twilio",
+    "keyword_search_query": "send sms message twilio two factor code",
+    "selected_tool_id": "ce9ea28e6ef78b2aae23b0fba06e35a0"
+  },
+  {
+    "goal": "Open a bug for the website\u2019s contact form on GitHub",
+    "keyword_search_query": "create issue github bug report website contact form",
+    "selected_tool_id": "1acc39726dcfeafeebb70b744dedceb5"
+  },
+  {
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "keyword_search_query": "get new members discord server join events",
+    "selected_tool_id": "6c0847f856183b841cea6617a87ba238"
+  },
+  {
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "keyword_search_query": "post message discord channel send content",
+    "selected_tool_id": "afcc911d281312c77c143230e84c06a6"
+  },
+  {
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "keyword_search_query": "create payment link stripe donation amount",
+    "selected_tool_id": "2f633e8e989084c82f8ef76cd2a8997f"
+  },
+  {
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "keyword_search_query": "send link communication donor",
+    "selected_tool_id": "4cc1936a7f45469a25ad96fb63ab8783"
+  },
+  {
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "keyword_search_query": "create page notion new title",
+    "selected_tool_id": "8edd9382ddf0179623b5308eba18ea98"
+  },
+  {
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "keyword_search_query": "add block notion checklist content page",
+    "selected_tool_id": "bf81e6dc5972a9f8dee900084c3326db"
+  },
+  {
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "keyword_search_query": "get user id asana find by name",
+    "selected_tool_id": "2b22a3993beccd294ed7f6caa14d85c9"
+  },
+  {
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "keyword_search_query": "create task asana assign due date",
+    "selected_tool_id": "0a5b17884a281a715f4ba834869f3012"
+  },
+  {
+    "goal": "Add a card to update the homepage on my Trello board",
+    "keyword_search_query": "add card trello board create task",
+    "selected_tool_id": "803b7490688d3bbc595f60d773d08bde"
+  },
+  {
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_query": "monitor new email gmail trigger",
+    "selected_tool_id": "336be851c786bff514b8378fc074d8af"
+  },
+  {
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_query": "get attachment email gmail retrieve file",
+    "selected_tool_id": "e276b569a115ad56753e91525750368c"
+  },
+  {
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_query": "upload file dropbox save attachment",
+    "selected_tool_id": "187cfdf2005721c04e6cbe84278609fd"
+  },
+  {
+    "goal": "File a login bug in the Mobile App project on Jira",
+    "keyword_search_query": "create issue jira bug project summary",
+    "selected_tool_id": "a540511f8373e32d8c38a05acea60246"
+  },
+  {
+    "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+    "keyword_search_query": "create lead salesforce add new contact",
+    "selected_tool_id": "84e5b6425114496a029dae1c65f24d23"
+  },
+  {
+    "goal": "Log a new contact from the conference in HubSpot",
+    "keyword_search_query": "create contact hubspot crm add new",
+    "selected_tool_id": "d674e46e6d22110a46f80e85c2457315"
+  },
+  {
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "keyword_search_query": "upload file dropbox folder content",
+    "selected_tool_id": "f41797e6b1a7af32efa46004713a8ce7"
+  },
+  {
+    "goal": "Get my most recent Shopify orders",
+    "keyword_search_query": "get orders shopify recent list fetch",
+    "selected_tool_id": "c400a95ee57c5f8e53228ce5719e0102"
+  },
+  {
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "keyword_search_query": "create meeting zoom schedule call product team",
+    "selected_tool_id": "43c3310030f1fee37cb88f99b9300415"
+  },
+  {
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "keyword_search_query": "get contacts list sendgrid retrieve users",
+    "selected_tool_id": "ecd478ce483efac37500de78150d4480"
+  },
+  {
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "keyword_search_query": "send email sendgrid marketing campaign",
+    "selected_tool_id": "32d5cb213f531892dbdb3bbe98f4ada1"
+  },
+  {
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "keyword_search_query": "add member mailchimp list email subscribe",
+    "selected_tool_id": "e088e94f379f310756850920927e944f"
+  },
+  {
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "keyword_search_query": "create record airtable base inventory add item",
+    "selected_tool_id": "82813be33241dc61283d6e4b3b7d6823"
+  },
+  {
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "keyword_search_query": "get folder box search name",
+    "selected_tool_id": "efac2de5e062a09904b9801adde57794"
+  },
+  {
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "keyword_search_query": "upload file box content folder",
+    "selected_tool_id": "f41797e6b1a7af32efa46004713a8ce7"
+  },
+  {
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "keyword_search_query": "save file onedrive upload folder",
+    "selected_tool_id": "5f9797aafa224201e97a2a34d8e4399e"
+  },
+  {
+    "goal": "Tweet that our new app is live!",
+    "keyword_search_query": "create tweet post twitter message content",
+    "selected_tool_id": "b3bb5eff9bb626305424fc2c9322231f"
+  },
+  {
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_query": "search track spotify song music",
+    "selected_tool_id": "9f47dacced4d3b4b438bcdd7a127645b"
+  },
+  {
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_query": "get playlist spotify user library",
+    "selected_tool_id": "aa3da3b028d56f998433882a0a3d4944"
+  },
+  {
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_query": "add track spotify playlist song",
+    "selected_tool_id": "1320831bd2fc24dbe8a34d75c0e53c93"
+  },
+  {
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "keyword_search_query": "send message telegram group post content",
+    "selected_tool_id": "4b0246e931e4e274509c7bb6d77aec5d"
+  }
+]

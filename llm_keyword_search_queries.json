@@ -1,0 +1,225 @@
+[
+  {
+    "provider": "Google",
+    "goal": "Email John about the project update using Gmail",
+    "keyword_search_queries": [
+      "send email gmail to recipient subject"
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+    "keyword_search_queries": [
+      "create event google calendar add schedule"
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "keyword_search_queries": [
+      "search folder google drive by name",
+      "upload file google drive to folder"
+    ]
+  },
+  {
+    "provider": "Google",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "keyword_search_queries": [
+      "youtube search channel nasa official",
+      "youtube get videos channel latest"
+    ]
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "keyword_search_queries": [
+      "find group members microsoft teams",
+      "create schedule meeting microsoft teams"
+    ]
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Remind my team about the deadline via Outlook",
+    "keyword_search_queries": [
+      "get team members outlook contact group list",
+      "send email outlook reminder message"
+    ]
+  },
+  {
+    "provider": "Slack",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "keyword_search_queries": [
+      "get channel id slack general",
+      "send message slack channel post content"
+    ]
+  },
+  {
+    "provider": "Twilio",
+    "goal": "Text me a 2FA code with Twilio",
+    "keyword_search_queries": [
+      "send sms message twilio two factor code"
+    ]
+  },
+  {
+    "provider": "GitHub",
+    "goal": "Open a bug for the website\u2019s contact form on GitHub",
+    "keyword_search_queries": [
+      "create issue github bug report website contact form"
+    ]
+  },
+  {
+    "provider": "Discord",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "keyword_search_queries": [
+      "get new members discord server join events",
+      "post message discord channel send content"
+    ]
+  },
+  {
+    "provider": "Stripe",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "keyword_search_queries": [
+      "create payment link stripe donation amount",
+      "send link communication donor"
+    ]
+  },
+  {
+    "provider": "Notion",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "keyword_search_queries": [
+      "create page notion new title",
+      "add block notion checklist content page"
+    ]
+  },
+  {
+    "provider": "Asana",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "keyword_search_queries": [
+      "get user id asana find by name",
+      "create task asana assign due date"
+    ]
+  },
+  {
+    "provider": "Trello",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "keyword_search_queries": [
+      "add card trello board create task"
+    ]
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "keyword_search_queries": [
+      "monitor new email gmail trigger",
+      "get attachment email gmail retrieve file",
+      "upload file dropbox save attachment"
+    ]
+  },
+  {
+    "provider": "Jira",
+    "goal": "File a login bug in the Mobile App project on Jira",
+    "keyword_search_queries": [
+      "create issue jira bug project summary"
+    ]
+  },
+  {
+    "provider": "Salesforce",
+    "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+    "keyword_search_queries": [
+      "create lead salesforce add new contact"
+    ]
+  },
+  {
+    "provider": "HubSpot",
+    "goal": "Log a new contact from the conference in HubSpot",
+    "keyword_search_queries": [
+      "create contact hubspot crm add new"
+    ]
+  },
+  {
+    "provider": "Dropbox",
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "keyword_search_queries": [
+      "upload file dropbox folder content"
+    ]
+  },
+  {
+    "provider": "Shopify",
+    "goal": "Get my most recent Shopify orders",
+    "keyword_search_queries": [
+      "get orders shopify recent list fetch"
+    ]
+  },
+  {
+    "provider": "Zoom",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "keyword_search_queries": [
+      "create meeting zoom schedule call product team"
+    ]
+  },
+  {
+    "provider": "SendGrid",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "keyword_search_queries": [
+      "get contacts list sendgrid retrieve users",
+      "send email sendgrid marketing campaign"
+    ]
+  },
+  {
+    "provider": "Mailchimp",
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "keyword_search_queries": [
+      "add member mailchimp list email subscribe"
+    ]
+  },
+  {
+    "provider": "Airtable",
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "keyword_search_queries": [
+      "create record airtable base inventory add item"
+    ]
+  },
+  {
+    "provider": "Box",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "keyword_search_queries": [
+      "get folder box search name",
+      "upload file box content folder"
+    ]
+  },
+  {
+    "provider": "OneDrive",
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "keyword_search_queries": [
+      "save file onedrive upload folder"
+    ]
+  },
+  {
+    "provider": "Twitter",
+    "goal": "Tweet that our new app is live!",
+    "keyword_search_queries": [
+      "create tweet post twitter message content"
+    ]
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "keyword_search_queries": [
+      "search track spotify song music",
+      "get playlist spotify user library",
+      "add track spotify playlist song"
+    ]
+  },
+  {
+    "provider": "Telegram",
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "keyword_search_queries": [
+      "send message telegram group post content"
+    ]
+  },
+  {
+    "provider": "OpenAI",
+    "goal": "Summarize this article about climate change in 2024 using OpenAI",
+    "keyword_search_queries": []
+  }
+]

@@ -39,5 +39,7 @@ class LiteLLMChatLLM(BaseLLM):
             temperature=kwargs.get("temperature", self.temperature),
             max_tokens=kwargs.get("max_tokens", self.max_tokens),
         )
+        # Save headers for inspection
+        self.last_headers = getattr(resp, "headers", {})
         content = resp.choices[0].message.content
         return content or ""  # Avoid None propagating 
