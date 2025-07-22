@@ -105,47 +105,55 @@ LLM_BULLET_PROMPT = """
 """
 
 TOOL_SELECTION_PROMPT = (
-    """
-    <role>
-    You are an expert orchestrator working within the Jentic API ecosystem.
-    Your job is to select the best tool to execute a specific plan step, using a list of available tools. Each tool may vary in API domain, supported actions, and required parameters. You must evaluate each tool's suitability and return the **single best matching tool** — or the wordnone if none qualify.
+   """
+   <role>
+   You are an expert orchestrator working within the Jentic API ecosystem.
+   Your job is to select the best tool to execute a specific plan step, using a list of available tools. Each tool may vary in API domain, supported actions, and required parameters. You must evaluate each tool's suitability and return the **single best matching tool** — or the word none if none qualify.
 
-    Your selection will be executed by an agent, so precision and compatibility are critical.
-    </role>
+   Your selection will be executed by an agent, so precision and compatibility are critical.
+   </role>
 
-    <instructions>
-    Analyze the provided step and evaluate all candidate tools. Use the scoring criteria to assess each tool’s fitness for executing the step. Return the tool `id` with the highest total score. If no tool scores ≥60, return the word none.
-    You are selecting the **most execution-ready** tool, not simply the closest match.
-    </instructions>
+   <instructions>
+   Analyze the provided step and evaluate all candidate tools. Use the scoring criteria to assess each tool’s fitness for executing the step. Return the tool `id` with the highest total score. If no tool scores ≥60, return the word none.
+   You are selecting the **most execution-ready** tool, not simply the closest match.
+   </instructions>
 
-    <input>
-    Step:
-    {step}
+   <input>
+   Step:
+   {step}
 
-    Tools (JSON):
-    {tools_json}
-    </input>
+   Tools (JSON):
+   {tools_json}
+   </input>
 
-    <scoring_criteria>
-    - **API Domain Match** (30 pts): Relevance of the tool’s API domain to the step's intent.
-    - **Action Compatibility** (25 pts): How well the tool’s action matches the step’s intent, considering common verb synonyms (e.g., "send" maps well to "post", "create" to "add").
-    - **Parameter Compatibility** (20 pts): Whether required parameters are available or can be inferred from the current context.
-    - **Workflow Fit** (15 pts): Alignment with the current workflow’s sequence and memory state.
-    - **Simplicity & Efficiency** (10 pts): Prefer tools that perform the intended action directly and efficiently; if both an operation and a workflow accomplish the same goal, favor the simpler operation unless the workflow provides a clear added benefit.
-    </scoring_criteria>
+   <scoring_criteria>
+   - **Action Compatibility** (35 pts): Evaluate how well the tool’s primary action matches the step’s intent. Consider synonyms (e.g., "send" ≈ "post", "create" ≈ "add"), but prioritize tools that closely reflect the intended verb-object structure. Penalize mismatches in type, scope, or intent.
 
-    <rules>
-    1. Score each tool using the weighted criteria above. Max score: 100 points.
-    2. Select the tool with the highest total score.
-    3. If no tool scores at least 60 points, return none.
-    4. Do **not** include any explanation, formatting, or metadata — only the tool `id` or none.
-    5. Use available step context and known inputs to inform scoring.
-    6. Penalize tools misaligned with the intended action.
-    </rules>
+   - **API Domain Match** (30 pts): This is a critical criterion.
+       - If the step **explicitly mentions a specific platform or system**, and the tool’s `api_name` does match that platform, highly penalise this option. Do not assume generic or alternate platforms are acceptable substitutes unless the step allows flexibility.
+       - If no domain is explicitly named in the step, evaluate based on general domain relevance.
 
-    <output_format>
-    Respond with a **single line** which only includes the selected tool’s `id`
-    **No additional text** should be included.
-    </output_format>
-    """
+   - **Parameter Compatibility** (20 pts): Determine if the tool’s required parameters are explicitly present in the step or clearly inferable. Penalize tools with ambiguous, unsupported, or overly strict input requirements.
+
+   - **Workflow Fit** (10 pts): Assess how logically the tool integrates into the surrounding workflow. Does it build upon prior steps or prepare outputs needed for future ones?
+
+   - **Simplicity & Efficiency** (5 pts): Prefer tools that accomplish the task directly and without unnecessary complexity. Penalize overly complex workflows if a simpler operation would suffice.
+   </scoring_criteria>
+
+   <rules>
+   1. Score each tool using the weighted criteria above. Max score: 100 points.
+   2. Select the tool with the highest total score.
+   3. If no tool scores at least 60 points, return none.
+   4. Do **not** include any explanation, formatting, or metadata — only the tool `id` or none.
+   5. Use available step context and known inputs to inform scoring.
+   6. Penalize tools severely if they are misaligned with the intended action or platform (if mentioned in the step).
+   7. Never select a tool from an incorrect domain if the step specifies a specific one.
+   </rules>
+
+   <output_format>
+   Respond with a **single line** which only includes the selected tool’s `id`
+   **No additional text** should be included.
+   </output_format>
+   """
 )
+
