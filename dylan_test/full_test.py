@@ -12,7 +12,7 @@ model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
 TOP_K = 10
 MAX_WORKERS = 60  # Safe for Gemini Flash paid tier
 
-PLAN_RESULTS_FILE = "dylan_test/llm_bullet_plans.json"
+PLAN_RESULTS_FILE = "dylan_test/data/llm_bullet_plans.json"
 KEYWORD_TOOL_SEARCH_RESULTS_FILE = "dylan_test/data/keyword_tool_search_results.json"
 SELECTION_RESULTS_FILE = "dylan_test/data/tool_selection_results.json"
 
