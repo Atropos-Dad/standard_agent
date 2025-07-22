@@ -103,7 +103,6 @@ LLM_BULLET_PROMPT = """
     Goal: {goal}
     </goal>
 """
-
 TOOL_SELECTION_PROMPT = (
    """
    <role>
@@ -127,17 +126,21 @@ TOOL_SELECTION_PROMPT = (
    </input>
 
    <scoring_criteria>
-   - **Action Compatibility** (35 pts): Evaluate how well the tool’s primary action matches the step’s intent. Consider synonyms (e.g., "send" ≈ "post", "create" ≈ "add"), but prioritize tools that closely reflect the intended verb-object structure. Penalize mismatches in type, scope, or intent.
+   - **Action Compatibility** (35 pts): Evaluate how well the tool’s primary action matches the step’s intent. Consider synonyms (e.g., "send" ≈ "post", "create" ≈ "add"), but prioritize tools that closely reflect the intended verb-object structure and scope. Penalize mismatches in type, scope, or intent (e.g., "get all members" for "get new members").
 
    - **API Domain Match** (30 pts): This is a critical criterion.
-       - If the step **explicitly mentions a specific platform or system**, and the tool’s `api_name` does match that platform, highly penalise this option. Do not assume generic or alternate platforms are acceptable substitutes unless the step allows flexibility.
-       - If no domain is explicitly named in the step, evaluate based on general domain relevance.
+       - **If the step EXPLICITLY mentions a specific platform or system (e.g., "Gmail", "Asana", "Microsoft Teams")**:
+           - **Perfect Match (30 pts):** If the tool's `api_name` directly matches the explicitly mentioned platform.
+           - **Severe Penalty (0 pts):** If the tool's `api_name` does *not* match the explicitly mentioned platform. Do NOT select tools from other domains in this scenario.
+       - **If NO specific platform or system is EXPLICITLY mentioned (e.g., "book a flight", "send an email")**:
+           - **Relevant Match (25-30 pts):** If the tool's `api_name` is generally relevant to the task (e.g., a flight booking tool for "book a flight"). Prefer tools with broader applicability if multiple options exist.
+           - **Irrelevant Match (0-10 pts):** If the tool's `api_name` is clearly irrelevant.
 
    - **Parameter Compatibility** (20 pts): Determine if the tool’s required parameters are explicitly present in the step or clearly inferable. Penalize tools with ambiguous, unsupported, or overly strict input requirements.
 
    - **Workflow Fit** (10 pts): Assess how logically the tool integrates into the surrounding workflow. Does it build upon prior steps or prepare outputs needed for future ones?
 
-   - **Simplicity & Efficiency** (5 pts): Prefer tools that accomplish the task directly and without unnecessary complexity. Penalize overly complex workflows if a simpler operation would suffice.
+   - **Simplicity & Efficiency** (5 pts): Prefer tools that accomplish the task directly and without unnecessary complexity. Penalize overly complex workflows if a simpler operation would suffice. This includes preferring a single-purpose tool over a multi-purpose tool if the single-purpose tool directly addresses the step's need (e.g., "Get a user" over "Get multiple users" if only one user is needed).
    </scoring_criteria>
 
    <rules>
@@ -147,7 +150,7 @@ TOOL_SELECTION_PROMPT = (
    4. Do **not** include any explanation, formatting, or metadata — only the tool `id` or none.
    5. Use available step context and known inputs to inform scoring.
    6. Penalize tools severely if they are misaligned with the intended action or platform (if mentioned in the step).
-   7. Never select a tool from an incorrect domain if the step specifies a specific one.
+   7. Never select a tool from an incorrect domain if the step explicitly specifies a specific one.
    </rules>
 
    <output_format>
