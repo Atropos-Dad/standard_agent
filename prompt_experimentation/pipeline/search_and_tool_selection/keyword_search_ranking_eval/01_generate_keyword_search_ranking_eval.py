@@ -63,6 +63,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=LLM_WORKERS) as executor:
 results = []
 total_score = 0
 max_score = 0
+skipped_none = 0
 for entry in tqdm(generated_queries, desc="LLM keyword search ranking eval"):
     pair_id = str(entry["pair_id"])
     goal = entry["goal"]
@@ -70,6 +71,9 @@ for entry in tqdm(generated_queries, desc="LLM keyword search ranking eval"):
     generated_query = entry["generated_query"]
     expected_entry = expected_data.get(pair_id)
     expected_tool_id = expected_entry["expected_tool_id"] if expected_entry else None
+    if expected_tool_id is None or expected_tool_id == "none" or expected_tool_id == "":
+        skipped_none += 1
+        continue
     search_entry = search_results_data.get(pair_id)
     tool_search_results = search_entry["tool_search_results"] if search_entry else []
     tool_ids = [t.get("id") for t in tool_search_results]
@@ -118,5 +122,5 @@ with open(REPORT_FILE, "w") as f:
 print(f"\nLLM Keyword Search Ranking Evaluation Report")
 print(f"Average Score: {average_score:.2f} / 10.00")
 print(f"Total Score: {total_score} / {max_score}")
-print(f"Evaluated {len(results)} queries")
+print(f"Evaluated {len(results)} queries (skipped {skipped_none} with expected_tool_id 'none' or empty)")
 print(f"Detailed report saved to {REPORT_FILE}") 
