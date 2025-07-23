@@ -13,8 +13,8 @@ TOP_K = 10
 MAX_WORKERS = 60
 TOOL_SEARCH_WORKERS = 8
 
-PLAN_RESULTS_FILE = "prompt_experimentation/data/llm_bullet_plans.json"
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/keyword_tool_search_results.json"
+PLAN_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/llm_bullet_plans.json"
+KEYWORD_TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
 
 client = JenticClient(api_key=API_KEY)
 llm = LiteLLMChatLLM(model=model_name, temperature=0.2)

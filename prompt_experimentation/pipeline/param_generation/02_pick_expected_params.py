@@ -99,7 +99,7 @@ def pick_expected_params():
     """Main function to pick expected parameters for all scenarios"""
     
     # Load scenarios
-    scenarios_file = "prompt_experimentation/data/param_generation_scenarios.json"
+    scenarios_file = "prompt_experimentation/data/param_generation/param_generation_scenarios.json"
     try:
         with open(scenarios_file, "r") as f:
             scenarios = json.load(f)
@@ -138,7 +138,7 @@ def pick_expected_params():
                 break
     
     # Save expected results
-    output_file = "prompt_experimentation/data/expected_param_results.json"
+    output_file = "prompt_experimentation/data/param_generation/expected_param_results.json"
     with open(output_file, "w") as f:
         json.dump(expected_results, f, indent=2)
     

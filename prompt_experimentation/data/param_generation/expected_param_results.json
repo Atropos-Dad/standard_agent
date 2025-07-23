@@ -11,9 +11,9 @@
   {
     "pair_id": "2",
     "id": "discord_news_articles",
-    "step": "send the latest 3 news articles to Discord channel #general",
+    "step": "send the latest 3 news articles to Discord channel #general 1384747473",
     "expected_params": {
-      "channel_id": "#general",
+      "channel_id": "1384747473",
       "content": "AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\n  Tech Market Updates: https://bloomberg.com/tech-market\n  Climate Change Report: https://reuters.com/climate-report"
     }
   },

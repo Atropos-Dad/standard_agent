@@ -8,9 +8,9 @@ from prompt_experimentation._prompts import PARAMETER_GENERATION_PROMPT
 model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
 LLM_WORKERS = 60
 
-SCENARIOS_FILE = "prompt_experimentation/data/param_generation_scenarios.json"
-EXPECTED_RESULTS_FILE = "prompt_experimentation/data/expected_param_results.json"
-OUTPUT_FILE = "prompt_experimentation/data/param_generation_results.json"
+SCENARIOS_FILE = "prompt_experimentation/data/param_generation/param_generation_scenarios.json"
+EXPECTED_RESULTS_FILE = "prompt_experimentation/data/param_generation/expected_param_results.json"
+OUTPUT_FILE = "prompt_experimentation/data/param_generation/param_generation_results.json"
 
 llm = LiteLLMChatLLM(model=model_name, temperature=0.2)
 

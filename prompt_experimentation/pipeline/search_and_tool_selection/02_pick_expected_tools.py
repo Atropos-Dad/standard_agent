@@ -1,8 +1,8 @@
 import json
 import questionary
 
-TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/keyword_tool_search_results.json"
-EXPECTED_RESULTS_FILE = "prompt_experimentation/data/expected_tool_selections.json"
+TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
+EXPECTED_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/expected_tool_selections.json"
 
 def prompt_user_for_selection(entry):
     print("\n" + "="*60)

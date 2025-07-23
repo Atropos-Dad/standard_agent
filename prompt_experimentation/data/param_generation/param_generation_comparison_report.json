@@ -5,8 +5,8 @@
     "performance_metrics": {
       "avg_json_validity": 1.0,
       "avg_key_correctness": 0.917,
-      "avg_value_appropriateness": 0.793,
-      "avg_total_score": 0.905
+      "avg_value_appropriateness": 0.772,
+      "avg_total_score": 0.898
     },
     "performance_distribution": {
       "high_performers": "10/12 (83.3%)",
@@ -81,7 +81,7 @@
       "id": "discord_simple_message",
       "step": "send message 'Hello team!' to Discord channel 12345",
       "generated_params": "{\"channel_id\": \"12345\", \"content\": \"Hello team!\"}",
-      "raw_response": "```json\n{\"channel_id\": \"12345\", \"content\": \"Hello team!\"}\n```",
+      "raw_response": "{\"channel_id\": \"12345\", \"content\": \"Hello team!\"}",
       "step_inputs": {},
       "allowed_keys": [
         "channel_id",
@@ -116,8 +116,8 @@
       "pair_id": "2",
       "id": "discord_news_articles",
       "step": "send the latest 3 news articles to Discord channel #general",
-      "generated_params": "{\n  \"channel_id\": \"#general\",\n  \"content\": \"AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\\nTech Market Updates: https://bloomberg.com/tech-market\\nClimate Change Report: https://reuters.com/climate-report\"\n}",
-      "raw_response": "```json\n{\n  \"channel_id\": \"#general\",\n  \"content\": \"AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\\nTech Market Updates: https://bloomberg.com/tech-market\\nClimate Change Report: https://reuters.com/climate-report\"\n}\n```",
+      "generated_params": "{\"channel_id\": \"#general\", \"content\": \"AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\\nTech Market Updates: https://bloomberg.com/tech-market\\nClimate Change Report: https://reuters.com/climate-report\"}",
+      "raw_response": "{\"channel_id\": \"#general\", \"content\": \"AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\\nTech Market Updates: https://bloomberg.com/tech-market\\nClimate Change Report: https://reuters.com/climate-report\"}",
       "step_inputs": {
         "news_articles": [
           {
@@ -148,14 +148,14 @@
       ],
       "evaluation": {
         "expected_params": {
-          "channel_id": "#general",
+          "channel_id": "1384747473",
           "content": "AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\n  Tech Market Updates: https://bloomberg.com/tech-market\n  Climate Change Report: https://reuters.com/climate-report"
         },
         "scores": {
           "json_valid": 1,
           "keys_correct": 1.0,
-          "values_appropriate": 0.75,
-          "total_score": 0.9249999999999999
+          "values_appropriate": 0.5,
+          "total_score": 0.85
         },
         "details": {
           "json_parse_error": null,
@@ -169,8 +169,8 @@
       "pair_id": "3",
       "id": "gmail_project_update",
       "step": "email john@company.com about the project status with subject 'Weekly Update'",
-      "generated_params": "{\n  \"to\": \"john@company.com\",\n  \"subject\": \"Weekly Update\",\n  \"body\": \"Project: Website Redesign\\nCompletion: 75%\\nNext Milestone: User Testing (Due: 2024-02-15)\\nBlockers:\\n- Waiting for content from marketing team\"\n}",
-      "raw_response": "```json\n{\n  \"to\": \"john@company.com\",\n  \"subject\": \"Weekly Update\",\n  \"body\": \"Project: Website Redesign\\nCompletion: 75%\\nNext Milestone: User Testing (Due: 2024-02-15)\\nBlockers:\\n- Waiting for content from marketing team\"\n}\n```",
+      "generated_params": "{\"to\": \"john@company.com\", \"subject\": \"Weekly Update\", \"body\": \"Here's an update on the project status:\\n\\nProject: Website Redesign\\nCompletion: 75%\\nNext Milestone: User Testing (Due: 2024-02-15)\\nBlockers:\\n- Waiting for content from marketing team\"}",
+      "raw_response": "{\"to\": \"john@company.com\", \"subject\": \"Weekly Update\", \"body\": \"Here's an update on the project status:\\n\\nProject: Website Redesign\\nCompletion: 75%\\nNext Milestone: User Testing (Due: 2024-02-15)\\nBlockers:\\n- Waiting for content from marketing team\"}",
       "step_inputs": {
         "project_status": {
           "name": "Website Redesign",
@@ -263,8 +263,8 @@
       "pair_id": "5",
       "id": "github_bug_issue",
       "step": "create a GitHub issue for the login bug with priority high",
-      "generated_params": "{\n  \"title\": \"Users cannot login with Google OAuth\",\n  \"body\": \"Description: Multiple users report 500 error when using Google login\\n\\nSteps to Reproduce:\\n1. Go to login page\\n2. Click 'Sign in with Google'\\n3. Complete OAuth flow\\n4. Observe 500 error\",\n  \"labels\": [\n    \"priority: high\"\n  ]\n}",
-      "raw_response": "```json\n{\n  \"title\": \"Users cannot login with Google OAuth\",\n  \"body\": \"Description: Multiple users report 500 error when using Google login\\n\\nSteps to Reproduce:\\n1. Go to login page\\n2. Click 'Sign in with Google'\\n3. Complete OAuth flow\\n4. Observe 500 error\",\n  \"labels\": [\n    \"priority: high\"\n  ]\n}\n```",
+      "generated_params": "{\n  \"title\": \"Users cannot login with Google OAuth\",\n  \"body\": \"Description: Multiple users report 500 error when using Google login\\n\\nSteps to reproduce:\\n1. Go to login page\\n2. Click 'Sign in with Google'\\n3. Complete OAuth flow\\n4. Observe 500 error\",\n  \"labels\": [\n    \"bug\",\n    \"login\",\n    \"priority: high\"\n  ]\n}",
+      "raw_response": "```json\n{\n  \"title\": \"Users cannot login with Google OAuth\",\n  \"body\": \"Description: Multiple users report 500 error when using Google login\\n\\nSteps to reproduce:\\n1. Go to login page\\n2. Click 'Sign in with Google'\\n3. Complete OAuth flow\\n4. Observe 500 error\",\n  \"labels\": [\n    \"bug\",\n    \"login\",\n    \"priority: high\"\n  ]\n}\n```",
       "step_inputs": {
         "bug_report": {
           "title": "Users cannot login with Google OAuth",
@@ -311,8 +311,8 @@
       "pair_id": "6",
       "id": "slack_metrics_summary",
       "step": "post a few key metrics to #analytics channel",
-      "generated_params": "{\"channel\": \"#analytics\", \"text\": \"Active Users: 1247\\nRevenue: $23,456\\nConversion Rate: 3.2%\"}",
-      "raw_response": "{\"channel\": \"#analytics\", \"text\": \"Active Users: 1247\\nRevenue: $23,456\\nConversion Rate: 3.2%\"}",
+      "generated_params": "{\n  \"channel\": \"#analytics\",\n  \"text\": \"Daily Metrics:\\nActive Users: 1247\\nRevenue: $23,456\\nConversion Rate: 3.2%\"\n}",
+      "raw_response": "```json\n{\n  \"channel\": \"#analytics\",\n  \"text\": \"Daily Metrics:\\nActive Users: 1247\\nRevenue: $23,456\\nConversion Rate: 3.2%\"\n}\n```",
       "step_inputs": {
         "daily_metrics": {
           "active_users": 1247,
@@ -350,8 +350,8 @@
       "pair_id": "7",
       "id": "twitter_ai_thread",
       "step": "create a Twitter thread about recent AI developments",
-      "generated_params": "{\n  \"text\": \"Recent AI Developments:\\n\\nTitle: GPT-4 Vision Released\\nSummary: OpenAI releases multimodal capabilities\\n\\nTitle: Google Gemini Update\\nSummary: Improved reasoning and coding abilities\\n\\nTitle: Meta AI Assistant\\nSummary: New AI assistant for Instagram and WhatsApp\"\n}",
-      "raw_response": "```json\n{\n  \"text\": \"Recent AI Developments:\\n\\nTitle: GPT-4 Vision Released\\nSummary: OpenAI releases multimodal capabilities\\n\\nTitle: Google Gemini Update\\nSummary: Improved reasoning and coding abilities\\n\\nTitle: Meta AI Assistant\\nSummary: New AI assistant for Instagram and WhatsApp\"\n}\n```",
+      "generated_params": "{\n  \"text\": \"Recent AI Developments:\\n\\n1. GPT-4 Vision Released: OpenAI releases multimodal capabilities\\n2. Google Gemini Update: Improved reasoning and coding abilities\\n3. Meta AI Assistant: New AI assistant for Instagram and WhatsApp\"\n}",
+      "raw_response": "```json\n{\n  \"text\": \"Recent AI Developments:\\n\\n1. GPT-4 Vision Released: OpenAI releases multimodal capabilities\\n2. Google Gemini Update: Improved reasoning and coding abilities\\n3. Meta AI Assistant: New AI assistant for Instagram and WhatsApp\"\n}\n```",
       "step_inputs": {
         "ai_developments": [
           {
@@ -488,8 +488,8 @@
       "pair_id": "10",
       "id": "asana_task_assignment",
       "step": "assign Alex to review the Q2 budget in Asana, due next Monday",
-      "generated_params": "{\n  \"name\": \"Q2 Budget Review\",\n  \"assignee\": \"Alex\",\n  \"due_on\": \"2024-02-12\",\n  \"notes\": \"File Location: /shared/budgets/Q2_2024.xlsx\"\n}",
-      "raw_response": "```json\n{\n  \"name\": \"Q2 Budget Review\",\n  \"assignee\": \"Alex\",\n  \"due_on\": \"2024-02-12\",\n  \"notes\": \"File Location: /shared/budgets/Q2_2024.xlsx\"\n}\n```",
+      "generated_params": "{\"name\": \"Q2 Budget Review\", \"assignee\": \"Alex\", \"due_on\": \"2024-02-12\", \"notes\": \"File: /shared/budgets/Q2_2024.xlsx, Priority: high\"}",
+      "raw_response": "{\"name\": \"Q2 Budget Review\", \"assignee\": \"Alex\", \"due_on\": \"2024-02-12\", \"notes\": \"File: /shared/budgets/Q2_2024.xlsx, Priority: high\"}",
       "step_inputs": {
         "budget_info": {
           "title": "Q2 Budget Review",

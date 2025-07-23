@@ -298,7 +298,7 @@ def generate_param_scenarios():
         scenario["pair_id"] = str(idx)
     
     # Save to file
-    output_file = "prompt_experimentation/data/param_generation_scenarios.json"
+    output_file = "prompt_experimentation/data/param_generation/param_generation_scenarios.json"
     with open(output_file, "w") as f:
         json.dump(PARAMETER_TEST_SCENARIOS, f, indent=2)
     

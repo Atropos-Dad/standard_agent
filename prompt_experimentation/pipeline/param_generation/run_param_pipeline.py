@@ -49,41 +49,41 @@ def main():
     print("🧪 Parameter Generation Testing Pipeline")
     print("========================================")
     
-    # Step 1: Generate scenarios
-    success = run_command(
-        "python -m prompt_experimentation.pipeline.param_generation.01_generate_param_scenarios",
-        "Step 1 - Generate parameter scenarios"
-    )
-    if not success:
-        sys.exit(1)
+    # # Step 1: Generate scenarios
+    # success = run_command(
+    #     "python -m prompt_experimentation.pipeline.param_generation.01_generate_param_scenarios",
+    #     "Step 1 - Generate parameter scenarios"
+    # )
+    # if not success:
+    #     sys.exit(1)
     
-    if args.generate_only:
-        print("\n🎉 Scenario generation completed!")
-        return
+    # if args.generate_only:
+    #     print("\n🎉 Scenario generation completed!")
+    #     return
     
-    # Step 2: Pick expected parameters (manual step)
-    if not args.test_only:
-        print(f"\n{'='*60}")
-        print("Step 2 - Pick Expected Parameters (Interactive)")
-        print("='*60")
-        print("This step requires manual input to set expected parameter values.")
-        print("You'll be shown each scenario and asked to specify the expected JSON output.")
+    # # Step 2: Pick expected parameters (manual step)
+    # if not args.test_only:
+    #     print(f"\n{'='*60}")
+    #     print("Step 2 - Pick Expected Parameters (Interactive)")
+    #     print("='*60")
+    #     print("This step requires manual input to set expected parameter values.")
+    #     print("You'll be shown each scenario and asked to specify the expected JSON output.")
         
-        continue_choice = input("\nDo you want to continue with the interactive step? (y/n): ")
-        if continue_choice.lower() != 'y':
-            print("⏭️  Skipping interactive step. You can run it later with:")
-            print("   python -m prompt_experimentation.pipeline.param_generation.02_pick_expected_params")
-            print("\nContinuing with existing expected results (if any)...")
-        else:
-            success = run_command(
-                "python -m prompt_experimentation.pipeline.param_generation.02_pick_expected_params",
-                "Step 2 - Pick expected parameters (interactive)"
-            )
-            if not success:
-                print("⚠️  Interactive step failed, but continuing with existing data...")
+    #     continue_choice = input("\nDo you want to continue with the interactive step? (y/n): ")
+    #     if continue_choice.lower() != 'y':
+    #         print("⏭️  Skipping interactive step. You can run it later with:")
+    #         print("   python -m prompt_experimentation.pipeline.param_generation.02_pick_expected_params")
+    #         print("\nContinuing with existing expected results (if any)...")
+    #     else:
+    #         success = run_command(
+    #             "python -m prompt_experimentation.pipeline.param_generation.02_pick_expected_params",
+    #             "Step 2 - Pick expected parameters (interactive)"
+    #         )
+    #         if not success:
+    #             print("⚠️  Interactive step failed, but continuing with existing data...")
     
     # Check if expected results exist
-    expected_file = "prompt_experimentation/data/expected_param_results.json"
+    expected_file = "prompt_experimentation/data/param_generation/expected_param_results.json"
     has_expected = check_file_exists(expected_file, "Expected parameter results")
     
     if not has_expected:
@@ -115,10 +115,10 @@ def main():
     # Show output files
     print("\n📁 Generated Files:")
     output_files = [
-        ("Scenarios", "prompt_experimentation/data/param_generation_scenarios.json"),
-        ("Expected Results", "prompt_experimentation/data/expected_param_results.json"),
-        ("Test Results", "prompt_experimentation/data/param_generation_results.json"),
-        ("Comparison Report", "prompt_experimentation/data/param_generation_comparison_report.json")
+        ("Scenarios", "prompt_experimentation/data/param_generation/param_generation_scenarios.json"),
+        ("Expected Results", "prompt_experimentation/data/param_generation/expected_param_results.json"),
+        ("Test Results", "prompt_experimentation/data/param_generation/param_generation_results.json"),
+        ("Comparison Report", "prompt_experimentation/data/param_generation/param_generation_comparison_report.json")
     ]
     
     for name, filepath in output_files:
