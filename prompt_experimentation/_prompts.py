@@ -215,7 +215,7 @@ PARAMETER_GENERATION_PROMPT = (
 
 KEYWORD_SEARCH_PROMPT = """
   <keyword_instructions>
-  For each step that requires an API or tool call, generate a focused keyword search query to find the appropriate tool capability:
+  You will be given a step that requires an API or tool call - the goal is just purely for context, generate a focused keyword search query to find the appropriate tool capability:
 
   **Core Rules:**
   - Describe the FUNCTION/CAPABILITY needed, not the user's specific data
