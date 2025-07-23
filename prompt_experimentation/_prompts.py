@@ -29,14 +29,46 @@ LLM_BULLET_PROMPT = """
     </main_instructions>
 
     <keyword_instructions>
-    For each step that requires an API or tool call (e.g., a Jentic tool execution), generate a concise keyword search query to facilitate tool discovery:
-    - Create a search query of 5-7 capability-focused keywords describing the required functionality for that step.
-    - Include EXACTLY ONE provider/platform keyword (e.g., 'github', 'discord', 'trello') if the platform is clear from the step context; otherwise omit.
-    - Do NOT combine multiple providers or API platforms in the same query.
-    - Do NOT include irrelevant terms.
-    - Focus on clear, action-oriented keywords and CRUD specific verbs based on the current step, yet taking the overall goal into consideration.
-    - Output the keyword search query as a sibling bullet under the step, prefixed by: `→ keyword search query: "<query>"`.
-    - If the step is a reasoning, data transformation, summarization, or any AI-only operation that does not require an API/tool call, do **not** output a keyword search query line.
+    For each step that requires an API or tool call, generate a focused keyword search query to find the appropriate tool capability:
+
+    **Core Rules:**
+    - Describe the FUNCTION/CAPABILITY needed, not the user's specific data
+    - Use 4-6 keywords maximum - prioritize precision
+    - Focus on ACTION + RESOURCE TYPE + optional CONTEXT
+    - Never include user-specific content, queries, search terms, or data values
+
+    **Capability-Focused Structure:**
+    1. **Primary Action Verb** - What the tool does (send, get, create, upload, delete, update, fetch, post)
+    2. **Resource Type** - What it operates on (email, message, file, event, issue, video, member, article)
+    3. **Optional Service Context** - Only if the platform is explicitly mentioned in the step
+    4. **Optional Operation Context** - Distinguishing qualifiers (channel, folder, repository, latest, new)
+
+    **What NOT to Include:**
+    - User's search queries ("artificial intelligence", "team sync", "bug report")
+    - Specific content ("Good morning everyone", file names, email subjects)
+    - User data (email addresses, dates, channel IDs, folder names)
+    - Generic filler words ("content", "data", "information", "about")
+
+    **Verb Selection Priority:**
+    - Messaging operations: send, post
+    - Data retrieval: get, fetch, list
+    - Content creation: create, add
+    - File operations: upload, download
+    - Management: update, delete, manage
+
+    **Quality Check Questions:**
+    1. Would this query find tools that perform this type of operation?
+    2. Does it avoid user-specific content and focus on capability?
+    3. Is it specific enough to distinguish from similar but different operations?
+    4. Would a developer use these terms when naming or searching for this functionality?
+
+    **Output Format:**
+    `→ keyword search query: "<action_verb> <resource_type> [service] [context]"`
+
+    **Skip keyword queries for:**
+    - Pure reasoning tasks (summarization, analysis, formatting)
+    - Data transformation that doesn't require external tools
+    - Logic operations or conditional flows
     </keyword_instructions>
 
     <self_check>
@@ -180,3 +212,89 @@ PARAMETER_GENERATION_PROMPT = (
     </output_format>
     """
 )
+
+KEYWORD_SEARCH_PROMPT = """
+  <keyword_instructions>
+  For each step that requires an API or tool call, generate a focused keyword search query to find the appropriate tool capability:
+
+  **Core Rules:**
+  - Describe the FUNCTION/CAPABILITY needed, not the user's specific data
+  - Use 4-6 keywords maximum - prioritize precision
+  - Focus on ACTION + RESOURCE TYPE + optional CONTEXT
+  - Never include user-specific content, queries, search terms, or data values
+
+  **Capability-Focused Structure:**
+  1. **Primary Action Verb** - What the tool does (send, get, create, upload, delete, update, fetch, post)
+  2. **Resource Type** - What it operates on (email, message, file, event, issue, video, member, article)
+  3. **Optional Service Context** - Only if the platform is explicitly mentioned in the step
+  4. **Optional Operation Context** - Distinguishing qualifiers (channel, folder, repository, latest, new)
+
+  **What NOT to Include:**
+  - User's search queries ("artificial intelligence", "team sync", "bug report")
+  - Specific content ("Good morning everyone", file names, email subjects)
+  - User data (email addresses, dates, channel IDs, folder names)
+  - Generic filler words ("content", "data", "information", "about")
+
+  **Verb Selection Priority:**
+  - Messaging operations: send, post
+  - Data retrieval: get, fetch, list
+  - Content creation: create, add
+  - File operations: upload, download
+  - Management: update, delete, manage
+
+  **Quality Check Questions:**
+  1. Would this query find tools that perform this type of operation?
+  2. Does it avoid user-specific content and focus on capability?
+  3. Is it specific enough to distinguish from similar but different operations?
+  4. Would a developer use these terms when naming or searching for this functionality?
+
+  **Output Format:**
+  `→ keyword search query: "<action_verb> <resource_type> [service] [context]"`
+
+  **Skip keyword queries for:**
+  - Pure reasoning tasks (summarization, analysis, formatting)
+  - Data transformation that doesn't require external tools
+  - Logic operations or conditional flows
+
+  **Examples:**
+
+  Goal:
+  Gather the latest 10 Hacker News posts about ‘AI’, summarise them, and email the summary to alice@example.com
+  Step:
+  - fetch latest 10 Hacker News posts containing “AI” (output: hn_posts)
+    → keyword search query: "get fetch posts hackernews searchquery filter"
+
+  Goal:
+  Search NYT articles about artificial intelligence and send them to Discord channel 12345
+  Step:
+  - send articles as a Discord message to Discord channel 12345 (input: nyt_articles) (output: post_confirmation)
+    → keyword search query: "send message discord channel post content"
+
+  Goal:
+  Make a $50 donation link with Stripe and send it to the donor
+  Step:
+  - create a Stripe payment link for a $50 donation (output: payment_link_details)
+    → keyword search query: "create payment link stripe donation amount"
+
+  Goal:
+  Welcome new members in the introductions channel on Discord
+  Step:
+  - get new members from Discord server (output: new_members)
+    → keyword search query: "get member discord server list"
+
+  Goal:
+  Gather the latest 10 Hacker News posts about ‘AI’, summarise them, and email the summary to alice@example.com
+  Step:
+  - email summary_text to alice@example.com (input: summary_text) (output: email_confirmation)
+    → keyword search query: "post send email gmail to user"
+
+  </keyword_instructions>
+
+  <goal>
+  Goal: {goal}
+  </goal>
+
+  <step>
+  Step: {step}
+  </step>
+  """

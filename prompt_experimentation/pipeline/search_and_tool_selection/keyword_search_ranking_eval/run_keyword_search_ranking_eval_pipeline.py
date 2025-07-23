@@ -24,10 +24,6 @@ if __name__ == "__main__":
         "python -m prompt_experimentation.pipeline.search_and_tool_selection.keyword_search_ranking_eval.01_generate_keyword_search_ranking_eval",
         "Step 1 - Generate keyword search queries"
     )
-    run_command(
-        "python -m prompt_experimentation.pipeline.search_and_tool_selection.keyword_search_ranking_eval.02_eval_keyword_search_ranking",
-        "Step 2 - Evaluate keyword search ranking"
-    )
     print(f"\n{'='*60}")
     print("🎉 Keyword search ranking evaluation pipeline completed!")
     print('='*60) 

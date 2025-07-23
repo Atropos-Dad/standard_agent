@@ -8,7 +8,7 @@ import toml
 
 config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.toml")
 config = toml.load(config_path)
-llm_cfg = config["llm_tool_selection_and_eval"]
+llm_cfg = config["llm_many_workers"]
 paths_cfg = config["paths"]
 
 model_name = llm_cfg["llm_model"]

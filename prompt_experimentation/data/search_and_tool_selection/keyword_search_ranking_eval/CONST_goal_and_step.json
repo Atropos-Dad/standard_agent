@@ -1,0 +1,227 @@
+[
+  {
+    "pair_id": "1",
+    "goal": "Email John about the project update using Gmail",
+    "step": "send email to John about the project update (output: email_confirmation)"
+  },
+  {
+    "pair_id": "2",
+    "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+    "step": "create a calendar event titled \"team sync\" on Google Calendar for next_friday_date at 2pm (input: next_friday_date) (output: event_creation_confirmation)"
+  },
+  {
+    "pair_id": "3",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "step": "Upload quarterly_report_file to 'Reports' folder in Google Drive (input: quarterly_report_file) (output: upload_confirmation)"
+  },
+  {
+    "pair_id": "4",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "step": "search YouTube for NASA's official channel (output: nasa_youtube_channel_id)"
+  },
+  {
+    "pair_id": "5",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "step": "get latest videos from nasa_youtube_channel_id (input: nasa_youtube_channel_id) (output: latest_nasa_videos)"
+  },
+  {
+    "pair_id": "6",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "step": "retrieve the contact information for the \"marketing\" team (output: marketing_contacts)"
+  },
+  {
+    "pair_id": "7",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "step": "create a Microsoft Teams meeting for the marketing team on thursday_date afternoon (input: thursday_date, marketing_contacts) (output: meeting_confirmation)"
+  },
+  {
+    "pair_id": "8",
+    "goal": "Remind my team about the deadline via Outlook",
+    "step": "Get team contact list from Outlook (output: team_contacts)"
+  },
+  {
+    "pair_id": "9",
+    "goal": "Remind my team about the deadline via Outlook",
+    "step": "Send reminder email via Outlook (input: team_contacts) (output: email_confirmation)"
+  },
+  {
+    "pair_id": "10",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "step": "find Slack channel named \"general\" (output: general_channel_id)"
+  },
+  {
+    "pair_id": "11",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "step": "post message \"Good morning everyone!\" to Slack channel (input: general_channel_id) (output: message_post_confirmation)"
+  },
+  {
+    "pair_id": "12",
+    "goal": "Text me a 2FA code with Twilio",
+    "step": "send two_factor_code as an SMS message using Twilio (input: two_factor_code) (output: sms_sent_confirmation)"
+  },
+  {
+    "pair_id": "13",
+    "goal": "Open a bug for the website\u2019s contact form on GitHub",
+    "step": "Create a new bug issue on GitHub for the website's contact form (output: github_issue)"
+  },
+  {
+    "pair_id": "14",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "step": "Get new members from Discord server (output: new_members)"
+  },
+  {
+    "pair_id": "15",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "step": "Send welcome message to introductions channel on Discord (input: new_members) (output: message_confirmation)"
+  },
+  {
+    "pair_id": "16",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "step": "create a Stripe payment link for a $50 donation (output: payment_link_details)"
+  },
+  {
+    "pair_id": "17",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "step": "send the payment link to the donor (input: payment_link_details) (output: send_confirmation)"
+  },
+  {
+    "pair_id": "18",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "step": "Create a new Notion page titled \"2024 Goals\" (output: notion_page)"
+  },
+  {
+    "pair_id": "19",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "step": "Add a checklist block to the Notion page (input: notion_page) (output: checklist_block_confirmation)"
+  },
+  {
+    "pair_id": "20",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "step": "Get user ID for \"Alex\" in Asana (output: alex_user_id)"
+  },
+  {
+    "pair_id": "21",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "step": "Create a task in Asana titled \"Review Q2 budget\" assigned to alex_user_id with a due date of next Monday (input: alex_user_id) (output: asana_task_confirmation)"
+  },
+  {
+    "pair_id": "22",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "step": "Get lists from the user's default Trello board (output: trello_lists)"
+  },
+  {
+    "pair_id": "23",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "step": "Create a Trello card named \"Update the homepage\" on a list (input: trello_lists) (output: new_card)"
+  },
+  {
+    "pair_id": "24",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "step": "Get new emails from Gmail inbox (output: new_gmail_emails)"
+  },
+  {
+    "pair_id": "25",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "step": "Upload extracted_attachments to Dropbox (input: extracted_attachments) (output: dropbox_upload_results)"
+  },
+  {
+    "pair_id": "26",
+    "goal": "File a login bug in the Mobile App project on Jira",
+    "step": "create a bug issue in Jira for the \"Mobile App\" project with the summary \"Login Bug\" (output: jira_bug_issue)"
+  },
+  {
+    "pair_id": "27",
+    "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+    "step": "Create a new lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: salesforce_lead_creation_status)"
+  },
+  {
+    "pair_id": "28",
+    "goal": "Log a new contact from the conference in HubSpot",
+    "step": "Create a contact in HubSpot (output: contact_creation_confirmation)"
+  },
+  {
+    "pair_id": "29",
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "step": "upload team_photo_content to the \"Team Photos\" folder in Dropbox (input: team_photo_content) (output: dropbox_upload_status)"
+  },
+  {
+    "pair_id": "30",
+    "goal": "Get my most recent Shopify orders",
+    "step": "Get most recent Shopify orders (output: shopify_orders)"
+  },
+  {
+    "pair_id": "31",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "step": "create a Zoom meeting for the product team next Wednesday at 10am (input: next_wednesday_date) (output: zoom_meeting_details)"
+  },
+  {
+    "pair_id": "32",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "step": "Get SendGrid contact list named \"My Newsletter List\" (output: newsletter_list_details)"
+  },
+  {
+    "pair_id": "33",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "step": "Create and send email marketing campaign using newsletter_list_details for product launch (input: newsletter_list_details) (output: campaign_confirmation)"
+  },
+  {
+    "pair_id": "34",
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "step": "Add newuser@example.com as a member to a Mailchimp list (output: mailchimp_add_confirmation)"
+  },
+  {
+    "pair_id": "35",
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "step": "Create record in Airtable Inventory base for \"Blue Widget\" (output: airtable_record_creation_result)"
+  },
+  {
+    "pair_id": "36",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "step": "Upload the signed contract file to the 'Contracts' folder in Box (output: upload_confirmation)"
+  },
+  {
+    "pair_id": "37",
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "step": "Save updated project plan to OneDrive folder \"Projects/2024\" (output: save_confirmation)"
+  },
+  {
+    "pair_id": "38",
+    "goal": "Tweet that our new app is live!",
+    "step": "Create a tweet with the message \"Our new app is live!\" (output: tweet_confirmation)"
+  },
+  {
+    "pair_id": "39",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "Search Spotify for the track \"Here Comes the Sun\" (output: track_details)"
+  },
+  {
+    "pair_id": "40",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "Find the Spotify playlist named \"Morning Motivation\" (output: playlist_details)"
+  },
+  {
+    "pair_id": "41",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "Add the track to the Spotify playlist (input: track_details, playlist_details) (output: add_confirmation)"
+  },
+  {
+    "pair_id": "42",
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "step": "send message to Telegram group with content \"the meeting starts in 10 minutes\" (output: telegram_message_confirmation)"
+  },
+  {
+    "pair_id": "43",
+    "goal": "Summarize this article about climate change in 2024 using OpenAI",
+    "step": "Search for an article about \"climate change in 2024\" (output: article_search_results)"
+  },
+  {
+    "pair_id": "44",
+    "goal": "Summarize this article about climate change in 2024 using OpenAI",
+    "step": "Extract content from the most relevant article (input: article_search_results) (output: article_content)"
+  },
+  {
+    "pair_id": "45",
+    "goal": "Summarize this article about climate change in 2024 using OpenAI",
+    "step": "Summarize article_content using OpenAI (input: article_content) (output: summary_text)"
+  }
+]
