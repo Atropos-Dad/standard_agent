@@ -114,7 +114,7 @@ TOOL_SELECTION_PROMPT = (
    </role>
 
    <instructions>
-   Analyze the provided step and evaluate all candidate tools. Use the scoring criteria to assess each tool’s fitness for executing the step. Return the tool `id` with the highest total score. If no tool scores ≥60, return the word none.
+   Analyze the provided step and evaluate all candidate tools. Use the scoring criteria to assess each tool's fitness for executing the step. Return the tool `id` with the highest total score. If no tool scores ≥60, return the word none.
    You are selecting the **most execution-ready** tool, not simply the closest match.
    </instructions>
 
@@ -127,7 +127,7 @@ TOOL_SELECTION_PROMPT = (
    </input>
 
    <scoring_criteria>
-   - **Action Compatibility** (35 pts): Evaluate how well the tool’s primary action matches the step’s intent. Consider synonyms (e.g., "send" ≈ "post", "create" ≈ "add"), but prioritize tools that closely reflect the intended verb-object structure and scope. Penalize mismatches in type, scope, or intent (e.g., "get all members" for "get new members").
+   - **Action Compatibility** (35 pts): Evaluate how well the tool's primary action matches the step's intent. Consider synonyms (e.g., "send" ≈ "post", "create" ≈ "add"), but prioritize tools that closely reflect the intended verb-object structure and scope. Penalize mismatches in type, scope, or intent (e.g., "get all members" for "get new members").
 
    - **API Domain Match** (30 pts): This is a critical criterion.
        - **If the step EXPLICITLY mentions a specific platform or system (e.g., "Gmail", "Asana", "Microsoft Teams")**:
@@ -137,7 +137,7 @@ TOOL_SELECTION_PROMPT = (
            - **Relevant Match (25-30 pts):** If the tool's `api_name` is generally relevant to the task (e.g., a flight booking tool for "book a flight"). Prefer tools with broader applicability if multiple options exist.
            - **Irrelevant Match (0-10 pts):** If the tool's `api_name` is clearly irrelevant.
 
-   - **Parameter Compatibility** (20 pts): Determine if the tool’s required parameters are explicitly present in the step or clearly inferable. Penalize tools with ambiguous, unsupported, or overly strict input requirements.
+   - **Parameter Compatibility** (20 pts): Determine if the tool's required parameters are explicitly present in the step or clearly inferable. Penalize tools with ambiguous, unsupported, or overly strict input requirements.
 
    - **Workflow Fit** (10 pts): Assess how logically the tool integrates into the surrounding workflow. Does it build upon prior steps or prepare outputs needed for future ones?
 
@@ -155,8 +155,61 @@ TOOL_SELECTION_PROMPT = (
    </rules>
 
    <output_format>
-   Respond with a **single line** which only includes the selected tool’s `id`
+   Respond with a **single line** which only includes the selected tool's `id`
    **No additional text** should be included.
    </output_format>
    """
+)
+
+PARAMETER_GENERATION_PROMPT = (
+    """
+    <role>
+    You are a Parameter Builder within the Jentic agent ecosystem. Your mission is to enable seamless API execution by generating precise parameters from step context and memory data. You specialize in data extraction, content formatting, and parameter mapping to ensure successful tool execution.
+
+    Your core responsibilities:
+    - Extract meaningful data from complex memory structures
+    - Format content appropriately for target APIs
+    - Apply quantity constraints and filtering logic
+    - Generate valid parameters that enable successful API calls
+    </role>
+
+    <goal>
+    Generate precise JSON parameters for the specified API call by extracting relevant data from step context and memory.
+    </goal>
+
+    <input>
+    STEP: {step}
+    MEMORY: {step_inputs}
+    SCHEMA: {tool_schema}
+    ALLOWED_KEYS: {allowed_keys}
+    </input>
+
+    <data_extraction_rules>
+    • **Articles/News**: Extract title/headline and URL fields, format as "Title: URL\n"
+    • **Arrays**: Process each item, combine into formatted string
+    • **Nested Objects**: Access properties using dot notation
+    • **Quantities**: "a/an/one" = 1, "few" = 3, "several" = 5, numbers = exact
+    • **Never use placeholder text** - always extract real data from memory
+    </data_extraction_rules>
+
+    <instructions>
+    1. Analyze MEMORY for relevant data structures
+    2. Extract actual values using the data extraction rules
+    3. Format content appropriately for the target API
+    4. Apply quantity constraints from step language
+    5. Generate valid parameters using only ALLOWED_KEYS
+    </instructions>
+
+    <constraints>
+    - Output ONLY valid JSON - no markdown, explanations, or backticks
+    - Use only keys from ALLOWED_KEYS
+    - Extract actual data values from MEMORY, never placeholder text
+    - For messaging APIs: format as readable text with titles and links
+    - Required parameters take priority over optional ones
+    </constraints>
+
+    <output_format>
+    Valid JSON object starting with {{ and ending with }}
+    </output_format>
+    """
 )

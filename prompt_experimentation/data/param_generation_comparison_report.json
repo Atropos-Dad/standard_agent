@@ -1,0 +1,630 @@
+{
+  "summary": {
+    "total_scenarios": 12,
+    "evaluated_scenarios": 12,
+    "performance_metrics": {
+      "avg_json_validity": 1.0,
+      "avg_key_correctness": 0.917,
+      "avg_value_appropriateness": 0.793,
+      "avg_total_score": 0.905
+    },
+    "performance_distribution": {
+      "high_performers": "10/12 (83.3%)",
+      "medium_performers": "2/12 (16.7%)",
+      "low_performers": "0/12 (0.0%)"
+    },
+    "error_analysis": {
+      "json_parse_errors": 0,
+      "most_missing_keys": {
+        "parents": 1,
+        "limit": 1
+      },
+      "most_extra_keys": {}
+    },
+    "insights": [
+      "High performance (>0.8 score): 10/12 scenarios (83.3%)",
+      "Most frequently missing keys: parents(1x), limit(1x)"
+    ],
+    "best_performing_scenarios": [
+      {
+        "id": "stripe_invoice_client",
+        "step": "create an invoice for John Smith for web development service...",
+        "score": 1.0
+      },
+      {
+        "id": "zoom_product_meeting",
+        "step": "schedule a Zoom call for the product team next Wednesday at ...",
+        "score": 1.0
+      },
+      {
+        "id": "gmail_project_update",
+        "step": "email john@company.com about the project status with subject...",
+        "score": 0.95
+      }
+    ],
+    "worst_performing_scenarios": [
+      {
+        "id": "drive_quarterly_report",
+        "step": "upload the quarterly report to Google Drive Reports folder...",
+        "score": 0.8,
+        "main_issues": "Missing: 1 keys"
+      },
+      {
+        "id": "shopify_recent_orders",
+        "step": "get my most recent Shopify orders from the last week...",
+        "score": 0.8,
+        "main_issues": "Missing: 1 keys"
+      },
+      {
+        "id": "discord_simple_message",
+        "step": "send message 'Hello team!' to Discord channel 12345...",
+        "score": 0.85,
+        "main_issues": "Missing: 0 keys"
+      }
+    ]
+  },
+  "error_patterns": {
+    "json_parse_errors": [],
+    "missing_required_keys": {
+      "parents": 1,
+      "limit": 1
+    },
+    "extra_keys_added": {},
+    "value_type_mismatches": {
+      "channel_id: int -> str": 1
+    },
+    "common_mistakes": []
+  },
+  "results": [
+    {
+      "pair_id": "1",
+      "id": "discord_simple_message",
+      "step": "send message 'Hello team!' to Discord channel 12345",
+      "generated_params": "{\"channel_id\": \"12345\", \"content\": \"Hello team!\"}",
+      "raw_response": "```json\n{\"channel_id\": \"12345\", \"content\": \"Hello team!\"}\n```",
+      "step_inputs": {},
+      "allowed_keys": [
+        "channel_id",
+        "content"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "channel_id": 12345,
+          "content": "Hello team!"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.5,
+          "total_score": 0.85
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": [
+            {
+              "key": "channel_id",
+              "expected": 12345,
+              "generated": "12345"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pair_id": "2",
+      "id": "discord_news_articles",
+      "step": "send the latest 3 news articles to Discord channel #general",
+      "generated_params": "{\n  \"channel_id\": \"#general\",\n  \"content\": \"AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\\nTech Market Updates: https://bloomberg.com/tech-market\\nClimate Change Report: https://reuters.com/climate-report\"\n}",
+      "raw_response": "```json\n{\n  \"channel_id\": \"#general\",\n  \"content\": \"AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\\nTech Market Updates: https://bloomberg.com/tech-market\\nClimate Change Report: https://reuters.com/climate-report\"\n}\n```",
+      "step_inputs": {
+        "news_articles": [
+          {
+            "title": "AI Breakthrough in 2024",
+            "url": "https://techcrunch.com/ai-breakthrough",
+            "summary": "Scientists achieve new milestone in AI research"
+          },
+          {
+            "title": "Tech Market Updates",
+            "url": "https://bloomberg.com/tech-market",
+            "summary": "Markets show positive trends for tech stocks"
+          },
+          {
+            "title": "Climate Change Report",
+            "url": "https://reuters.com/climate-report",
+            "summary": "New climate data shows concerning trends"
+          },
+          {
+            "title": "Space Exploration",
+            "url": "https://nasa.gov/mars-mission",
+            "summary": "Mars mission shows promising results"
+          }
+        ]
+      },
+      "allowed_keys": [
+        "channel_id",
+        "content"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "channel_id": "#general",
+          "content": "AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\n  Tech Market Updates: https://bloomberg.com/tech-market\n  Climate Change Report: https://reuters.com/climate-report"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.75,
+          "total_score": 0.9249999999999999
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "3",
+      "id": "gmail_project_update",
+      "step": "email john@company.com about the project status with subject 'Weekly Update'",
+      "generated_params": "{\n  \"to\": \"john@company.com\",\n  \"subject\": \"Weekly Update\",\n  \"body\": \"Project: Website Redesign\\nCompletion: 75%\\nNext Milestone: User Testing (Due: 2024-02-15)\\nBlockers:\\n- Waiting for content from marketing team\"\n}",
+      "raw_response": "```json\n{\n  \"to\": \"john@company.com\",\n  \"subject\": \"Weekly Update\",\n  \"body\": \"Project: Website Redesign\\nCompletion: 75%\\nNext Milestone: User Testing (Due: 2024-02-15)\\nBlockers:\\n- Waiting for content from marketing team\"\n}\n```",
+      "step_inputs": {
+        "project_status": {
+          "name": "Website Redesign",
+          "completion": "75%",
+          "next_milestone": "User Testing",
+          "due_date": "2024-02-15",
+          "blockers": [
+            "Waiting for content from marketing team"
+          ]
+        }
+      },
+      "allowed_keys": [
+        "to",
+        "subject",
+        "body"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "to": "john@company.com",
+          "subject": "Weekly Update",
+          "body": "Hi John,\n\n  Here's the weekly update on the Website Redesign project:\n\n  Project: Website Redesign\n  Progress: 75% complete\n  Next Milestone: User Testing\n  Due Date: 2024-02-15\n\n  Current Blockers:\n  - Waiting for content from marketing team\n\n  Let me know if you have any questions.\n\n  Best regards\n"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.8333333333333334,
+          "total_score": 0.95
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "4",
+      "id": "calendar_team_meeting",
+      "step": "create a team meeting for next Friday at 2pm with Alice, Bob, and Charlie",
+      "generated_params": "{\"summary\": \"Team Meeting\", \"start\": \"2024-02-09T14:00:00\", \"attendees\": [\"alice@company.com\", \"bob@company.com\", \"charlie@company.com\"]}",
+      "raw_response": "{\"summary\": \"Team Meeting\", \"start\": \"2024-02-09T14:00:00\", \"attendees\": [\"alice@company.com\", \"bob@company.com\", \"charlie@company.com\"]}",
+      "step_inputs": {
+        "team_members": [
+          {
+            "name": "Alice",
+            "email": "alice@company.com"
+          },
+          {
+            "name": "Bob",
+            "email": "bob@company.com"
+          },
+          {
+            "name": "Charlie",
+            "email": "charlie@company.com"
+          }
+        ],
+        "next_friday": "2024-02-09"
+      },
+      "allowed_keys": [
+        "summary",
+        "start",
+        "attendees"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "summary": "Team meeting",
+          "start": "2024-02-09T14:00:00",
+          "attendees": [
+            "alice@company.com",
+            "bob@company.com",
+            "charlie@company.com"
+          ]
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.8333333333333334,
+          "total_score": 0.95
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "5",
+      "id": "github_bug_issue",
+      "step": "create a GitHub issue for the login bug with priority high",
+      "generated_params": "{\n  \"title\": \"Users cannot login with Google OAuth\",\n  \"body\": \"Description: Multiple users report 500 error when using Google login\\n\\nSteps to Reproduce:\\n1. Go to login page\\n2. Click 'Sign in with Google'\\n3. Complete OAuth flow\\n4. Observe 500 error\",\n  \"labels\": [\n    \"priority: high\"\n  ]\n}",
+      "raw_response": "```json\n{\n  \"title\": \"Users cannot login with Google OAuth\",\n  \"body\": \"Description: Multiple users report 500 error when using Google login\\n\\nSteps to Reproduce:\\n1. Go to login page\\n2. Click 'Sign in with Google'\\n3. Complete OAuth flow\\n4. Observe 500 error\",\n  \"labels\": [\n    \"priority: high\"\n  ]\n}\n```",
+      "step_inputs": {
+        "bug_report": {
+          "title": "Users cannot login with Google OAuth",
+          "description": "Multiple users report 500 error when using Google login",
+          "steps_to_reproduce": [
+            "Go to login page",
+            "Click 'Sign in with Google'",
+            "Complete OAuth flow",
+            "Observe 500 error"
+          ],
+          "severity": "high",
+          "reporter": "jane@company.com"
+        }
+      },
+      "allowed_keys": [
+        "title",
+        "body",
+        "labels"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "title": "Users cannot login with Google OAuth",
+          "body": "Multiple users report 500 error when using Google login",
+          "labels": [
+            "bug",
+            "high-priority"
+          ]
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.6,
+          "total_score": 0.8799999999999999
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "6",
+      "id": "slack_metrics_summary",
+      "step": "post a few key metrics to #analytics channel",
+      "generated_params": "{\"channel\": \"#analytics\", \"text\": \"Active Users: 1247\\nRevenue: $23,456\\nConversion Rate: 3.2%\"}",
+      "raw_response": "{\"channel\": \"#analytics\", \"text\": \"Active Users: 1247\\nRevenue: $23,456\\nConversion Rate: 3.2%\"}",
+      "step_inputs": {
+        "daily_metrics": {
+          "active_users": 1247,
+          "revenue": "$23,456",
+          "conversion_rate": "3.2%",
+          "errors": 12,
+          "response_time": "245ms",
+          "new_signups": 34
+        }
+      },
+      "allowed_keys": [
+        "channel",
+        "text"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "channel": "#analytics",
+          "text": "daily_metrics"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.75,
+          "total_score": 0.9249999999999999
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "7",
+      "id": "twitter_ai_thread",
+      "step": "create a Twitter thread about recent AI developments",
+      "generated_params": "{\n  \"text\": \"Recent AI Developments:\\n\\nTitle: GPT-4 Vision Released\\nSummary: OpenAI releases multimodal capabilities\\n\\nTitle: Google Gemini Update\\nSummary: Improved reasoning and coding abilities\\n\\nTitle: Meta AI Assistant\\nSummary: New AI assistant for Instagram and WhatsApp\"\n}",
+      "raw_response": "```json\n{\n  \"text\": \"Recent AI Developments:\\n\\nTitle: GPT-4 Vision Released\\nSummary: OpenAI releases multimodal capabilities\\n\\nTitle: Google Gemini Update\\nSummary: Improved reasoning and coding abilities\\n\\nTitle: Meta AI Assistant\\nSummary: New AI assistant for Instagram and WhatsApp\"\n}\n```",
+      "step_inputs": {
+        "ai_developments": [
+          {
+            "title": "GPT-4 Vision Released",
+            "summary": "OpenAI releases multimodal capabilities",
+            "impact": "High",
+            "date": "2024-01-15"
+          },
+          {
+            "title": "Google Gemini Update",
+            "summary": "Improved reasoning and coding abilities",
+            "impact": "High",
+            "date": "2024-01-20"
+          },
+          {
+            "title": "Meta AI Assistant",
+            "summary": "New AI assistant for Instagram and WhatsApp",
+            "impact": "Medium",
+            "date": "2024-01-25"
+          }
+        ]
+      },
+      "allowed_keys": [
+        "text"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "text": "\ud83e\uddf5 Thread: Major AI developments from January 2024. Starting with GPT-4 Vision... 1/"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.5,
+          "total_score": 0.85
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "8",
+      "id": "drive_quarterly_report",
+      "step": "upload the quarterly report to Google Drive Reports folder",
+      "generated_params": "{\"name\": \"Q4_Report_2024.pdf\", \"media_body\": \"Financial report showing 25% growth in Q4...\"}",
+      "raw_response": "{\"name\": \"Q4_Report_2024.pdf\", \"media_body\": \"Financial report showing 25% growth in Q4...\"}",
+      "step_inputs": {
+        "quarterly_report": {
+          "filename": "Q4_Report_2024.pdf",
+          "content": "Financial report showing 25% growth in Q4...",
+          "size": "2.5MB"
+        }
+      },
+      "allowed_keys": [
+        "name",
+        "parents",
+        "media_body"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "name": "Q4_Report_2024.pdf",
+          "parents": [
+            "Reports"
+          ],
+          "media_body": "Financial report showing 25% growth in Q4..."
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 0.5,
+          "values_appropriate": 1.0,
+          "total_score": 0.8
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [
+            "parents"
+          ],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "9",
+      "id": "stripe_invoice_client",
+      "step": "create an invoice for John Smith for web development services ($2,500)",
+      "generated_params": "{\"customer_email\": \"john.smith@example.com\", \"amount\": 2500, \"currency\": \"USD\", \"description\": \"Web development services - Q4 2024\"}",
+      "raw_response": "{\"customer_email\": \"john.smith@example.com\", \"amount\": 2500, \"currency\": \"USD\", \"description\": \"Web development services - Q4 2024\"}",
+      "step_inputs": {
+        "client_info": {
+          "name": "John Smith",
+          "email": "john.smith@example.com",
+          "company": "Smith Consulting"
+        },
+        "service_details": {
+          "description": "Web development services - Q4 2024",
+          "amount": 2500,
+          "currency": "USD",
+          "hours": 50,
+          "hourly_rate": 50
+        }
+      },
+      "allowed_keys": [
+        "customer_email",
+        "amount",
+        "currency",
+        "description"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "customer_email": "john.smith@example.com",
+          "amount": 2500,
+          "currency": "USD",
+          "description": "Web development services - Q4 2024"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 1.0,
+          "total_score": 1.0
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "10",
+      "id": "asana_task_assignment",
+      "step": "assign Alex to review the Q2 budget in Asana, due next Monday",
+      "generated_params": "{\n  \"name\": \"Q2 Budget Review\",\n  \"assignee\": \"Alex\",\n  \"due_on\": \"2024-02-12\",\n  \"notes\": \"File Location: /shared/budgets/Q2_2024.xlsx\"\n}",
+      "raw_response": "```json\n{\n  \"name\": \"Q2 Budget Review\",\n  \"assignee\": \"Alex\",\n  \"due_on\": \"2024-02-12\",\n  \"notes\": \"File Location: /shared/budgets/Q2_2024.xlsx\"\n}\n```",
+      "step_inputs": {
+        "budget_info": {
+          "title": "Q2 Budget Review",
+          "file_location": "/shared/budgets/Q2_2024.xlsx",
+          "priority": "high"
+        },
+        "assignee": {
+          "name": "Alex",
+          "email": "alex@company.com"
+        },
+        "next_monday": "2024-02-12"
+      },
+      "allowed_keys": [
+        "name",
+        "assignee",
+        "due_on",
+        "notes"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "name": "Q2 Budget Review",
+          "assignee": "alex@company.com",
+          "due_on": "2024-02-12",
+          "notes": "Budget file located at: /shared/budgets/Q2_2024.xlsx\\nPriority: high"
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 0.75,
+          "total_score": 0.9249999999999999
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "11",
+      "id": "zoom_product_meeting",
+      "step": "schedule a Zoom call for the product team next Wednesday at 10am",
+      "generated_params": "{\"topic\": \"Product roadmap discussion\", \"start_time\": \"2024-02-07T10:00:00\", \"duration\": 60}",
+      "raw_response": "{\"topic\": \"Product roadmap discussion\", \"start_time\": \"2024-02-07T10:00:00\", \"duration\": 60}",
+      "step_inputs": {
+        "meeting_details": {
+          "topic": "Product roadmap discussion",
+          "duration": 60,
+          "agenda": [
+            "Q1 features",
+            "User feedback review",
+            "Technical debt"
+          ]
+        },
+        "product_team": [
+          {
+            "name": "Sarah",
+            "email": "sarah@company.com"
+          },
+          {
+            "name": "Mike",
+            "email": "mike@company.com"
+          },
+          {
+            "name": "Lisa",
+            "email": "lisa@company.com"
+          }
+        ],
+        "next_wednesday": "2024-02-07T10:00:00"
+      },
+      "allowed_keys": [
+        "topic",
+        "start_time",
+        "duration"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "topic": "Product roadmap discussion",
+          "start_time": "2024-02-07T10:00:00",
+          "duration": 60
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 1.0,
+          "values_appropriate": 1.0,
+          "total_score": 1.0
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    },
+    {
+      "pair_id": "12",
+      "id": "shopify_recent_orders",
+      "step": "get my most recent Shopify orders from the last week",
+      "generated_params": "{\"created_at_min\": \"2024-01-29\", \"created_at_max\": \"2024-02-05\"}",
+      "raw_response": "{\"created_at_min\": \"2024-01-29\", \"created_at_max\": \"2024-02-05\"}",
+      "step_inputs": {
+        "time_filter": {
+          "period": "last_week",
+          "start_date": "2024-01-29",
+          "end_date": "2024-02-05"
+        }
+      },
+      "allowed_keys": [
+        "created_at_min",
+        "created_at_max",
+        "limit"
+      ],
+      "evaluation": {
+        "expected_params": {
+          "created_at_min": "2024-01-29",
+          "created_at_max": "2024-02-05",
+          "limit": 50
+        },
+        "scores": {
+          "json_valid": 1,
+          "keys_correct": 0.5,
+          "values_appropriate": 1.0,
+          "total_score": 0.8
+        },
+        "details": {
+          "json_parse_error": null,
+          "missing_keys": [
+            "limit"
+          ],
+          "extra_keys": [],
+          "value_mismatches": []
+        }
+      }
+    }
+  ]
+}

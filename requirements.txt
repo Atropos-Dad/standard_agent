@@ -12,3 +12,5 @@ pytest>=8.0
 pytest-mock
 ruff            # fast linter/formatter
 mypy
+questionary     # interactive CLI prompts
+rich           # rich console output

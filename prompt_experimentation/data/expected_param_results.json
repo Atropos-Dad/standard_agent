@@ -1,0 +1,128 @@
+[
+  {
+    "pair_id": "1",
+    "id": "discord_simple_message",
+    "step": "send message 'Hello team!' to Discord channel 12345",
+    "expected_params": {
+      "channel_id": 12345,
+      "content": "Hello team!"
+    }
+  },
+  {
+    "pair_id": "2",
+    "id": "discord_news_articles",
+    "step": "send the latest 3 news articles to Discord channel #general",
+    "expected_params": {
+      "channel_id": "#general",
+      "content": "AI Breakthrough in 2024: https://techcrunch.com/ai-breakthrough\n  Tech Market Updates: https://bloomberg.com/tech-market\n  Climate Change Report: https://reuters.com/climate-report"
+    }
+  },
+  {
+    "pair_id": "3",
+    "id": "gmail_project_update",
+    "step": "email john@company.com about the project status with subject 'Weekly Update'",
+    "expected_params": {
+      "to": "john@company.com",
+      "subject": "Weekly Update",
+      "body": "Hi John,\n\n  Here's the weekly update on the Website Redesign project:\n\n  Project: Website Redesign\n  Progress: 75% complete\n  Next Milestone: User Testing\n  Due Date: 2024-02-15\n\n  Current Blockers:\n  - Waiting for content from marketing team\n\n  Let me know if you have any questions.\n\n  Best regards\n"
+    }
+  },
+  {
+    "pair_id": "4",
+    "id": "calendar_team_meeting",
+    "step": "create a team meeting for next Friday at 2pm with Alice, Bob, and Charlie",
+    "expected_params": {
+      "summary": "Team meeting",
+      "start": "2024-02-09T14:00:00",
+      "attendees": [
+        "alice@company.com",
+        "bob@company.com",
+        "charlie@company.com"
+      ]
+    }
+  },
+  {
+    "pair_id": "5",
+    "id": "github_bug_issue",
+    "step": "create a GitHub issue for the login bug with priority high",
+    "expected_params": {
+      "title": "Users cannot login with Google OAuth",
+      "body": "Multiple users report 500 error when using Google login",
+      "labels": [
+        "bug",
+        "high-priority"
+      ]
+    }
+  },
+  {
+    "pair_id": "6",
+    "id": "slack_metrics_summary",
+    "step": "post a few key metrics to #analytics channel",
+    "expected_params": {
+      "channel": "#analytics",
+      "text": "daily_metrics"
+    }
+  },
+  {
+    "pair_id": "7",
+    "id": "twitter_ai_thread",
+    "step": "create a Twitter thread about recent AI developments",
+    "expected_params": {
+      "text": "\ud83e\uddf5 Thread: Major AI developments from January 2024. Starting with GPT-4 Vision... 1/"
+    }
+  },
+  {
+    "pair_id": "8",
+    "id": "drive_quarterly_report",
+    "step": "upload the quarterly report to Google Drive Reports folder",
+    "expected_params": {
+      "name": "Q4_Report_2024.pdf",
+      "parents": [
+        "Reports"
+      ],
+      "media_body": "Financial report showing 25% growth in Q4..."
+    }
+  },
+  {
+    "pair_id": "9",
+    "id": "stripe_invoice_client",
+    "step": "create an invoice for John Smith for web development services ($2,500)",
+    "expected_params": {
+      "customer_email": "john.smith@example.com",
+      "amount": 2500,
+      "currency": "USD",
+      "description": "Web development services - Q4 2024"
+    }
+  },
+  {
+    "pair_id": "10",
+    "id": "asana_task_assignment",
+    "step": "assign Alex to review the Q2 budget in Asana, due next Monday",
+    "expected_params": {
+      "name": "Q2 Budget Review",
+      "assignee": "alex@company.com",
+      "due_on": "2024-02-12",
+      "notes": "Budget file located at: /shared/budgets/Q2_2024.xlsx\\nPriority: high"
+    }
+  },
+  {
+    "pair_id": "11",
+    "id": "zoom_product_meeting",
+    "step": "schedule a Zoom call for the product team next Wednesday at 10am",
+    "expected_params": {
+      "topic": "Product roadmap discussion",
+      "start_time": "2024-02-07T10:00:00",
+      "duration": 60
+    }
+  },
+  {
+    "pair_id": "12",
+    "id": "shopify_recent_orders",
+    "step": "get my most recent Shopify orders from the last week",
+    "expected_params": {
+      "created_at_min": "2024-01-29",
+      "created_at_max": "2024-02-05",
+      "limit": 50
+    }
+  }
+]
