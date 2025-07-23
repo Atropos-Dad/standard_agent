@@ -215,79 +215,90 @@ PARAMETER_GENERATION_PROMPT = (
 
 KEYWORD_SEARCH_PROMPT = """
   <keyword_instructions>
-  You will be given a step that requires an API or tool call - the goal is just purely for context, generate a focused keyword search query to find the appropriate tool capability:
+  You will be given a step that requires an API or tool call. Generate a focused keyword search query to find the appropriate tool capability:
 
   **Core Rules:**
   - Describe the FUNCTION/CAPABILITY needed, not the user's specific data
-  - Use 4-6 keywords maximum - prioritize precision
-  - Focus on ACTION + RESOURCE TYPE + optional CONTEXT
+  - Use 4-6 keywords maximum - prioritize precision over brevity
+  - Focus on ACTION + RESOURCE TYPE + SERVICE + DISTINGUISHING CONTEXT
   - Never include user-specific content, queries, search terms, or data values
 
-  **Capability-Focused Structure:**
-  1. **Primary Action Verb** - What the tool does (send, get, create, upload, delete, update, fetch, post)
-  2. **Resource Type** - What it operates on (email, message, file, event, issue, video, member, article)
-  3. **Optional Service Context** - Only if the platform is explicitly mentioned in the step
-  4. **Optional Operation Context** - Distinguishing qualifiers (channel, folder, repository, latest, new)
+  **Enhanced Structure (in order of importance):**
+  1. **Primary Action Verb** - What the tool does (send, get, create, upload, delete, update, fetch, post, search, list, add, assign)
+  2. **Resource Type** - What it operates on (email, message, file, event, issue, video, member, article, task, card, link, channel)
+  3. **Service Context** - Platform/service when mentioned (gmail, slack, discord, github, spotify, stripe, asana, trello)
+  4. **Distinguishing Context** - Critical qualifiers that differentiate similar operations:
+    - Location: (channel, folder, repository, board, list, server)
+    - Timing: (latest, new, recent)
+    - Scope: (user, member, group)
+    - Operation type: (assign, due, notification)
 
-  **What NOT to Include:**
-  - User's search queries ("artificial intelligence", "team sync", "bug report")
-  - Specific content ("Good morning everyone", file names, email subjects)
-  - User data (email addresses, dates, channel IDs, folder names)
-  - Generic filler words ("content", "data", "information", "about")
+  **Improved Verb Selection:**
+  - **Communication**: send, post, notify, message
+  - **Retrieval**: get, fetch, list, search, find
+  - **Creation**: create, add, make, generate
+  - **File Operations**: upload, download, save, attach
+  - **Management**: update, delete, assign, manage
+  - **User Operations**: add, invite, remove, get
 
-  **Verb Selection Priority:**
-  - Messaging operations: send, post
-  - Data retrieval: get, fetch, list
-  - Content creation: create, add
-  - File operations: upload, download
-  - Management: update, delete, manage
+  **Service Context Priority:**
+  - ALWAYS include service name when explicitly mentioned in the step
+  - Use common abbreviations when they're standard (github vs git, youtube vs video platform)
 
-  **Quality Check Questions:**
-  1. Would this query find tools that perform this type of operation?
-  2. Does it avoid user-specific content and focus on capability?
-  3. Is it specific enough to distinguish from similar but different operations?
-  4. Would a developer use these terms when naming or searching for this functionality?
+  **Enhanced Quality Checks:**
+  1. Would this query find tools that perform this exact type of operation?
+  2. Does it distinguish from similar operations on the same platform?
+  3. Does it include the service context when that's critical for tool selection?
+  4. Would this help rank the correct tool higher than similar alternatives?
+
+  **Critical Pattern Recognition:**
+  - User operations (get user, add member, find user) need "user" or "member" qualifier
+  - Channel/group operations need location context (discord channel, slack channel)
+  - Assignment operations need "assign" verb specifically
+  - Latest/new content needs temporal qualifier
+  - File operations with destinations need location context (folder, drive)
 
   **Output Format:**
-  `→ keyword search query: "<action_verb> <resource_type> [service] [context]"`
+  `→ keyword search query: "<action_verb> <resource_type> <service> [context]"`
 
   **Skip keyword queries for:**
   - Pure reasoning tasks (summarization, analysis, formatting)
   - Data transformation that doesn't require external tools
   - Logic operations or conditional flows
 
-  **Examples:**
+  **Enhanced Examples:**
 
-  Goal:
-  Gather the latest 10 Hacker News posts about ‘AI’, summarise them, and email the summary to alice@example.com
-  Step:
-  - fetch latest 10 Hacker News posts containing “AI” (output: hn_posts)
-    → keyword search query: "get fetch posts hackernews searchquery filter"
+  Goal: Add a team sync to my Google Calendar for next Friday at 2pm
+  Step: create a calendar event titled "team sync" on Google Calendar for next_friday_date at 2pm
+  → keyword search query: "create calendar event google calendar"
 
-  Goal:
-  Search NYT articles about artificial intelligence and send them to Discord channel 12345
-  Step:
-  - send articles as a Discord message to Discord channel 12345 (input: nyt_articles) (output: post_confirmation)
-    → keyword search query: "send message discord channel post content"
+  Goal: Assign Alex to review the Q2 budget in Asana, due next Monday  
+  Step: Get user ID for "Alex" in Asana
+  → keyword search query: "get user asana id member"
 
-  Goal:
-  Make a $50 donation link with Stripe and send it to the donor
-  Step:
-  - create a Stripe payment link for a $50 donation (output: payment_link_details)
-    → keyword search query: "create payment link stripe donation amount"
+  Goal: Add a card to update the homepage on my Trello board
+  Step: Get lists from the user's default Trello board
+  → keyword search query: "get list trello board"
 
-  Goal:
-  Welcome new members in the introductions channel on Discord
-  Step:
-  - get new members from Discord server (output: new_members)
-    → keyword search query: "get member discord server list"
+  Goal: Welcome new members in the introductions channel on Discord
+  Step: Get new members from Discord server
+  → keyword search query: "get member discord server new"
 
-  Goal:
-  Gather the latest 10 Hacker News posts about ‘AI’, summarise them, and email the summary to alice@example.com
-  Step:
-  - email summary_text to alice@example.com (input: summary_text) (output: email_confirmation)
-    → keyword search query: "post send email gmail to user"
+  Goal: Show me NASA's latest YouTube videos
+  Step: get latest videos from nasa_youtube_channel_id
+  → keyword search query: "get video youtube latest channel"
 
+  Goal: Add Here Comes the Sun to my Morning Motivation playlist on Spotify
+  Step: Find the Spotify playlist named "Morning Motivation"
+  → keyword search query: "get playlist spotify user name"
+
+  Goal: Text me a 2FA code with Twilio
+  Step: send two_factor_code as an SMS message using Twilio
+  → keyword search query: "send SMS message twilio text"
+
+  Goal: Automatically save Gmail attachments to Dropbox with Zapier
+  Step: Get new emails from Gmail inbox
+  → keyword search query: "get email gmail new inbox"
   </keyword_instructions>
 
   <goal>
@@ -297,4 +308,4 @@ KEYWORD_SEARCH_PROMPT = """
   <step>
   Step: {step}
   </step>
-  """
+"""
