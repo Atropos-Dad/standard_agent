@@ -1,8 +1,8 @@
 import json
 from collections import defaultdict
 
-RESULTS_FILE = "prompt_experimentation/data/param_generation_results.json"
-REPORT_FILE = "prompt_experimentation/data/param_generation_comparison_report.json"
+RESULTS_FILE = "prompt_experimentation/data/param_generation/param_generation_results.json"
+REPORT_FILE = "prompt_experimentation/data/param_generation/param_generation_comparison_report.json"
 
 def analyze_common_errors(results):
     """Analyze common patterns in parameter generation errors"""

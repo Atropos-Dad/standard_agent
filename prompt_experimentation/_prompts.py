@@ -1,36 +1,3 @@
-SEARCH_QUERIES = [
-    {"provider": "Google", "goal": "Email John about the project update using Gmail"},
-    {"provider": "Google", "goal": "Add a team sync to my Google Calendar for next Friday at 2pm"},
-    {"provider": "Google", "goal": "Put the quarterly report in my Drive, in the Reports folder"},
-    {"provider": "Google", "goal": "Show me NASA’s latest YouTube videos"},
-    {"provider": "Microsoft", "goal": "Set up a Teams meeting with marketing for Thursday afternoon"},
-    {"provider": "Microsoft", "goal": "Remind my team about the deadline via Outlook"},
-    {"provider": "Slack", "goal": "Say good morning to everyone in #general on Slack"},
-    {"provider": "Twilio", "goal": "Text me a 2FA code with Twilio"},
-    {"provider": "GitHub", "goal": "Open a bug for the website’s contact form on GitHub"},
-    {"provider": "Discord", "goal": "Welcome new members in the introductions channel on Discord"},
-    {"provider": "Stripe", "goal": "Make a $50 donation link with Stripe and send it to the donor"},
-    {"provider": "Notion", "goal": "Start a 2024 Goals page in Notion with a checklist"},
-    {"provider": "Asana", "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday"},
-    {"provider": "Trello", "goal": "Add a card to update the homepage on my Trello board"},
-    {"provider": "Zapier", "goal": "Automatically save Gmail attachments to Dropbox with Zapier"},
-    {"provider": "Jira", "goal": "File a login bug in the Mobile App project on Jira"},
-    {"provider": "Salesforce", "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com"},
-    {"provider": "HubSpot", "goal": "Log a new contact from the conference in HubSpot"},
-    {"provider": "Dropbox", "goal": "Upload the latest team photo to Dropbox, Team Photos folder"},
-    {"provider": "Shopify", "goal": "Get my most recent Shopify orders"},
-    {"provider": "Zoom", "goal": "Book a Zoom call for the product team next Wednesday at 10am"},
-    {"provider": "SendGrid", "goal": "Email my newsletter list about our new product launch using SendGrid"},
-    {"provider": "Mailchimp", "goal": "Add newuser@example.com to my Mailchimp list"},
-    {"provider": "Airtable", "goal": "Add Blue Widget to my Inventory base in Airtable"},
-    {"provider": "Box", "goal": "Put the signed contract in my Box Contracts folder"},
-    {"provider": "OneDrive", "goal": "Save the updated project plan to OneDrive, Projects/2024"},
-    {"provider": "Twitter", "goal": "Tweet that our new app is live!"},
-    {"provider": "Spotify", "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify"},
-    {"provider": "Telegram", "goal": "Let my Telegram group know the meeting starts in 10 minutes"},
-    {"provider": "OpenAI", "goal": "Summarize this article about climate change in 2024 using OpenAI"},
-]
-
 LLM_BULLET_PROMPT = """
     <role>
     You are a world-class planning assistant operating within the Jentic platform.
