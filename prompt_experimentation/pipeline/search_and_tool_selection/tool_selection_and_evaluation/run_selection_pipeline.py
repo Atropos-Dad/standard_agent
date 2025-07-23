@@ -21,13 +21,13 @@ def run_command(cmd, description):
 if __name__ == "__main__":
     # Pipeline 3: LLM tool selection and evaluation  
     run_command(
-        "python -m prompt_experimentation.pipeline.search_and_tool_selection.03_llm_tool_selection_and_eval",
+        "python -m prompt_experimentation.pipeline.search_and_tool_selection.tool_selection_and_evaluation.03_llm_tool_selection_and_eval",
         "Pipeline 3 - LLM tool selection and evaluation"
     )
     
     # Pipeline 4: Comparison
     run_command(
-        "python -m prompt_experimentation.pipeline.search_and_tool_selection.04_comparison",
+        "python -m prompt_experimentation.pipeline.search_and_tool_selection.tool_selection_and_evaluation.04_comparison",
         "Pipeline 4 - Comparison"
     )
     

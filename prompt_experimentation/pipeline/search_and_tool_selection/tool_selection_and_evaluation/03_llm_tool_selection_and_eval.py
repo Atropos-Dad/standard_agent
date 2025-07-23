@@ -6,7 +6,8 @@ from jentic_agents.utils.llm import LiteLLMChatLLM
 from prompt_experimentation._prompts import TOOL_SELECTION_PROMPT
 import toml
 
-config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.toml")
+config = toml.load(config_path)
 llm_cfg = config["llm_tool_selection_and_eval"]
 paths_cfg = config["paths"]
 

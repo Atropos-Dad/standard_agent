@@ -3,22 +3,26 @@ import os
 import re
 from tqdm import tqdm
 import concurrent.futures
-from jentic_agents.platform.jentic_client import JenticClient
-from jentic_agents.utils.llm import LiteLLMChatLLM
 from prompt_experimentation._prompts import LLM_BULLET_PROMPT
 from prompt_experimentation._test_scenarios import SEARCH_QUERIES
+import toml
+from jentic_agents.utils.llm import LiteLLMChatLLM
 
-API_KEY = os.getenv("JENTIC_API_KEY")
-model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
-TOP_K = 10
-MAX_WORKERS = 60
-TOOL_SEARCH_WORKERS = 8
+config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.toml")
+config = toml.load(config_path)
+gen_cfg = config["generate_keyword_search"]
+paths_cfg = config["paths"]
 
-PLAN_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/llm_bullet_plans.json"
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
+model_name = gen_cfg["llm_model"]
+MAX_WORKERS = gen_cfg["max_workers"]
 
-client = JenticClient(api_key=API_KEY)
-llm = LiteLLMChatLLM(model=model_name, temperature=0.2)
+llm = LiteLLMChatLLM(model=model_name, temperature=gen_cfg["llm_temperature"])
+
+KEYWORD_QUERIES_FILE = os.path.join(
+    os.path.dirname(paths_cfg["keyword_search_ranking_report"]),
+    "01_keyword_search_ranking_eval_queries.json"
+)
+os.makedirs(os.path.dirname(KEYWORD_QUERIES_FILE), exist_ok=True)
 
 def generate_plan(entry):
     goal = entry["goal"]
@@ -31,7 +35,7 @@ def generate_plan(entry):
         plan = llm.chat(llm_messages).strip()
     except Exception as e:
         plan = f"llm_error: {e}"
-    return {"provider": entry["provider"], "goal": goal, "plan": plan}
+    return {"provider": entry.get("provider", ""), "goal": goal, "plan": plan}
 
 def extract_steps_and_keywords(plan_entry):
     goal = plan_entry["goal"]
@@ -50,22 +54,12 @@ def extract_steps_and_keywords(plan_entry):
             m = re.match(r'→ keyword search query: "([^"]+)"', line)
             if m and last_step:
                 results.append({
-                    "provider": plan_entry["provider"],
+                    "provider": plan_entry.get("provider", ""),
                     "goal": goal,
                     "step": last_step,
                     "keyword_search_query": m.group(1)
                 })
     return results
-
-def tool_search(entry):
-    keyword_query = entry["keyword_search_query"]
-    try:
-        search_results = client.search(keyword_query, top_k=TOP_K)
-    except Exception as e:
-        search_results = f"search_error: {e}"
-    enriched = dict(entry)
-    enriched["tool_search_results"] = search_results
-    return enriched
 
 if __name__ == "__main__":
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -75,26 +69,15 @@ if __name__ == "__main__":
             desc="Generating LLM plans",
             unit="goal"
         ))
-    with open(PLAN_RESULTS_FILE, "w") as f:
-        json.dump(plans, f, indent=2)
+    # Save all plans (optional, for debugging)
+    # with open(os.path.join(os.path.dirname(KEYWORD_QUERIES_FILE), "01_keyword_search_ranking_eval_plans.json"), "w") as f:
+    #     json.dump(plans, f, indent=2)
 
     all_step_keyword_entries = []
     for plan_entry in plans:
         all_step_keyword_entries.extend(extract_steps_and_keywords(plan_entry))
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=TOOL_SEARCH_WORKERS) as executor:
-        tool_search_results = list(tqdm(
-            executor.map(tool_search, all_step_keyword_entries),
-            total=len(all_step_keyword_entries),
-            desc="Tool search",
-            unit="query"
-        ))
-    with open(KEYWORD_TOOL_SEARCH_RESULTS_FILE, "w") as f:
-        json.dump(tool_search_results, f, indent=2)
+    with open(KEYWORD_QUERIES_FILE, "w") as f:
+        json.dump(all_step_keyword_entries, f, indent=2)
 
-    # Assign pair_id as a simple string index
-    for idx, entry in enumerate(tool_search_results, 1):
-        entry["pair_id"] = str(idx)
-
-    print(f"Plans written to {PLAN_RESULTS_FILE}")
-    print(f"Tool search results written to {KEYWORD_TOOL_SEARCH_RESULTS_FILE}") 
+    print(f"Keyword search queries written to {KEYWORD_QUERIES_FILE}") 

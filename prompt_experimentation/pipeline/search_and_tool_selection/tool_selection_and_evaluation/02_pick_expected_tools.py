@@ -3,7 +3,8 @@ import questionary
 import toml
 import os
 
-config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.toml")
+config = toml.load(config_path)
 pick_cfg = config["pick_expected_tools"]
 paths_cfg = config["paths"]
 

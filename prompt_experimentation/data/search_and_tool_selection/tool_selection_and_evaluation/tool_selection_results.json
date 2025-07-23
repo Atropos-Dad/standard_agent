@@ -154,9 +154,9 @@
     "goal": "Welcome new members in the introductions channel on Discord",
     "step": "Get new members from Discord server (output: new_members)",
     "keyword_search_query": "get new members discord server list",
-    "selected_tool_id": "6913b91a51c3e8096bc04d8326909359",
+    "selected_tool_id": "6c0847f856183b841cea6617a87ba238",
     "name": "",
-    "description": "GET /guilds/{guild_id}/members",
+    "description": "GET /guilds/{guild_id}/new-member-welcome",
     "type": "operation",
     "api_name": "discord.com",
     "parameters": {}
@@ -193,7 +193,12 @@
     "goal": "Make a $50 donation link with Stripe and send it to the donor",
     "step": "send the payment link to the donor (input: payment_link_details) (output: send_confirmation)",
     "keyword_search_query": "send email link to donor",
-    "selected_tool_id": "9ba302a5eeb9815103e97974a3ae8c815"
+    "selected_tool_id": "9ba302a5eeb9815103e9794a3ae8c815",
+    "name": "create-and-send-email",
+    "description": "Creates a draft email, allows for potential review/modification (though not shown in this specific sequence), and then sends it.",
+    "type": "workflow",
+    "api_name": "googleapis.com/gmail",
+    "parameters": {}
   },
   {
     "pair_id": "18",
@@ -385,7 +390,12 @@
     "goal": "Put the signed contract in my Box Contracts folder",
     "step": "Upload the signed contract file to the 'Contracts' folder in Box (output: upload_confirmation)",
     "keyword_search_query": "upload file box contract document folder",
-    "selected_tool_id": "none"
+    "selected_tool_id": "bf9461b5ef4e576a373e294e13a119b8",
+    "name": "Upload file",
+    "description": "Upload file (max 100MB). Please use the [Upload Sessions API](#operation/uploadSessionsStart) to upload bigger files. For more information on uploads, refer to the [file upload guide](/guides/file-upload).",
+    "type": "operation",
+    "api_name": "apideck.com/file-storage",
+    "parameters": {}
   },
   {
     "pair_id": "37",
@@ -401,12 +411,7 @@
     "goal": "Tweet that our new app is live!",
     "step": "Create a tweet with the message \"Our new app is live!\" (output: tweet_confirmation)",
     "keyword_search_query": "create post tweet twitter message content",
-    "selected_tool_id": "b3bb5eff9bb626305424fc2c9322231f",
-    "name": "Creation of a Post",
-    "description": "Causes the User to create a Post under the authorized account.",
-    "type": "operation",
-    "api_name": "twitter.com/current",
-    "parameters": {}
+    "selected_tool_id": "b3bb5eff9bb626305424fc2c932231f"
   },
   {
     "pair_id": "39",

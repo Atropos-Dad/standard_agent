@@ -1,0 +1,278 @@
+[
+  {
+    "provider": "Google",
+    "goal": "Email John about the project update using Gmail",
+    "step": "Send email_draft to John using Gmail (input: email_draft) (output: email_sent_confirmation)",
+    "keyword_search_query": "send email gmail to user"
+  },
+  {
+    "provider": "Google",
+    "goal": "Add a team sync to my Google Calendar for next Friday at 2pm",
+    "step": "create a calendar event titled \"team sync\" on Google Calendar for next_friday_date at 2pm (input: next_friday_date) (output: calendar_event_confirmation)",
+    "keyword_search_query": "create event google calendar add schedule"
+  },
+  {
+    "provider": "Google",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "step": "Find folder named \"Reports\" in Google Drive (output: reports_folder_id)",
+    "keyword_search_query": "find folder google drive search name"
+  },
+  {
+    "provider": "Google",
+    "goal": "Put the quarterly report in my Drive, in the Reports folder",
+    "step": "Upload quarterly report file to Google Drive folder (input: reports_folder_id) (output: upload_confirmation)",
+    "keyword_search_query": "upload file google drive create content folder"
+  },
+  {
+    "provider": "Google",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "step": "find NASA's official YouTube channel (output: nasa_channel_info)",
+    "keyword_search_query": "find youtube channel nasa official"
+  },
+  {
+    "provider": "Google",
+    "goal": "Show me NASA\u2019s latest YouTube videos",
+    "step": "get latest videos from YouTube channel (input: nasa_channel_info) (output: latest_nasa_videos)",
+    "keyword_search_query": "get youtube videos channel latest"
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "step": "get marketing team members (output: marketing_members)",
+    "keyword_search_query": "get users microsoft teams marketing team"
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Set up a Teams meeting with marketing for Thursday afternoon",
+    "step": "create Teams meeting with marketing team (input: meeting_datetime, marketing_members) (output: meeting_confirmation)",
+    "keyword_search_query": "create meeting microsoft teams schedule event"
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Remind my team about the deadline via Outlook",
+    "step": "Get team contact group or distribution list from Outlook (output: team_contacts)",
+    "keyword_search_query": "get outlook team contact group distribution list"
+  },
+  {
+    "provider": "Microsoft",
+    "goal": "Remind my team about the deadline via Outlook",
+    "step": "Send email reminder about the deadline via Outlook (input: team_contacts) (output: email_confirmation)",
+    "keyword_search_query": "send outlook email message reminder"
+  },
+  {
+    "provider": "Slack",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "step": "Get Slack channel ID for \"#general\" (output: slack_channel_id)",
+    "keyword_search_query": "get slack channel id name general"
+  },
+  {
+    "provider": "Slack",
+    "goal": "Say good morning to everyone in #general on Slack",
+    "step": "Send \"Good morning everyone!\" message to Slack channel (input: slack_channel_id) (output: message_confirmation)",
+    "keyword_search_query": "send slack message channel post content"
+  },
+  {
+    "provider": "Twilio",
+    "goal": "Text me a 2FA code with Twilio",
+    "step": "send two_factor_code as an SMS message via Twilio (input: two_factor_code) (output: sms_delivery_status)",
+    "keyword_search_query": "send sms message twilio text code"
+  },
+  {
+    "provider": "GitHub",
+    "goal": "Open a bug for the website\u2019s contact form on GitHub",
+    "step": "Create a new GitHub issue for a bug related to the website's contact form (output: github_issue_creation_status)",
+    "keyword_search_query": "create issue github bug report website contact form"
+  },
+  {
+    "provider": "Discord",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "step": "Get Discord channel named \"introductions\" (output: introductions_channel)",
+    "keyword_search_query": "get discord channel by name find"
+  },
+  {
+    "provider": "Discord",
+    "goal": "Welcome new members in the introductions channel on Discord",
+    "step": "Send welcome_message_content to introductions_channel (input: introductions_channel, welcome_message_content) (output: message_sent_confirmation)",
+    "keyword_search_query": "send message discord channel post content"
+  },
+  {
+    "provider": "Stripe",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "step": "create a $50 donation link with Stripe (output: donation_link_details)",
+    "keyword_search_query": "create payment link stripe donation amount"
+  },
+  {
+    "provider": "Stripe",
+    "goal": "Make a $50 donation link with Stripe and send it to the donor",
+    "step": "send the donation link to the donor (input: donation_link_details) (output: send_confirmation)",
+    "keyword_search_query": "send email link to recipient"
+  },
+  {
+    "provider": "Notion",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "step": "Create a new Notion page titled \"2024 Goals\" (output: notion_page)",
+    "keyword_search_query": "create page notion new title"
+  },
+  {
+    "provider": "Notion",
+    "goal": "Start a 2024 Goals page in Notion with a checklist",
+    "step": "Add a checklist block to the Notion page (input: notion_page) (output: checklist_block_confirmation)",
+    "keyword_search_query": "add block notion checklist page content"
+  },
+  {
+    "provider": "Asana",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "step": "Get user ID for \"Alex\" in Asana (output: alex_user_id)",
+    "keyword_search_query": "get user asana find by name"
+  },
+  {
+    "provider": "Asana",
+    "goal": "Assign Alex to review the Q2 budget in Asana, due next Monday",
+    "step": "Create task \"review the Q2 budget\" in Asana, assigned to alex_user_id, due next Monday (input: alex_user_id) (output: task_creation_confirmation)",
+    "keyword_search_query": "create task asana assign due date"
+  },
+  {
+    "provider": "Trello",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "step": "Get default Trello board for the user (output: default_board)",
+    "keyword_search_query": "get trello board user default"
+  },
+  {
+    "provider": "Trello",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "step": "Get default list for new cards on default_board (input: default_board) (output: default_list)",
+    "keyword_search_query": "get trello list board default"
+  },
+  {
+    "provider": "Trello",
+    "goal": "Add a card to update the homepage on my Trello board",
+    "step": "Create Trello card named \"update the homepage\" on default_list (input: default_list) (output: new_card_confirmation)",
+    "keyword_search_query": "create add trello card list name"
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "step": "retrieve new emails with attachments from Gmail (output: new_gmail_emails)",
+    "keyword_search_query": "get email gmail new attachment filter"
+  },
+  {
+    "provider": "Zapier",
+    "goal": "Automatically save Gmail attachments to Dropbox with Zapier",
+    "step": "upload extracted_attachments to Dropbox (input: extracted_attachments) (output: dropbox_upload_confirmations)",
+    "keyword_search_query": "upload file dropbox save create"
+  },
+  {
+    "provider": "Jira",
+    "goal": "File a login bug in the Mobile App project on Jira",
+    "step": "Create a Jira issue (output: jira_issue_details)",
+    "keyword_search_query": "create issue jira bug mobile app"
+  },
+  {
+    "provider": "Salesforce",
+    "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
+    "step": "create a new lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: salesforce_lead_creation_confirmation)",
+    "keyword_search_query": "create lead salesforce add new contact"
+  },
+  {
+    "provider": "HubSpot",
+    "goal": "Log a new contact from the conference in HubSpot",
+    "step": "Create a new contact in HubSpot (output: hubspot_contact_creation_confirmation)",
+    "keyword_search_query": "create contact hubspot crm add new"
+  },
+  {
+    "provider": "Dropbox",
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "step": "Retrieve latest team photo file (output: team_photo_data)",
+    "keyword_search_query": "retrieve file photo latest content"
+  },
+  {
+    "provider": "Dropbox",
+    "goal": "Upload the latest team photo to Dropbox, Team Photos folder",
+    "step": "Upload team_photo_data to \"Team Photos\" folder in Dropbox (input: team_photo_data) (output: dropbox_upload_result)",
+    "keyword_search_query": "upload file dropbox folder content"
+  },
+  {
+    "provider": "Shopify",
+    "goal": "Get my most recent Shopify orders",
+    "step": "Get most recent Shopify orders (output: shopify_orders)",
+    "keyword_search_query": "get orders shopify recent list"
+  },
+  {
+    "provider": "Zoom",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "step": "retrieve members of the \"product team\" (output: product_team_members)",
+    "keyword_search_query": "get retrieve users team members group"
+  },
+  {
+    "provider": "Zoom",
+    "goal": "Book a Zoom call for the product team next Wednesday at 10am",
+    "step": "create a Zoom meeting for next_wednesday_date at 10am with product_team_members (input: next_wednesday_date, product_team_members) (output: zoom_meeting_details)",
+    "keyword_search_query": "create schedule meeting zoom conference call"
+  },
+  {
+    "provider": "SendGrid",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "step": "get newsletter recipient list (output: recipient_list)",
+    "keyword_search_query": "get contacts list sendgrid recipients email"
+  },
+  {
+    "provider": "SendGrid",
+    "goal": "Email my newsletter list about our new product launch using SendGrid",
+    "step": "send email using SendGrid (input: email_content, recipient_list) (output: send_confirmation)",
+    "keyword_search_query": "send email sendgrid marketing campaign"
+  },
+  {
+    "provider": "Mailchimp",
+    "goal": "Add newuser@example.com to my Mailchimp list",
+    "step": "add newuser@example.com as a subscriber to a Mailchimp list (output: add_subscriber_confirmation)",
+    "keyword_search_query": "add subscriber mailchimp list member create"
+  },
+  {
+    "provider": "Airtable",
+    "goal": "Add Blue Widget to my Inventory base in Airtable",
+    "step": "create record in Airtable base \"Inventory\" with item \"Blue Widget\" (output: airtable_record_creation_status)",
+    "keyword_search_query": "create record airtable base inventory add item"
+  },
+  {
+    "provider": "Box",
+    "goal": "Put the signed contract in my Box Contracts folder",
+    "step": "upload signed contract file to Box \"Contracts\" folder (output: upload_confirmation)",
+    "keyword_search_query": "upload file box contract folder document"
+  },
+  {
+    "provider": "OneDrive",
+    "goal": "Save the updated project plan to OneDrive, Projects/2024",
+    "step": "save project plan content to OneDrive folder Projects/2024 (input: project_plan_content) (output: save_confirmation)",
+    "keyword_search_query": "save upload file onedrive folder create"
+  },
+  {
+    "provider": "Twitter",
+    "goal": "Tweet that our new app is live!",
+    "step": "post tweet to Twitter (input: tweet_content) (output: tweet_confirmation)",
+    "keyword_search_query": "post tweet twitter create update status"
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "Search track \"Here Comes the Sun\" on Spotify (output: track_details)",
+    "keyword_search_query": "search track song spotify find"
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "Find playlist \"Morning Motivation\" on Spotify (output: playlist_details)",
+    "keyword_search_query": "find playlist spotify get"
+  },
+  {
+    "provider": "Spotify",
+    "goal": "Add Here Comes the Sun to my Morning Motivation playlist on Spotify",
+    "step": "Add track to playlist (input: track_details, playlist_details) (output: add_confirmation)",
+    "keyword_search_query": "add track song playlist spotify"
+  },
+  {
+    "provider": "Telegram",
+    "goal": "Let my Telegram group know the meeting starts in 10 minutes",
+    "step": "send message to Telegram group with content \"the meeting starts in 10 minutes\" (output: telegram_message_status)",
+    "keyword_search_query": "send message telegram group post content"
+  }
+]

@@ -2,7 +2,8 @@ import json
 import toml
 import os
 
-config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.toml")
+config = toml.load(config_path)
 paths_cfg = config["paths"]
 
 EXPECTED_FILE = paths_cfg["expected_tool_selections"]

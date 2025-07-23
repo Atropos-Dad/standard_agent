@@ -9,7 +9,8 @@ from prompt_experimentation._prompts import LLM_BULLET_PROMPT
 from prompt_experimentation._test_scenarios import SEARCH_QUERIES
 import toml
 
-config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.toml")
+config = toml.load(config_path)
 gen_cfg = config["generate_keyword_search"]
 paths_cfg = config["paths"]
 
