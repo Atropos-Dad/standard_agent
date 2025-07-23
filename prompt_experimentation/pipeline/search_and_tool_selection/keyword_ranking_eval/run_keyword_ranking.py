@@ -21,7 +21,7 @@ def run_command(cmd, description):
 
 if __name__ == "__main__":
     run_command(
-        "python -m prompt_experimentation.pipeline.search_and_tool_selection.keyword_search_ranking_eval.01_generate_keyword_search_ranking_eval",
+        "python -m prompt_experimentation.pipeline.search_and_tool_selection.keyword_ranking_eval.01_keyword_ranking",
         "Step 1 - Generate keyword search queries"
     )
     print(f"\n{'='*60}")
