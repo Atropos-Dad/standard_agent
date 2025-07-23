@@ -188,8 +188,13 @@ report = {
 with open(REPORT_FILE, "w") as f:
     json.dump(report, f, indent=2)
 
+YELLOW = '\033[1;33m'
+CYAN = '\033[1;36m'
+GREEN = '\033[1;32m'
+RESET = '\033[0m'
+
 print(f"\nLLM Keyword Search Ranking Evaluation Report")
-print(f"Average Score: {average_score:.2f} / 10.00")
-print(f"Total Score: {total_score} / {max_score}")
-print(f"Evaluated {len(results)} queries (skipped {skipped_none} with expected_tool_id 'none' or empty)")
+print(f"{YELLOW}Average Score: {average_score:.2f} / 10.00{RESET} (10 = correct tool averaged first in search list, 1 = correct tool averaged last in search list)")
+print(f"{CYAN}Total Score: {total_score} / {max_score}{RESET} (sum of all query scores; max score = number of queries × 10)")
+print(f"{GREEN}Evaluated {len(results)} queries{RESET} (skipped {skipped_none} with expected_tool_id 'none' or empty)")
 print(f"Detailed report saved to {REPORT_FILE}")
