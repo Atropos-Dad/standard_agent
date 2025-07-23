@@ -4,15 +4,19 @@ from tqdm import tqdm
 import concurrent.futures
 from jentic_agents.utils.llm import LiteLLMChatLLM
 from prompt_experimentation._prompts import TOOL_SELECTION_PROMPT
+import toml
 
-model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
-LLM_WORKERS = 60
+config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+llm_cfg = config["llm_tool_selection_and_eval"]
+paths_cfg = config["paths"]
 
-KEYWORD_TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
-EXPECTED_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/expected_tool_selections.json"
-SELECTION_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/tool_selection_results.json"
+model_name = llm_cfg["llm_model"]
+LLM_WORKERS = llm_cfg["llm_workers"]
+KEYWORD_TOOL_SEARCH_RESULTS_FILE = paths_cfg["keyword_tool_search_results"]
+EXPECTED_RESULTS_FILE = paths_cfg["expected_tool_selections"]
+SELECTION_RESULTS_FILE = paths_cfg["tool_selection_results"]
 
-llm = LiteLLMChatLLM(model=model_name, temperature=0.2)
+llm = LiteLLMChatLLM(model=model_name, temperature=llm_cfg["llm_temperature"])
 
 def select_tool(entry):
     tools = entry["tool_search_results"]

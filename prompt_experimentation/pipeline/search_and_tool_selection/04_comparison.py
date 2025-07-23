@@ -1,9 +1,14 @@
 import json
+import toml
+import os
 
-EXPECTED_FILE = "prompt_experimentation/data/search_and_tool_selection/expected_tool_selections.json"
-ACTUAL_FILE = "prompt_experimentation/data/search_and_tool_selection/tool_selection_results.json"
-TOOL_SEARCH_FILE = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
-REPORT_FILE = "prompt_experimentation/data/search_and_tool_selection/tool_selection_comparison_report.json"
+config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+paths_cfg = config["paths"]
+
+EXPECTED_FILE = paths_cfg["expected_tool_selections"]
+ACTUAL_FILE = paths_cfg["tool_selection_results"]
+TOOL_SEARCH_FILE = paths_cfg["keyword_tool_search_results"]
+REPORT_FILE = paths_cfg["tool_selection_comparison_report"]
 
 # Load files
 with open(EXPECTED_FILE) as f:

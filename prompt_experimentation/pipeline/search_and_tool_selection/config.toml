@@ -1,0 +1,20 @@
+[paths]
+plan_results = "prompt_experimentation/data/search_and_tool_selection/llm_bullet_plans.json"
+keyword_tool_search_results = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
+expected_tool_selections = "prompt_experimentation/data/search_and_tool_selection/expected_tool_selections.json"
+tool_selection_results = "prompt_experimentation/data/search_and_tool_selection/tool_selection_results.json"
+tool_selection_comparison_report = "prompt_experimentation/data/search_and_tool_selection/tool_selection_comparison_report.json"
+
+[generate_keyword_search]
+top_k = 10
+max_workers = 60
+tool_search_workers = 8
+llm_model = "gemini/gemini-2.5-flash"
+llm_temperature = 0.2
+
+[llm_tool_selection_and_eval]
+llm_model = "gemini/gemini-2.5-flash"
+llm_workers = 60
+llm_temperature = 0.2
+
+

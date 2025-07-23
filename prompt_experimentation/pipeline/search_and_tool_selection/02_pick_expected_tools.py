@@ -1,8 +1,14 @@
 import json
 import questionary
+import toml
+import os
 
-TOOL_SEARCH_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/keyword_tool_search_results.json"
-EXPECTED_RESULTS_FILE = "prompt_experimentation/data/search_and_tool_selection/expected_tool_selections.json"
+config = toml.load(os.path.join(os.path.dirname(__file__), "config.toml"))
+pick_cfg = config["pick_expected_tools"]
+paths_cfg = config["paths"]
+
+TOOL_SEARCH_RESULTS_FILE = paths_cfg["keyword_tool_search_results"]
+EXPECTED_RESULTS_FILE = paths_cfg["expected_tool_selections"]
 
 def prompt_user_for_selection(entry):
     print("\n" + "="*60)
