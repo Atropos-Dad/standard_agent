@@ -5,7 +5,8 @@ from tqdm import tqdm
 import concurrent.futures
 from jentic_agents.platform.jentic_client import JenticClient
 from jentic_agents.utils.llm import LiteLLMChatLLM
-from prompt_experimentation._prompts import SEARCH_QUERIES, LLM_BULLET_PROMPT
+from prompt_experimentation._prompts import LLM_BULLET_PROMPT
+from prompt_experimentation._test_scenarios import SEARCH_QUERIES
 
 API_KEY = os.getenv("JENTIC_API_KEY")
 model_name = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
