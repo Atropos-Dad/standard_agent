@@ -544,10 +544,14 @@
         "not_found": true
       },
       "actual": {
-        "id": "none",
-        "not_found": true
+        "id": "7d300a6139fd53d68671a720b9a4e0ba",
+        "name": "POST for lead",
+        "description": "Add lead into the system",
+        "type": "operation",
+        "api_name": "data2crm.com",
+        "parameters": {}
       },
-      "success": true
+      "success": false
     },
     {
       "goal": "Log a new contact from the conference in HubSpot",
@@ -698,14 +702,10 @@
         "not_found": true
       },
       "actual": {
-        "id": "bf9461b5ef4e576a373e294e13a119b8",
-        "name": "Upload file",
-        "description": "Upload file (max 100MB). Please use the [Upload Sessions API](#operation/uploadSessionsStart) to upload bigger files. For more information on uploads, refer to the [file upload guide](/guides/file-upload).",
-        "type": "operation",
-        "api_name": "apideck.com/file-storage",
-        "parameters": {}
+        "id": "none",
+        "not_found": true
       },
-      "success": false
+      "success": true
     },
     {
       "goal": "Save the updated project plan to OneDrive, Projects/2024",

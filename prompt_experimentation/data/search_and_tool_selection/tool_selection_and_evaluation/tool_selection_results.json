@@ -308,7 +308,12 @@
     "goal": "Add Jamie Smith as a lead in Salesforce, jamie@example.com",
     "step": "Create a new lead in Salesforce with first name \"Jamie\", last name \"Smith\", and email \"jamie@example.com\" (output: salesforce_lead_creation_status)",
     "keyword_search_query": "create lead salesforce add new contact",
-    "selected_tool_id": "none"
+    "selected_tool_id": "7d300a6139fd53d68671a720b9a4e0ba",
+    "name": "POST for lead",
+    "description": "Add lead into the system",
+    "type": "operation",
+    "api_name": "data2crm.com",
+    "parameters": {}
   },
   {
     "pair_id": "28",
@@ -390,12 +395,7 @@
     "goal": "Put the signed contract in my Box Contracts folder",
     "step": "Upload the signed contract file to the 'Contracts' folder in Box (output: upload_confirmation)",
     "keyword_search_query": "upload file box contract document folder",
-    "selected_tool_id": "bf9461b5ef4e576a373e294e13a119b8",
-    "name": "Upload file",
-    "description": "Upload file (max 100MB). Please use the [Upload Sessions API](#operation/uploadSessionsStart) to upload bigger files. For more information on uploads, refer to the [file upload guide](/guides/file-upload).",
-    "type": "operation",
-    "api_name": "apideck.com/file-storage",
-    "parameters": {}
+    "selected_tool_id": "none"
   },
   {
     "pair_id": "37",
